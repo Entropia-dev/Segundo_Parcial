@@ -4,6 +4,42 @@ using namespace std;
 
 /**probando git
 
+	el trabajo terminado es la nota del segundo parcial
+	
+	paso 1 definir grupo y tema	
+
+	paso 2 presentacion del informe (puede estar desaprobado)
+	hay dos tipos 1 para un sistema de gestion y otro para un juego en el campus
+	
+	para la entrega del prototipo se necesita el informe aprobado
+	cuando traemos el prototipo tenemos que traer el informe.
+		
+	si llega el 22 de noviemre y no tenes el prototipo aprobado ,
+
+	o el programa terminado no se consigue y se terminaron estan las mesas de final
+
+	en las mesas de final se puede venir con el prototipo o con el programa terminado 
+
+	se viene a las 8 am y despues de que los compañeros rindan se ve lo que trajiste para corregir.
+	
+	recuperatorios del primero va a haber uno en noviempre y uno en febrero.
+
+	en el final lo que van a tomar es el programa terminado del segundo parcial con alguna mejora en el medio.4
+
+	que se solicita en la revision del programa.
+
+	el final y la presentacion del programa terminado es individual
+	
+	se le hacen preguntas al grupo con respecto a el trabajo final terminado, una vez que esta completo.
+		
+	
+		
+	===========================================================
+	
+
+
+		
+
     base pdf:intro_a_POO
 
  notas/tareas:
