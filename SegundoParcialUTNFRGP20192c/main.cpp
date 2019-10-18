@@ -1,7 +1,10 @@
 #include <iostream>
 #include <cstring>
 
+
 using namespace std;
+
+#include "clases.h"
 
 /**probando git
 
@@ -145,6 +148,13 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    persona obj;
+    char nombre_persona[50];
+    cout<<"ingrese nombre persona"<<endl;
+    cin>>nombre_persona;
+    obj.set_nombre(nombre_persona);
+    cout<<"se mostrara el nombre de la persona"<<endl;
+    cout<<"NOMBRE PERSONA:"<<obj.get_nombre()<<endl;
+
     return 0;
 }
