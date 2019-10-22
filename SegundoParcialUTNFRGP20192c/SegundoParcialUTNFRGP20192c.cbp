@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Menues.h" />
 		<Unit filename="clases.h" />
 		<Unit filename="fecha.h" />
 		<Unit filename="main.cpp" />

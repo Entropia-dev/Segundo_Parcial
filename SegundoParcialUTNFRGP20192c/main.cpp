@@ -2,13 +2,13 @@
 #include <cstring>
 #include <stdio.h>
 #include <time.h>
-
+#include <cstdlib>
 using namespace std;
 
-
+#include "fecha.h"
 #include "clases.h"
 #include "Menues.h"
-#include "fecha.h"
+
 
 /**probando git
 

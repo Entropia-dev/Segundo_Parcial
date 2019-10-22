@@ -22,12 +22,28 @@ void set_direccion(char *nueva_direccion){strcpy(direccion, nueva_direccion);}
 char *get_direccion(){return direccion;}
 };
 
-class empleado public persona{
+class empleado:public persona {
+	 private:
+		int codigo_empleado;
+		float sueldo;
+		bool estado;
+	 public:
+		void Cargar_empleado();
+		void Mostrar_empleado();
+		void set_codigo_empleado(int nuevo_codigo){codigo_empleado = nuevo_codigo;}
+		void set_estado(bool nuevo_estado){estado = nuevo_estado;}
+		void set_sueldo(float nuevo_sueldo){sueldo = nuevo_sueldo;}
+		bool get_estado(){return estado;}
+		int get_codigo_empleado(){return codigo_empleado;}
+		float get_sueldo(){return sueldo;}
 
+	 };
 
+	 class cliente : public persona{
+        private:
 
+        public:
 
-
-};
+	 };
 
 #endif // CLASES_H_INCLUDED

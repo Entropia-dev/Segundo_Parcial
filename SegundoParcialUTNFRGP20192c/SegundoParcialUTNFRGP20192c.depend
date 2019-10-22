@@ -1,7 +1,11 @@
 # depslib dependency file v1.0
-1571693478 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
+1571770395 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"fecha.h"
 	"clases.h"
 	"Menues.h"
 
@@ -9,7 +13,9 @@
 	<iostream>
 	<cstring>
 
-1571689479 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clases.h
+1571770533 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clases.h
 
-1571693478 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menues.h
+1571719799 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menues.h
+
+1571694159 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\fecha.h
 
