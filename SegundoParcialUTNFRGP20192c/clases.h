@@ -22,6 +22,12 @@ void set_direccion(char *nueva_direccion){strcpy(direccion, nueva_direccion);}
 char *get_direccion(){return direccion;}
 };
 
+class empleado public persona{
 
+
+
+
+
+};
 
 #endif // CLASES_H_INCLUDED

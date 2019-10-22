@@ -1,8 +1,15 @@
 # depslib dependency file v1.0
-1570151911 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
+1571693478 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
+	<cstring>
+	"clases.h"
+	"Menues.h"
 
 1571398683 source:c:\users\miran\desktop\clone\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
+
+1571689479 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clases.h
+
+1571693478 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menues.h
 

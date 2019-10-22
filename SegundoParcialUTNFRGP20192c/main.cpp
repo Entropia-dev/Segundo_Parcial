@@ -1,10 +1,14 @@
 #include <iostream>
 #include <cstring>
-
+#include <stdio.h>
+#include <time.h>
 
 using namespace std;
 
+
 #include "clases.h"
+#include "Menues.h"
+#include "fecha.h"
 
 /**probando git
 
