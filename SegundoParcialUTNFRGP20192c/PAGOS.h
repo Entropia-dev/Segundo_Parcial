@@ -32,14 +32,29 @@
     };
 
     void pago::cargar_pago(){
-        Fecha nueva_fecha;
-        int dia,mes,anio;
-        cout<<"INGRESE EL DIA DEL PAGO"<<endl;
-        cin>>dia;
-        cout<<"INGRESE EL MES DEL PAGO"<<endl;
-        cin>>mes;
-        cout<<"INGRESE EL ANIO DEL PAGO"<<endl;
-        cin>>anio;
-    }
+
+cout<<"ID DE PAGO: "<<endl;
+cin>>id_pago;
+cout<<"ID DE VENTA: "<<endl;
+cin>>id_venta;
+cout<<"FORMA DE PAGO: "<<endl;
+cin>>forma_pago;
+cout<<"IMPORTE: "<<endl;
+cin>>importe;
+estado = true;
+cin>>fecha_pago;
+return;
+}
+
+void pago::mostrar_pago(){
+cout<<"ID DE PAGO: "<<id_pago<<endl;
+cout<<"ID DE VENTA: "<<id_venta<<endl;
+cout<<"FORMA DE PAGO: "<<forma_pago<<endl;
+cout<<"IMPORTE: "<<importe<<endl;
+cout<<fecha_pago<<endl;
+return;
+}
+
+
 
 #endif // PAGOS_H_INCLUDED

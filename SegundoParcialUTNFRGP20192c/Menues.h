@@ -30,7 +30,10 @@ cout << char (RV) << "                                                          
     }
 
 void menuClientes()
-{system("cls");
+{
+    int opc;
+    empleado obj_empleado;
+    system("cls");
         cout << char (c1);
     for (int x=0; x<77; x++)
     {
@@ -53,6 +56,14 @@ cout << char (RV) << "                                                          
         cout << char(RH);
     }
     cout << char (c3)<<endl;
+
+cin>>opc;
+switch(opc){
+case 1:
+    obj_empleado.Cargar_empleado();
+    //obj_empleado.guardar_empleado();
+    break;
+}
 }
 
 void menuModelos()

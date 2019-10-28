@@ -215,6 +215,7 @@ int main()
               }break;
         default: cout<<"OPCION INCORRECTA";
         //Sleep(1000);
+        return -1;
            }//cierra case 1
          case 2:{
            menuClientes();

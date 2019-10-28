@@ -38,5 +38,13 @@ class empleado:public persona {
 	 cout<<"SUELDO :"<<sueldo<<endl;
 	 cout<<"ID DE EMPLEADO"<<codigo_empleado<<endl;
 	 }
+///guardar empleados ->
+bool empleado::guardar_empleado(){
+FILE*p=fopen("empleados.dat","ab");
+if(p==NULL){cout<<"ERROR DE GUARDADO ! ! ! "; exit(1);}
+bool grabo=fwrite(this,sizeof*this,1,p);
+fclose(p);
+return grabo;
+}
 
 #endif // EMPLEADOS_H_INCLUDED
