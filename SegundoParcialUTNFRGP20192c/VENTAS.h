@@ -1,7 +1,7 @@
 #ifndef VENTAS_H_INCLUDED
 #define VENTAS_H_INCLUDED
 
-    class venta{
+ class venta{
         private:
        Fecha fecha_venta;
         int id_venta;
@@ -30,8 +30,5 @@
         void guardar_venta();
         void mostrar_venta();
     };
-
-
-
 
 #endif // VENTAS_H_INCLUDED

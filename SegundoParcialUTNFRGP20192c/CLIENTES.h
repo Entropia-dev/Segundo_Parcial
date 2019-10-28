@@ -1,7 +1,6 @@
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
 
-
 	 class cliente {
         private:
 
@@ -16,6 +15,7 @@
             void mostrar_cliente();
             void cargar_cliente();
 	 };
+
 
 
 #endif // CLIENTES_H_INCLUDED

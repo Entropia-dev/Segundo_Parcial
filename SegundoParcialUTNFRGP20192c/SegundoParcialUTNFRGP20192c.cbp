@@ -33,9 +33,15 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Menues.h" />
-		<Unit filename="clases.h" />
+		<Unit filename="clientes.h" />
+		<Unit filename="detalle_venta.h" />
+		<Unit filename="empleados.h" />
 		<Unit filename="fecha.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="pagos.h" />
+		<Unit filename="personas.h" />
+		<Unit filename="productos.h" />
+		<Unit filename="ventas.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

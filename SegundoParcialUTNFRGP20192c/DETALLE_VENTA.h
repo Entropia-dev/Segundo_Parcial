@@ -1,8 +1,7 @@
 #ifndef DETALLE_VENTA_H_INCLUDED
 #define DETALLE_VENTA_H_INCLUDED
 
-
-    class detalle_venta{
+class detalle_venta{
     private:
     float importe_prdocuto; /// se obtiene el  importe del producto listado en el detalle y para la venta se obitnene el detalle final.
     int id_producto;
@@ -35,7 +34,6 @@
         void guardar_detalle_venta();
 
     };
-
 
 
 #endif // DETALLE_VENTA_H_INCLUDED

@@ -22,6 +22,21 @@ class empleado:public persona {
 
 	 };
 
+	 void empleado::Cargar_empleado(){
+	 persona::cargar_persona();
+	 cout<<"INGRESE EL CODIGO DE EMPLEADO: "<<endl;
+	 cin>>codigo_empleado;
+	 cout<<"INGRESE EL SUELDO DEL EMPLEADO: "<<endl;
+	 cin>>sueldo;
+	 estado=true;
+	 return;
+	 }
 
+
+	 void empleado::Mostrar_empleado(){
+	 persona::mostrar_persona();
+	 cout<<"SUELDO :"<<sueldo<<endl;
+	 cout<<"ID DE EMPLEADO"<<codigo_empleado<<endl;
+	 }
 
 #endif // EMPLEADOS_H_INCLUDED

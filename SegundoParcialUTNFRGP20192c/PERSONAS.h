@@ -1,7 +1,6 @@
 #ifndef PERSONAS_H_INCLUDED
 #define PERSONAS_H_INCLUDED
 
-
 class persona{
 protected:
 char nombre[50];
@@ -27,5 +26,27 @@ void cargar_persona();
 void mostrar_persona();
 };
 
+void persona::cargar_persona(){
+cout<<"NOMBRE :"<<endl;
+cin>>nombre;
+cout<<"APELLIDO :"<<endl;
+cin>>apellido;
+cout<<"EMAIL :"<<endl;
+cin>>e_mail;
+cout<<"DIRECCION: "<<endl;
+cin>>direccion;
+cout<<"DNI :"<<endl;
+cin>>dni;
+return;
+}
+
+void persona::mostrar_persona(){
+cout<<"NOMBRE :"<<nombre<<endl;
+cout<<"APELLIDO :"<<apellido<<endl;
+cout<<"EMAIL :"<<e_mail<<endl;
+cout<<"DIN :"<<dni<<endl;
+cout<<"DIRECCION :"<<direccion<<endl;
+return;
+}
 
 #endif // PERSONAS_H_INCLUDED

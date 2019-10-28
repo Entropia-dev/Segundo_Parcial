@@ -1,12 +1,33 @@
 # depslib dependency file v1.0
-1571770395 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
+1572279060 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
 	<time.h>
 	<cstdlib>
 	"fecha.h"
-	"clases.h"
+	"productos.h"
+	"ventas.h"
+	"personas.h"
+	"empleados.h"
+	"clientes.h"
+	"pagos.h"
+	"detalle_venta.h"
+	"detalle_venta.h"
+	"Menues.h"
+	<iostream>
+	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"fecha.h"
+	"VENTAS.h"
+	"PAGOS.h"
+	"PRODUCTOS.h"
+	"CLIENTES.h"
+	"EMPLEADOS.h"
+	"DETALLE_VENTA.h"
+	"PERSONAS.h"
 	"Menues.h"
 
 1571398683 source:c:\users\miran\desktop\clone\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
@@ -34,4 +55,18 @@
 1572211949 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\clases.h
 
 1572054134 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\menues.h
+
+1572277612 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\detalle_venta.h
+
+1572277927 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\productos.h
+
+1572277956 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\ventas.h
+
+1572279090 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\personas.h
+
+1572279458 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\empleados.h
+
+1572279504 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clientes.h
+
+1572279871 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\pagos.h
 

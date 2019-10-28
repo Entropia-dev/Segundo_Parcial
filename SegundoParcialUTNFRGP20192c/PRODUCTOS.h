@@ -1,7 +1,7 @@
 #ifndef PRODUCTOS_H_INCLUDED
 #define PRODUCTOS_H_INCLUDED
 
-	 class productos {
+ class productos {
         private:
     int id_producto;
 	 float precio_x_metro;
