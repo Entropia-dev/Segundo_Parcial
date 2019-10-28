@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1572279060 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
+1572289481 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
@@ -36,9 +36,9 @@
 
 1571770533 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clases.h
 
-1571719799 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menues.h
+1572290899 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menues.h
 
-1571694159 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\fecha.h
+1572284751 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\fecha.h
 
 1572288195 source:c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
@@ -77,19 +77,19 @@
 
 1572288171 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\menues.h
 
-1572277612 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\detalle_venta.h
+1572284751 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\detalle_venta.h
 
-1572277927 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\productos.h
+1572284751 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\productos.h
 
-1572277956 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\ventas.h
+1572284751 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\ventas.h
 
-1572279090 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\personas.h
+1572284751 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\personas.h
 
-1572279458 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\empleados.h
+1572290692 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\empleados.h
 
-1572279504 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clientes.h
+1572284751 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clientes.h
 
-1572279871 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\pagos.h
+1572287886 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\pagos.h
 
 1572285305 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\productos.h
 

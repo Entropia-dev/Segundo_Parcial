@@ -22,7 +22,7 @@ class empleado:public persona {
 
 	 };
 
-	 void empleado::Cargar_empleado(){
+void empleado::Cargar_empleado(){
 	 persona::cargar_persona();
 	 cout<<"INGRESE EL CODIGO DE EMPLEADO: "<<endl;
 	 cin>>codigo_empleado;
@@ -32,17 +32,17 @@ class empleado:public persona {
 	 return;
 	 }
 
-
-	 void empleado::Mostrar_empleado(){
+void empleado::Mostrar_empleado(){
 	 persona::mostrar_persona();
 	 cout<<"SUELDO :"<<sueldo<<endl;
 	 cout<<"ID DE EMPLEADO"<<codigo_empleado<<endl;
 	 }
+
 ///guardar empleados ->
 bool empleado::guardar_empleado(){
 FILE*p=fopen("empleados.dat","ab");
 if(p==NULL){cout<<"ERROR DE GUARDADO ! ! ! "; exit(1);}
-bool grabo=fwrite(this,sizeof*this,1,p);
+bool grabo=fwrite(this,sizeof *this,1,p);
 fclose(p);
 return grabo;
 }

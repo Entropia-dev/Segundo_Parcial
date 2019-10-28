@@ -103,6 +103,7 @@ using namespace std;
 #include <stdio.h>
 #include <time.h>
 #include <cstdlib>
+
 using namespace std;
 
 #include "fecha.h"
@@ -176,82 +177,8 @@ using namespace std;
 
 int main()
 {
-       char opc[20],opcventas[20],opcclientes[20];
-     int opswitch,OPCVENTAS,OPCCLIENTES;
-     int pos=0,NUMVMODIF;
-     bool salir=false;
-
-
-        persona obj;
-
-        MenuPrincipal();
-        cout<<"INGRESE UNA OPCION: ";
-        cin.getline(opc,20);
-     opswitch=strToIntAll(opc);
-     while(!salir)
-     {
-         switch(opswitch)
-         {
-           case 1:{ menuVentas();
-           cout<<"INGRESE UNA OPCION: ";
-           cin.getline(opcventas,20);
-           OPCVENTAS=strToIntAll(opcventas);
-           switch(OPCVENTAS)
-           {
-              case 1: {
-                  cin.get();
-                      }break;
-              case 2: {
-             // v.mostrar();
-              cin.get();
-                      }break;
-              case 3: {
-                  cout<<"Ingrese el numero de la venta a modificar: ";
-                  cin>>NUMVMODIF;
-              //actualizarSaldo(NUMVMODIF);
-              }break;
-              case 4:{
-              //ModificarVenta();
-              }break;
-        default: cout<<"OPCION INCORRECTA";
-        //Sleep(1000);
-        return -1;
-           }//cierra case 1
-         case 2:{
-           menuClientes();
-           cout<<"INGRESE UNA OPCION: ";
-           cin.getline(opcclientes,20);
-           OPCCLIENTES=strToIntAll(opcclientes);
-           switch(OPCCLIENTES)
-           {
-             case 1: {
-             //cli.cargar();
-             //cli.mostrar();
-            cin.get();
-            }break;
-
-           }
-         case 3:
-            {
-               // menuModelos();
-                cin.get();
-            }break;
-         case 0:{
-         salir=true;
-         exit(1);
-         }break;
-        default: cout<<"OPCION INCORRECTA";
-        //Sleep(1000);
-        }
-        }//cierra switch principal
-     MenuPrincipal();
-     cout<<"INGRESE UNA OPCION: ";
-     cin.getline(opc,20);
-     }//cierra while
-     }
-
+    menu_principal();
     return 0;
-//cierra main
 }
 
 /*
