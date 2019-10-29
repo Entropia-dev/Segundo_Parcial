@@ -31,4 +31,25 @@
         void mostrar_venta();
     };
 
+   void venta::cargar_venta(){
+       cout<<"INGRESE LA FECHA DE VENTA"<<endl; ///tiene que setear la venta del dia auto.
+    cin>>fecha_venta;   ///consultar como funciona esto
+    cout<<"INGRESE LA ID DE LA VENTA"<<endl;    ///tiene que ser auto_numerico
+    cin>>id_venta;
+    cout<<"INGRESE EL IMPORTE"<<endl;
+    cin>>importe;
+    cout<<"INGRESE LA ID DEL CLIENTE"<<endl;    ///tiene que validar en archivo clientes
+    cin>>id_cliente;
+
+    }
+
+    void venta::mostrar_venta(){
+
+    cout<<"ID DE VENTA"<<id_venta<<endl;
+    cout<<"ID DE CLIENTE"<<id_cliente<<endl;
+    cout<<"IMPORTE DE LA VENTA"<<endl;
+    cout<<"FECHA DE VENTA: "<<endl;
+    cout<<fecha_venta; ///consultar como funciona esto
+    }
+
 #endif // VENTAS_H_INCLUDED

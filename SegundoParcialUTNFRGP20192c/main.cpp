@@ -123,12 +123,18 @@ using namespace std;
     -REALIZAR LOS METODOS DE GUARDAR DE TODAS LAS CLASES.
     -REALIZAR LOS METODOS DE CARGAR DE TODAS LAS CLASES.
     -REALIZAR LOS METODOS DE MOSTRAR DE TODAS LAS CLASES.
+    -IR COMPLETANDO LAS FUNCIONES DE LOS MENUES PRINCIPALES.
+        EMPLEADOS -----SIN EMPEZAR
+        CLIENTES  -----SIN EMPEZAR
+        VENTAS -----SIN EMPEZAR
+        PAGOS -----SIN EMPEZAR
+        PRODUCTOS -----SIN EMPEZAR
       || PARA EL PROTOTIPO SE NECESITA EL ABML AL MENOS SIN NINGUNA VALIDACION  ||
 	el trabajo terminado es la nota del segundo parcial
 	paso 1 definir grupo y tema -----------------------------------------TERMINADO
-	Paso 2 presentacion del informe (INFORME APROVADO)----------------------TERMINADO
+	Paso 2 presentacion del informe (INFORME APROBADO)----------------------TERMINADO
 	hay dos tipos 1 para un sistema de gestion y otro para un juego en el campus
-	cuando traemos el prototipo tenemos que traer el informe.   ------------- EL LUNES 1/11 SE NECESITA EL PROTOTIPO
+	cuando traemos el prototipo tenemos que traer el informe.   ------------- EL VIERNES 1/11 SE NECESITA EL PROTOTIPO
 	para la entrega del prototipo se necesita el informe aprobado
 	si llega el 22 de noviemre y no tenes el prototipo aprobado ,
 	o el programa terminado no se consigue y se terminaron estan las mesas de final
