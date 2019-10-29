@@ -24,6 +24,31 @@
             bool guardar_producto();
 	 };
 
+    void productos::cargar_producto(){
+    cout<<"INGRESE LA ID DEL PRODUCTO"<<endl;
+    cin>>id_producto;
+    cout<<"INGRESE EL MODELO DEL PRODUCTO"<<endl;
+    cin>>modelo;
+    cout<<"INGRESE EL PRECIO POR METRO"<<endl;
+    cin>>precio_x_metro;
+    estado=true;
+    }
 
+    void productos::mostrar_producto(){
+    cout<<"MODELO DEL PRODUCTO :"<<modelo<<endl;
+    cout<<"ID DEL PRODUCTO :"<<id_producto<<endl;
+    cout<<"PRECIO POR METRO :"<<precio_x_metro<<endl;
+    }
+
+    bool productos::guardar_producto(){
+    bool grabo;
+    FILE *p;
+    p=fopen("productos.dat","ab");
+    if(p==NULL){cout<<"ERROR DE ARCHIVO EN PRODUCTOS::CARGARPRODUCTO"<<endl;
+                    exit(1);}
+    grabo=fwrite(this, sizeof *this,1,p);
+    fclose(p);
+    return grabo;
+    }
 
 #endif // PRODUCTOS_H_INCLUDED
