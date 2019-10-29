@@ -31,9 +31,47 @@ class detalle_venta{
         ///====================CARGAR/MOSTRAR/GUARDAR==================
         void cargar_detalle_venta();
         void mostrar_detalle_venta();
-        void guardar_detalle_venta();
+        bool guardar_detalle_venta();
 
     };
 
+    void detalle_venta::cargar_detalle_venta(){
+    cout<<"INGRESE LA ID DE PRODUCTO"<<endl;
+    cin>>id_producto;
+    cout<<"INGRESE LA ID DE LA VENTA"<<endl;
+    cin>>id_venta;
+    cout<<"INGRESE LA FORMA DE PAGO"<<endl;
+    cin>>forma_pago;
+    cout<<"INGRESE LOS METROS VENDIDOS"<<endl;
+    cin>>metros_vendidos;
+    cout<<"INGRESE EL PRECIO POR METRO"<<endl; ///despues hay que hacer que se auto
+    cin>>precio_x_metro;                       ///obtenga en base al archivo prodcutos
+    cout<<"INGRESE EL DNI DEL CLIENTE"<<endl;
+    cin>>dni_cliente;         ///el dni del cliente luego sera solicitado solamente
+                                ///seleccionando un metodo de pago que lo requiera
+    estado=true;
+    return;
+    }
+
+    void detalle_venta::mostrar_detalle_venta(){
+    cout<<"ID DE VENTA"<<id_venta;
+    cout<<"ID DEL PRODUCTO"<<id_producto;
+    cout<<"DNI CLIENTE"<<dni_cliente;
+    cout<<"PRECIO POR METRO"<<precio_x_metro;
+    cout<<"METROS VENDIDOS"<<metros_vendidos;
+    cout<<"FORMA DE PAGO"<<forma_pago;
+    cout<<"INGRESE EL IMPORTE"<<importe_prdocuto;
+    }
+
+    bool detalle_venta::guardar_detalle_venta(){
+    bool grabo;
+    FILE *p;
+    p=fopen("detalle_ventas.dat","ab");
+    if(p==NULL){cout<<"ERROR DE ARCHIVO EN DETALLE_VENTA::GUARDAR_DETALLE"<<endl;
+                            exit(1);}
+    grabo=fwrite(this,sizeof *this , 1 ,p);
+    fclose(p);
+    return grabo;
+    }
 
 #endif // DETALLE_VENTA_H_INCLUDED
