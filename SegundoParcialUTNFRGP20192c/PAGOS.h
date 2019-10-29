@@ -28,7 +28,7 @@
         ///====================CARGAR/MOSTRAR/GUARDAR==================
         void cargar_pago();
         void mostrar_pago();
-        void guardar_pago();
+        bool guardar_pago();
     };
 
     void pago::cargar_pago(){
@@ -55,6 +55,15 @@ cout<<fecha_pago<<endl;
 return;
 }
 
-
+bool pago::guardar_pago(){
+bool grabo;
+FILE *p;
+p=fopen("pagos.dat","ab");
+if(p==NULL){cout<<"ERROR DE ARCHIVO EN PAGO::GUARDAR_PAGO"<<endl;
+                    exit(1);}
+grabo=fwrite(this, sizeof *this ,1,p);
+fclose(p);
+return grabo;
+}
 
 #endif // PAGOS_H_INCLUDED
