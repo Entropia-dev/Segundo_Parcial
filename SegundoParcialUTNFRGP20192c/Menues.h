@@ -290,6 +290,7 @@ cout<<"0) VOLVEr AL MENU ANTERIOR"<<endl;
 cin>>opc;
 switch(opc){
 case 1:
+alta_empleado();
 break;
 
 case 2:

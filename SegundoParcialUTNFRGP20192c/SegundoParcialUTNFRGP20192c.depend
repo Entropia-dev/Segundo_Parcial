@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1572362877 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
+1572456125 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
@@ -36,7 +36,7 @@
 
 1571770533 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clases.h
 
-1572290899 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menues.h
+1572457249 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menues.h
 
 1572284751 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\fecha.h
 
@@ -83,9 +83,9 @@
 
 1572363034 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\ventas.h
 
-1572284751 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\personas.h
+1572457404 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\personas.h
 
-1572290692 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\empleados.h
+1572457292 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\empleados.h
 
 1572356630 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clientes.h
 

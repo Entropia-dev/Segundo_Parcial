@@ -31,7 +31,7 @@ cout<<"NOMBRE :"<<endl;
 cin>>nombre;
 cout<<"APELLIDO :"<<endl;
 cin>>apellido;
-cout<<"EMAIL :"<<endl;
+cout<<"INGRESE EL EMAIL :"<<endl;
 cin>>e_mail;
 cout<<"DIRECCION: "<<endl;
 cin>>direccion;

@@ -47,4 +47,16 @@ fclose(p);
 return grabo;
 }
 
+
+void alta_empleado(){
+system("cls");
+cout<<"MENU CARGA DE EMPLEADOS :"<<endl;
+empleado obj;
+bool resultado;
+obj.Cargar_empleado();
+resultado=obj.guardar_empleado();
+if(resultado==true){cout<<"EMPLEADO GUARDADO CON EXITO."<<endl;}
+system("pause");
+}
+
 #endif // EMPLEADOS_H_INCLUDED
