@@ -10,8 +10,8 @@ class empleado:public persona {
         ///====================CARGAR/MOSTRAR/GUARDAR==================
 		void Cargar_empleado();
 		void Mostrar_empleado();
-		bool Guardar_empleado();
-		bool leerDeDisco();
+		bool guardar_empleado();
+		bool leerDeDisco(int);
             ///====================SETS==================
 		void set_codigo_empleado(int nuevo_codigo){codigo_empleado = nuevo_codigo;}
 		void set_estado(bool nuevo_estado){estado = nuevo_estado;}
@@ -27,6 +27,7 @@ void empleado::Cargar_empleado(){
 	 persona::cargar_persona();
 	 cout<<"INGRESE EL CODIGO DE EMPLEADO: "<<endl;
 	 cin>>codigo_empleado;
+	 cin.ignore();
 	 cout<<"INGRESE EL SUELDO DEL EMPLEADO: "<<endl;
 	 cin>>sueldo;
 	 estado=true;
@@ -40,8 +41,7 @@ void empleado::Mostrar_empleado(){
 	 }
 
 ///guardar empleados ->
-bool empleado::Guardar_empleado(){
-    empleado obj;
+bool empleado::guardar_empleado(){
 FILE*p=fopen("empleados.dat","ab");
 if(p==NULL){cout<<"ERROR DE GUARDADO ! ! ! "; exit(1);}
 bool grabo=fwrite(this,sizeof *this,1,p);
@@ -49,29 +49,34 @@ fclose(p);
 return grabo;
 }
 
-///  BUSCAR EMPLEADO X DNI   ///
 
-void buscarXdni(char *dni){
-    empleado obj;
-    FILE*p=fopen("empleados.dat","rb");
-    if(p==NULL){cout<<"DNI NO ENCONTRADO ! ! ! "; exit(1);}
-while(fread(&obj,sizeof(empleado),1,p)){
-    if(strcmp(dni,obj.get_dni())==0){
-        obj.Mostrar_empleado();
-    }
-}
-fclose(p);
+void alta_empleado(){
+system("cls");
+cout<<"MENU CARGA DE EMPLEADOS "<<endl;
+empleado obj;
+obj.Cargar_empleado();
+bool resultado=obj.guardar_empleado();
+if(resultado==true){cout<<"EMPLEADO GUARDADO CON EXITO !"<<endl;}
 system("pause");
-return;
 }
 
-///   LISTAR EMPLEADO    ///
+bool empleado::leerDeDisco(int pos){
+FILE*p=fopen("empleados.dat","rb");
+fseek(p,sizeof*this*pos,0);
+bool leyo=fread(this, sizeof*this,1,p);
+fclose(p);
+return leyo;
+}
 
-void listar_empleado_x_dni(){
-char comparador [9];
-cout<<"INGRESE UN NUMERO DE DNI: ";
-cin>>comparador;
-buscarXdni(comparador);
+///     MOSTRAR TODOS LOS EMPLEADOS
+
+void mostrar_todos_empleados(){
+empleado obj;
+int pos=0;
+while(obj.leerDeDisco(pos++)){
+    obj.Mostrar_empleado();
+}
+
 }
 
 #endif // EMPLEADOS_H_INCLUDED

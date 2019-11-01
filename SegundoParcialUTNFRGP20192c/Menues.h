@@ -278,7 +278,6 @@ break;
 void menu_empleados(){
      system("cls");
     int opc;
-    empleado obj;
 cout<<"MENU EMPLEADOS"<<endl;
 cout<<"======="<<endl;
 cout<<"1)NUEVO EMPLEADO"<<endl;
@@ -291,18 +290,15 @@ cout<<"0) VOLVEr AL MENU ANTERIOR"<<endl;
 cin>>opc;
 switch(opc){
 case 1:
-    obj.Cargar_empleado();
-    if(obj.Guardar_empleado()==true)
-        cout<<"EL EMPLEADO CARGADO !!! ";
-        system("pause");
-    break;
-
-case 2:
-    listar_empleado_x_dni();
-    system("pause");
+alta_empleado();
+system("pause");
 break;
 
-case 3:
+case 2:
+break;
+
+case 3: mostrar_todos_empleados();
+system("pause");
 break;
 
 case 4:

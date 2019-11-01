@@ -27,16 +27,22 @@ void mostrar_persona();
 };
 
 void persona::cargar_persona(){
+
 cout<<"NOMBRE :"<<endl;
-cin>>nombre;
+cin.getline(nombre,50);
+cin.ignore();
 cout<<"APELLIDO :"<<endl;
-cin>>apellido;
-cout<<"EMAIL :"<<endl;
-cin>>e_mail;
+cin.getline(apellido,50);
+cin.ignore();
+cout<<"INGRESE EL EMAIL :"<<endl;
+cin.getline(e_mail,50);
+cin.ignore();
 cout<<"DIRECCION: "<<endl;
-cin>>direccion;
+cin.getline(direccion,50);
+cin.ignore();
 cout<<"DNI :"<<endl;
-cin>>dni;
+cin.getline(dni,9);
+cin.ignore();
 return;
 }
 

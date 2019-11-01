@@ -3,7 +3,7 @@
 
  class productos {
         private:
-     int id_producto;
+    int id_producto;
 	 float precio_x_metro;
 	 char modelo[9];
 	 bool estado;
