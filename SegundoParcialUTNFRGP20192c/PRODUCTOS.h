@@ -22,6 +22,7 @@
             void cargar_producto();
             void mostrar_producto();
             bool guardar_producto();
+            void leer_producto(int);
 	 };
 
     void productos::cargar_producto(){
@@ -52,5 +53,24 @@
     }
 
 
+    void productos::leer_producto(int pos){
+  FILE *p;
+  p=fopen("productos.dat","rb");
+  if(p==NULL)exit(1);
+  fseek(p, sizeof *this*pos,0);
+  fread(this, sizeof *this, 1, p);
+  fclose(p);
+  return;
+  }
 
+  int contar_cant_productos(){
+  FILE *p;
+  long int bytes_arch;
+  int cant_registros;
+  p=fopen("productos.dat","rb");
+  fseek(p,0,SEEK_END);
+  bytes_arch=ftell(p);
+  cant_registros=bytes_arch/sizeof(productos);
+  return cant_registros;
+  }
 #endif // PRODUCTOS_H_INCLUDED

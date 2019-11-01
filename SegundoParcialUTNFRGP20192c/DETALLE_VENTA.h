@@ -74,4 +74,5 @@ class detalle_venta{
     return grabo;
     }
 
+
 #endif // DETALLE_VENTA_H_INCLUDED
