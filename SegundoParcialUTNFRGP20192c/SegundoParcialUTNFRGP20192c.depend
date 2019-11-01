@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1572456125 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
+1572586154 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
@@ -36,11 +36,11 @@
 
 1571770533 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clases.h
 
-1572457249 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menues.h
+1572587269 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menues.h
 
 1572284751 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\fecha.h
 
-1572457522 source:c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
+1572288195 source:c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
@@ -71,11 +71,11 @@
 	"PERSONAS.h"
 	"Menues.h"
 
-1572457522 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\fecha.h
+1572285250 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\fecha.h
 
 1572211949 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\clases.h
 
-1572559509 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\menues.h
+1572288171 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\menues.h
 
 1572360017 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\detalle_venta.h
 
@@ -83,29 +83,29 @@
 
 1572363034 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\ventas.h
 
-1572457404 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\personas.h
+1572585937 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\personas.h
 
-1572457292 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\empleados.h
+1572587427 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\empleados.h
 
 1572356630 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clientes.h
 
 1572356294 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\pagos.h
 
-1572457522 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\productos.h
+1572285305 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\productos.h
 
-1572457522 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\ventas.h
+1572285305 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\ventas.h
 
-1572558138 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\personas.h
+1572285305 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\personas.h
 
-1572559509 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\empleados.h
+1572287259 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\empleados.h
 
-1572457522 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\clientes.h
+1572285304 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\clientes.h
 
-1572457522 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\pagos.h
+1572286621 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\pagos.h
 
-1572457522 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\detalle_venta.h
+1572285304 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\detalle_venta.h
 
-1572560311 source:c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
+1572586154 source:c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
@@ -136,21 +136,21 @@
 	"PERSONAS.h"
 	"Menues.h"
 
-1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\fecha.h
+1572284751 c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\fecha.h
 
-1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\productos.h
+1572359585 c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\productos.h
 
-1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\ventas.h
+1572615760 c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\ventas.h
 
-1572609144 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\personas.h
+1572585937 c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\personas.h
 
-1572609679 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\empleados.h
+1572616757 c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\empleados.h
 
-1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\clientes.h
+1572356630 c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\clientes.h
 
-1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\pagos.h
+1572356294 c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\pagos.h
 
-1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\detalle_venta.h
+1572360017 c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\detalle_venta.h
 
-1572609144 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\menues.h
+1572587269 c:\users\miran\desktop\proyecto_beta\segundoparcialutnfrgp20192c\menues.h
 

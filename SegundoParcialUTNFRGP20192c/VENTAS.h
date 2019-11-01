@@ -1,6 +1,9 @@
 #ifndef VENTAS_H_INCLUDED
 #define VENTAS_H_INCLUDED
 
+///si tenes un cin y luego del cin un cin.getline entre medio va cin.ignore
+///o algo que libere el buffer y si tenes dos ignores juntos entre medio no va nada
+
  class venta{
         private:
        Fecha fecha_venta;
@@ -31,7 +34,7 @@
         void mostrar_venta();
     };
 
-   void venta::cargar_venta(){
+    void venta::cargar_venta(){
        cout<<"INGRESE LA FECHA DE VENTA"<<endl; ///tiene que setear la venta del dia auto.
     cin>>fecha_venta;   ///consultar como funciona esto
     cout<<"INGRESE LA ID DE LA VENTA"<<endl;    ///tiene que ser auto_numerico

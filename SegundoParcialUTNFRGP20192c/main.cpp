@@ -180,9 +180,34 @@ using namespace std;
         ===========================================================
 **/
 
+void inicializar_archivos()
+{
+    FILE *p;
+    p=fopen("inicio.dat","rb");
+
+    if(p==NULL)
+    {
+        FILE *a=fopen("empleados.dat","ab");
+        fclose(a);
+   //     FILE *b=fopen("clientes.dat","ab");
+    //    fclose(b);
+     //   FILE *c=fopen("ventas.dat","ab");
+      //  fclose(c);
+        FILE *p=fopen("inicio.dat","ab");
+        fclose(p);
+        return;
+    }
+    else
+    {
+        return;
+    }
+
+}
+
 
 int main()
 {
+    inicializar_archivos();
     menu_principal();
     return 0;
 }

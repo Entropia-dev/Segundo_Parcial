@@ -27,22 +27,16 @@ void mostrar_persona();
 };
 
 void persona::cargar_persona(){
-
 cout<<"NOMBRE :"<<endl;
-cin.getline(nombre,50);
-cin.ignore();
+cin>>nombre;
 cout<<"APELLIDO :"<<endl;
-cin.getline(apellido,50);
-cin.ignore();
+cin>>apellido;
 cout<<"INGRESE EL EMAIL :"<<endl;
-cin.getline(e_mail,50);
-cin.ignore();
+cin>>e_mail;
 cout<<"DIRECCION: "<<endl;
-cin.getline(direccion,50);
-cin.ignore();
+cin>>direccion;
 cout<<"DNI :"<<endl;
-cin.getline(dni,9);
-cin.ignore();
+cin>>dni;
 return;
 }
 
@@ -50,9 +44,11 @@ void persona::mostrar_persona(){
 cout<<"NOMBRE :"<<nombre<<endl;
 cout<<"APELLIDO :"<<apellido<<endl;
 cout<<"EMAIL :"<<e_mail<<endl;
-cout<<"DIN :"<<dni<<endl;
+cout<<"DNI :"<<dni<<endl;
 cout<<"DIRECCION :"<<direccion<<endl;
 return;
 }
+
+
 
 #endif // PERSONAS_H_INCLUDED

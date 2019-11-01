@@ -291,20 +291,22 @@ cin>>opc;
 switch(opc){
 case 1:
 alta_empleado();
-system("pause");
 break;
 
 case 2:
+listar_empleado_x_dni();
 break;
 
-case 3: mostrar_todos_empleados();
-system("pause");
+case 3:
+listar_todos_empleados();
 break;
 
 case 4:
+modificar_empleado();
 break;
 
 case 5:
+    eliminar_empleado();
 break;
 
 case 0:
