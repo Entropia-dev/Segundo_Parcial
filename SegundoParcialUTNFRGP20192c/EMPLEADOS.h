@@ -12,6 +12,7 @@ class empleado:public persona {
 		void Mostrar_empleado();
 		bool guardar_empleado();
 		bool leerDeDisco(int);
+		bool sobreescribir_empleado(int);
             ///====================SETS==================
 		void set_codigo_empleado(int nuevo_codigo){codigo_empleado = nuevo_codigo;}
 		void set_estado(bool nuevo_estado){estado = nuevo_estado;}
@@ -49,6 +50,24 @@ fclose(p);
 return grabo;
 }
 
+int contar_empleados(){
+FILE *p;
+long int bytes_arch;
+int cant_registros;
+
+p=fopen("empleados.dat","rb");
+if(p==NULL){cout<<"error de archivo en contar empleados"<<endl;
+                exit(1);}
+
+    fseek(p,0,SEEK_END);
+
+    bytes_arch=ftell(p);
+    cant_registros = bytes_arch / sizeof (empleado);
+
+fclose(p);
+
+return cant_registros;
+}
 
 void alta_empleado(){
 system("cls");
@@ -77,6 +96,63 @@ while(obj.leerDeDisco(pos++)){
     obj.Mostrar_empleado();
 }
 
+}
+
+ bool empleado::sobreescribir_empleado(int pos){
+  FILE *p;
+  p=fopen("empleados.dat","rb+");
+  if(p==NULL){cout<<"error de archivo en sobreescribir empleado"<<endl;}
+  fseek(p,sizeof *this * pos, 0);
+  fwrite(this , sizeof *this ,1 ,p);
+  fclose(p);
+  return true;
+  }
+
+  void modificar_empleado(){
+int id;
+empleado obj;
+system("cls");
+cout<<"INGRESE LA ID DEL EMPLEADO A MODIFICAR"<<endl;
+cin>>id;
+cout<<"EL EMPLEADO A MODIFICAR ES"<<endl;
+obj.leerDeDisco(id-1);
+obj.Mostrar_empleado();
+cout<<endl;
+obj.Cargar_empleado();
+obj.set_codigo_empleado(id);
+obj.sobreescribir_empleado(id-1);
+return;
+}
+
+void eliminar_empleado(){
+int id;
+empleado obj;
+system("cls");
+cout<<"INGRESE LA ID DEL EMPLEADO A ELIMINAR"<<endl;
+cin>>id;
+cout<<"EL EMPLEADO A MODIFICAR ES"<<endl;
+obj.leerDeDisco(id-1);
+obj.set_estado(false);
+obj.sobreescribir_empleado(id-1);
+return;
+}
+
+void listar_empleado_x_dni(){
+char auxiliar[9];
+int cantidad_registros;
+empleado obj;
+cout<<"INGRESE EL DNI DEL EMPLEADO QUE DESEA LISTAR"<<endl;
+cin>>auxiliar;
+cantidad_registros=contar_empleados();
+for(int i=0;i<cantidad_registros;i++){
+        obj.leerDeDisco(i);
+        if(strcmp(obj.get_dni(),auxiliar)==0 && obj.get_estado() == true ){
+            obj.Mostrar_empleado();
+                system("pause");
+                return;
+                }
+        }
+            cout<<"no se encontro al empleado que se desea listar"<<endl;
 }
 
 #endif // EMPLEADOS_H_INCLUDED

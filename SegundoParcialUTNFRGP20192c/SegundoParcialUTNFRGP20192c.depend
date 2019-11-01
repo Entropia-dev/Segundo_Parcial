@@ -105,3 +105,52 @@
 
 1572457522 c:\users\claudio vass\documents\github\segundo_parcial\segundoparcialutnfrgp20192c\detalle_venta.h
 
+1572560311 source:c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
+	<iostream>
+	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"fecha.h"
+	"productos.h"
+	"ventas.h"
+	"personas.h"
+	"empleados.h"
+	"clientes.h"
+	"pagos.h"
+	"detalle_venta.h"
+	"detalle_venta.h"
+	"Menues.h"
+	<iostream>
+	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"fecha.h"
+	"VENTAS.h"
+	"PAGOS.h"
+	"PRODUCTOS.h"
+	"CLIENTES.h"
+	"EMPLEADOS.h"
+	"DETALLE_VENTA.h"
+	"PERSONAS.h"
+	"Menues.h"
+
+1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\fecha.h
+
+1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\productos.h
+
+1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\ventas.h
+
+1572609144 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\personas.h
+
+1572609679 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\empleados.h
+
+1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\clientes.h
+
+1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\pagos.h
+
+1572560311 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\detalle_venta.h
+
+1572609144 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\menues.h
+
