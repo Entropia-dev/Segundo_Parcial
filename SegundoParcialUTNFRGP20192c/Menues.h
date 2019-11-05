@@ -358,21 +358,28 @@ void menu_ventas(){
 cout<<"MENU VENTAS"<<endl;
 cout<<"======"<<endl;
 cout<<"1)NUEVA VENTA"<<endl;
-cout<<"2) LISTAR VENTAS POR CLIENTE"<<endl;
-cout<<"3)LISTAR TODAS LAS VENTAS"<<endl;
-cout<<"4)MODIFICAR VENTA"<<endl;
-cout<<"5)ELIMINAR VENTA"<<endl;
+cout<<"2)LISTAR TODAS LAS VENTAS"<<endl;
+cout<<"3)LISTAR VENTA POR CODIGO"<<endl;
+cout<<"4)LISTAR VENTA POR CLIENTE"<<endl;
+cout<<"5)LISTAR VENTA POR MES"<<endl;
+cout<<"6)LISTAR VENTA POR AÑO"<<endl;
+cout<<"7)MODIFICAR VENTA"<<endl;
+cout<<"8)ELIMINAR VENTA"<<endl;
+cout<<"9)RESTAURAR VENTA"<<endl;
 cout<<"==============================="<<endl;
 cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
 cin>>opc;
 switch(opc){
 case 1:
+    alta_venta();
 break;
 
 case 2:
+
 break;
 
 case 3:
+    listar_ventas();
 break;
 
 case 4:
@@ -403,6 +410,7 @@ cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
 cin>>opc;
 switch(opc){
 case 1:
+    alta_producto();
 break;
 
 case 2:
@@ -412,6 +420,7 @@ case 3:
 break;
 
 case 4:
+    listar_todos_productos();
 break;
 
 case 5:

@@ -1,44 +1,74 @@
+
+
 #ifndef PRODUCTOS_H_INCLUDED
 #define PRODUCTOS_H_INCLUDED
+
+///=================  ACTUALIZACION AL 5/11/2019 (2:00 AM) ===============
+///
+/// -agregue color a la clase producto.
+/// -corregi la carga para que acepte espacios y no se rompa.
+/// -Realice la opcion 4 de listar todos los productos (emprolijada)
+///
+///===================================================================
+
+
+
+void alta_producto();
+int contar_cant_productos();
+bool buscar_id_producto(int);
+float buscar_precio_producto(int id_producto);
 
  class productos {
         private:
     int id_producto;
 	 float precio_x_metro;
-	 char modelo[9];
+	 char modelo[50];
+	 char color[50];
 	 bool estado;
         public:
-            ///========================GETS====================================================
+            ///============GETS====================================================
             int get_id_producto(){return id_producto;}
             bool get_estado(){return estado;}
             char *get_modelo(){return modelo;}
+            char *get_color(){return color;}
             float get_precio_x_metro(){return precio_x_metro;}
-            ///=======================SETS====================================================
+            ///=======================SETS=========================================
             void set_estado(bool nuevo_estado){estado= nuevo_estado;}
             void set_modelo(char *nuevo_modelo){strcpy(modelo, nuevo_modelo);}
-             void set_precio_x_metro(float nuevo_precio){precio_x_metro = nuevo_precio;}
+            void set_precio_x_metro(float nuevo_precio){precio_x_metro = nuevo_precio;}
             void set_id_producto(int nueva_id){id_producto= nueva_id;}
+            void set_color(char *_color){strcpy(color,_color);}
             ///====================CARGAR/MOSTRAR/GUARDAR==================
             void cargar_producto();
             void mostrar_producto();
             bool guardar_producto();
-            void leer_producto(int);
+            bool leer_producto(int);
 	 };
 
     void productos::cargar_producto(){
     cout<<"INGRESE LA ID DEL PRODUCTO"<<endl;
     cin>>id_producto;
+    cin.ignore();
     cout<<"INGRESE EL MODELO DEL PRODUCTO"<<endl;
-    cin>>modelo;
-    cout<<"INGRESE EL PRECIO POR METRO"<<endl;
+    //cin.ignore();
+    cin.getline(modelo,50);
+    //cin.ignore();
+    cout<<"INGRESE EL COLOR: "<<endl;
+    cin.getline(color,50);
+    //cin.ignore();
+    cout<<"INGRESE EL PRECIO POR METRO: "<<endl;
     cin>>precio_x_metro;
     estado=true;
     }
 
     void productos::mostrar_producto(){
-    cout<<"MODELO DEL PRODUCTO :"<<modelo<<endl;
-    cout<<"ID DEL PRODUCTO :"<<id_producto<<endl;
-    cout<<"PRECIO POR METRO :"<<precio_x_metro<<endl;
+    cout<<endl;
+    cout<<"********************************************"<<endl;
+    cout<<"MODELO DEL PRODUCTO: "<<modelo<<endl;
+    cout<<"COLOR: "<<color<<endl;
+    cout<<"ID DEL PRODUCTO: "<<id_producto<<endl;
+    cout<<"PRECIO POR METRO: "<<precio_x_metro<<endl;
+    cout<<endl;
     }
 
     bool productos::guardar_producto(){
@@ -53,14 +83,14 @@
     }
 
 
-    void productos::leer_producto(int pos){
+  bool productos::leer_producto(int pos){
   FILE *p;
   p=fopen("productos.dat","rb");
   if(p==NULL)exit(1);
   fseek(p, sizeof *this*pos,0);
-  fread(this, sizeof *this, 1, p);
+  bool leyo=fread(this, sizeof *this, 1, p);
   fclose(p);
-  return;
+  return leyo;
   }
 
   int contar_cant_productos(){
@@ -71,6 +101,69 @@
   fseek(p,0,SEEK_END);
   bytes_arch=ftell(p);
   cant_registros=bytes_arch/sizeof(productos);
+  fclose(p);
   return cant_registros;
   }
+
+  void alta_producto(){
+system("cls");
+cout<<"======================="<<endl;
+cout<<"MENU CARGA DE PRODUCTO "<<endl;
+cout<<"========================"<<endl;
+productos obj;
+bool resultado;
+obj.cargar_producto();
+resultado=obj.guardar_producto();
+if(resultado==true){cout<<"PRODUCTO CARGADO CON EXITO"<<endl;}
+system("pause");
+}
+
+bool buscar_id_producto(int id_buscada){
+FILE *p;
+int cantidad_productos;
+productos obj;
+p=fopen("productos.dat","rb");
+if(p==NULL){cout<<"ERROR DE ARCHIVO EN BUSCAR_ID_PRODUCTO"<<endl;
+                    exit(1);}
+cantidad_productos=contar_cant_productos();
+for(int i=0;i<cantidad_productos;i++){
+    if(obj.get_id_producto() == id_buscada){
+            fclose(p);
+        return true;
+            }
+        }
+       fclose(p);
+    return false;
+}
+
+float buscar_precio_producto(int id_producto){
+FILE *p;
+productos obj;
+p=fopen("productos.dat","rb");
+if(p==NULL){cout<<"ERROR DE ARCHIVO EN BUSCAR PRECIO PRODUCTO"<<endl;
+            exit(1);}
+int cantidad_productos=contar_cant_productos();
+for(int i=0;i<cantidad_productos;i++){
+if(id_producto == obj.get_id_producto() && obj.get_estado() == true){
+    fclose(p);
+    return obj.get_precio_x_metro();
+    }
+}
+cout<<"NO SE ENCONTRO EL PRODUCTO"<<endl;
+fclose(p);
+return -1;
+}
+
+ void listar_todos_productos(){
+ productos obj;
+ int pos=0;
+ while(obj.leer_producto(pos++)==true)
+    {
+        obj.mostrar_producto();
+    }
+
+ }
+
+
+
 #endif // PRODUCTOS_H_INCLUDED

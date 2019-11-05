@@ -107,13 +107,13 @@ using namespace std;
 using namespace std;
 
 #include "fecha.h"
-#include "VENTAS.h"
-#include "PAGOS.h"
-#include "PRODUCTOS.h"
-#include "CLIENTES.h"
-#include "EMPLEADOS.h"
-#include "DETALLE_VENTA.h"
 #include "PERSONAS.h"
+#include "pagos.h"
+#include "PRODUCTOS.h"
+#include "clientes.h"
+#include "empleados.h"
+#include "detalle_venta.h"
+#include "ventas.h"
 #include "Menues.h"
 
 
@@ -189,12 +189,14 @@ void inicializar_archivos()
     {
         FILE *a=fopen("empleados.dat","ab");
         fclose(a);
-   //     FILE *b=fopen("clientes.dat","ab");
-    //    fclose(b);
-     //   FILE *c=fopen("ventas.dat","ab");
-      //  fclose(c);
+     FILE *b=fopen("clientes.dat","ab");
+        fclose(b);
+        FILE *c=fopen("ventas.dat","ab");
+        fclose(c);
         FILE *p=fopen("inicio.dat","ab");
         fclose(p);
+        FILE *k=fopen("productos.dat","ab");
+        fclose(k);
         return;
     }
     else
