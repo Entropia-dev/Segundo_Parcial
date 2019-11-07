@@ -43,11 +43,11 @@ float buscar_precio_producto(int id_producto);
             void mostrar_producto();
             bool guardar_producto();
             bool leer_producto(int);
+            void sobreescribir_producto(int);
 	 };
 
     void productos::cargar_producto(){
-    cout<<"INGRESE LA ID DEL PRODUCTO"<<endl;
-    cin>>id_producto;
+    id_producto=contar_cant_productos()+1;
     cin.ignore();
     cout<<"INGRESE EL MODELO DEL PRODUCTO"<<endl;
     //cin.ignore();
@@ -127,6 +127,7 @@ if(p==NULL){cout<<"ERROR DE ARCHIVO EN BUSCAR_ID_PRODUCTO"<<endl;
                     exit(1);}
 cantidad_productos=contar_cant_productos();
 for(int i=0;i<cantidad_productos;i++){
+        obj.leer_producto(i);
     if(obj.get_id_producto() == id_buscada){
             fclose(p);
         return true;
@@ -144,6 +145,7 @@ if(p==NULL){cout<<"ERROR DE ARCHIVO EN BUSCAR PRECIO PRODUCTO"<<endl;
             exit(1);}
 int cantidad_productos=contar_cant_productos();
 for(int i=0;i<cantidad_productos;i++){
+    obj.leer_producto(i);
 if(id_producto == obj.get_id_producto() && obj.get_estado() == true){
     fclose(p);
     return obj.get_precio_x_metro();
@@ -164,6 +166,36 @@ return -1;
 
  }
 
+ void listar_producto_x_id(){
+productos obj;
+int id_producto;
+int cant_productos;
+cout<<"INGRESE LA ID DEL PRODUCTO QUE DESEA LISTAR"<<endl;
+cin>>id_producto;
+cant_productos=contar_cant_productos();
+ for(int i=0;i<cant_productos;i++){
+    obj.leer_producto(i);
+   if(obj.get_estado()==true){obj.mostrar_producto();}
+    }
+ }
 
+ void modificar_precio_producto(){
+
+ }
+
+void eliminar_producto(){
+
+
+}
+
+void productos::sobreescribir_producto(int pos){
+  FILE *p;
+  p=fopen("empleados.dat","rb+");
+  if(p==NULL){cout<<"error de archivo en sobreescribir producto"<<endl;}
+  fseek(p,sizeof *this * pos, 0);
+  fwrite(this , sizeof *this ,1 ,p);
+  fclose(p);
+  return;
+}
 
 #endif // PRODUCTOS_H_INCLUDED

@@ -23,7 +23,15 @@
 	 };
 
 void cliente::cargar_cliente(){
-persona::cargar_persona();
+cout<<"INGRESE EL NOMBRE DEL CLIENTE"<<endl;
+cin>>nombre;
+cout<<"INGRESE EL APELLIDO DEL CLIENTE"<<endl;
+cin>>apellido;
+cout<<"INGRESE EL EMAIL DEL CLIENTE"<<endl;
+cin>>e_mail;
+cout<<"INGRESE LA DIRECCION DEL CLIENTE"<<endl;
+cin>>direccion;
+strcpy(dni,"-----");
 codigo_cliente=contar_clientes()+1;
 estado=true;
 return;
@@ -158,6 +166,28 @@ obj.leer_cliente(id-1);
 obj.mostrar_cliente();
 system("pause");
 return;
+}
+
+void modificar_cliente(){
+cliente obj;
+int cant_clientes;
+int id_cliente;
+char nuevo_correo[50];
+cout<<"INGRESE LA ID DE CLIENTE QUE DESEA MODIFICAR"<<endl;
+cin>>id_cliente;
+if(buscar_id_cliente(id_cliente)==false){cout<<"INGRESE UNA ID DE CLIENTE VALIDA"<<endl;
+cin>>id_cliente;
+}
+cant_clientes=contar_clientes();
+for(int i=0;i<cant_clientes;i++){
+        obj.leer_cliente(i);
+        if(obj.get_codigo_cliente()==id_cliente){
+            cout<<"INGRESE EL NUEVO CORREO DEL CLIENTE"<<endl;
+            cin>>nuevo_correo;
+            obj.set_email(nuevo_correo);
+            obj.sobreescribir_cliente(id_cliente-1);
+            }
+        }
 }
 
 #endif // CLIENTES_H_INCLUDED

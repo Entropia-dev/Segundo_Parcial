@@ -324,24 +324,29 @@ cout<<"1)NUEVO CLIENTE"<<endl;
 cout<<"2)LISTAR TODOS LOS CLIENTES"<<endl;
 cout<<"3)LISTAR CLIENTE POR ID"<<endl;
 cout<<"4)ELIMINAR CLIENTE"<<endl;
-cout<<"5)MODIFICAR CLIENTE"<<endl;
+cout<<"5)CAMBIAR DNI CLIENTE"<<endl;
 cout<<"====="<<endl;
 cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
 cin>>opc;
 switch(opc){
 case 1:
+    alta_cliente();
 break;
 
 case 2:
+    listar_todos_clientes();
 break;
 
 case 3:
+    listar_cliente_x_id();
 break;
 
 case 4:
+    eliminar_cliente();
 break;
 
 case 5:
+    modificar_cliente();
 break;
 
 case 0:
@@ -359,7 +364,7 @@ cout<<"MENU VENTAS"<<endl;
 cout<<"======"<<endl;
 cout<<"1)NUEVA VENTA"<<endl;
 cout<<"2)LISTAR TODAS LAS VENTAS"<<endl;
-cout<<"3)LISTAR VENTA POR CODIGO"<<endl;
+cout<<"3)LISTAR VENTA POR ID"<<endl;
 cout<<"4)LISTAR VENTA POR CLIENTE"<<endl;
 cout<<"5)LISTAR VENTA POR MES"<<endl;
 cout<<"6)LISTAR VENTA POR AÑO"<<endl;
@@ -375,17 +380,39 @@ case 1:
 break;
 
 case 2:
-
-break;
-
-case 3:
     listar_ventas();
 break;
 
+case 3:
+    listar_ventas_x_id();
+        system("pause");
+break;
+
 case 4:
+    listar_venta_x_cliente();
+        system("pause");
 break;
 
 case 5:
+    listar_venta_x_mes();
+    system("pause");
+break;
+
+case 6:
+listar_venta_x_anio();
+    system("pause");
+break;
+
+case 7:
+modificar_venta();
+break;
+
+case 8:
+eliminar_venta();
+break;
+
+case 9:
+restaurar_venta();
 break;
 
 case 0:
@@ -399,13 +426,13 @@ void menu_productos(){
      system("cls");
 int opc;
 cout<<"MENU EMPLEADOS"<<endl;
-cout<<"======"<<endl;
+cout<<"========================"<<endl;
 cout<<"1)NUEVO PRODUCTO"<<endl;
-cout<<"2)LISTAR EMPLEADO POR DNI"<<endl;
-cout<<"3)MODIFICAR PRODUCTO"<<endl;
+cout<<"2)LISTAR PRODUCTO POR ID"<<endl;
+cout<<"3)MODIFICAR PRECIO PRODUCTO"<<endl;
 cout<<"4)LISTAR TODOS LOS PRODUCTOS"<<endl;
-cout<<"4)ELIMINAR PRODUCTO"<<endl;
-cout<<"=============="<<endl;
+cout<<"5)ELIMINAR PRODUCTO"<<endl;
+cout<<"========================"<<endl;
 cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
 cin>>opc;
 switch(opc){
@@ -421,6 +448,7 @@ break;
 
 case 4:
     listar_todos_productos();
+    system("pause");
 break;
 
 case 5:

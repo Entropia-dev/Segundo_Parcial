@@ -3,12 +3,13 @@
 
    class pago{
     private:
-    int id_pago;
-    int id_venta;
-    int forma_pago;
-    Fecha fecha_pago;
-    float importe;
-    bool estado;
+    int id_cliente; ///HAY QUE INGRESAR
+    int id_pago;    /// SE AUTO GENERA
+    int id_venta;   ///HAY QUE INGRESAR
+    int forma_pago; /// VENTA
+    Fecha fecha_pago;   ///TIENE CONSTRUCTORES PARA OBTENER LA FECHA DEL DIA
+    float importe;  /// EN CASO DE QUE SEA CUENTA CORRIENTE HAY QUE INGRESARLO
+    bool estado;    /// SE OBTIENE POR DEFECTO EN TRUE
     public:
     ///==================SETS=====================================
     void set_id_pago(int nueva_id){id_pago=nueva_id;}
@@ -64,6 +65,19 @@ if(p==NULL){cout<<"ERROR DE ARCHIVO EN PAGO::GUARDAR_PAGO"<<endl;
 grabo=fwrite(this, sizeof *this ,1,p);
 fclose(p);
 return grabo;
+}
+
+int contar_pagos(){
+FILE *p;
+p=fopen("pagos.dat","rb");
+if(p==NULL){cout<<"ERROR DE ARCHIVO EN CONTAR_PAGOS"<<endl;}
+long int bytes_arch;
+int cant_pagos;
+fseek(p,0,SEEK_END);
+bytes_arch=ftell(p);
+cant_pagos=bytes_arch/sizeof(pago);
+fclose(p);
+return cant_pagos;
 }
 
 #endif // PAGOS_H_INCLUDED

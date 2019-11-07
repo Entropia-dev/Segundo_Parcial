@@ -124,9 +124,9 @@ using namespace std;
     -REALIZAR LOS METODOS DE CARGAR DE TODAS LAS CLASES.    --- TERMINADO
     -REALIZAR LOS METODOS DE MOSTRAR DE TODAS LAS CLASES.       --- TERMINADO
     -IR COMPLETANDO LAS FUNCIONES DE LOS MENUES PRINCIPALES.
-        EMPLEADOS -----SIN EMPEZAR
+        EMPLEADOS -----SIN VALIDAR (MENUES FUNCIONALES)
         CLIENTES  -----SIN EMPEZAR
-        VENTAS -----SIN EMPEZAR
+        VENTAS ----- CONSULTAR COMO FUNCIONA BUSCAR_DNI_VENTA
         PAGOS -----SIN EMPEZAR
         PRODUCTOS -----SIN EMPEZAR
       || PARA EL PROTOTIPO SE NECESITA EL ABML AL MENOS SIN NINGUNA VALIDACION  ||
@@ -197,6 +197,8 @@ void inicializar_archivos()
         fclose(p);
         FILE *k=fopen("productos.dat","ab");
         fclose(k);
+        FILE *g=fopen("detalle_ventas.dat","ab");
+        fclose(g);
         return;
     }
     else
