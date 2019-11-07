@@ -179,15 +179,16 @@ detalle_venta detalle;
 
 cantidad_ventas=contar_ventas();
 cantidad_detalles=contar_detalles_venta();
-cout<<endl;
+/*cout<<endl;
 cout<<"DETALLES: "<<cantidad_detalles<<endl;
 cout<<"VENTAS: "<<cantidad_ventas<<endl;
 cout<<endl;
-cout<<"CANTITDAD DE VENTAS"<<contar_ventas()<<endl;
 
+cout<<"CANTITDAD DE VENTAS"<<contar_ventas()<<endl;
+*/
 for(int i=0;i<cantidad_ventas;i++){
 
-     cout<<endl;   cout<<"VUELTA DE VENTA NUMERO "<<i<<endl;
+  //   cout<<endl;   cout<<"VUELTA DE VENTA NUMERO "<<i<<endl;
 
     ///MOSTRAR VENTAS GENERALES
       cout<<"==========="<<endl;
@@ -198,8 +199,8 @@ for(int i=0;i<cantidad_ventas;i++){
     /// MOSTRAR DETALLES DE LA VENTA
 
         for(int t=0;t<cantidad_detalles;t++){
-            cout<<endl;
-                cout<<"VUELTA DE DETALLE"<<t<<endl;
+       //     cout<<endl;
+      //          cout<<"VUELTA DE DETALLE"<<t<<endl;
         detalle.leer_detalle(t);
         if(detalle.get_id_venta()==i+1){             ///lee los detalles correspondientes a una vuelta del primer for   ACA TENDRIA QUE CHEQUEAR EL ESTADO
                 detalle.mostrar_detalle_venta();

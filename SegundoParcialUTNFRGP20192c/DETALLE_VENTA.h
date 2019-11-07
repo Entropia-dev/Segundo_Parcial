@@ -101,7 +101,7 @@ class detalle_venta{
     cout<<"PRECIO POR METRO: "<<precio_x_metro<<endl;
     cout<<"METROS VENDIDOS: "<<metros_vendidos<<endl;
     cout<<"FORMA DE PAGO: "<<forma_pago<<endl;
-    cout<<"ID DEL DETALLE"<<id_detalle<<endl;
+  //  cout<<"ID DEL DETALLE"<<id_detalle<<endl;
     }
 
     bool detalle_venta::guardar_detalle_venta(){

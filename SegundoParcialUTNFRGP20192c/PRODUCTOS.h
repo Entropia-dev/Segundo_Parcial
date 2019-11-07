@@ -179,10 +179,13 @@ cant_productos=contar_cant_productos();
     }
  }
 
+
+ ///          completar !!!
  void modificar_precio_producto(){
 
  }
 
+ ///       completar!!!
 void eliminar_producto(){
 
 
