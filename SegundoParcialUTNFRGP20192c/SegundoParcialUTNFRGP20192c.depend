@@ -264,3 +264,56 @@
 
 1572999466 c:\users\kai anderson\desktop\parcial_avanzado\menues.h
 
+1573181722 source:c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
+	<iostream>
+	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"fecha.h"
+	"productos.h"
+	"ventas.h"
+	"personas.h"
+	"empleados.h"
+	"clientes.h"
+	"pagos.h"
+	"detalle_venta.h"
+	"detalle_venta.h"
+	"Menues.h"
+	<iostream>
+	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"fecha.h"
+	"PERSONAS.h"
+	"pagos.h"
+	"PRODUCTOS.h"
+	"clientes.h"
+	"empleados.h"
+	"detalle_venta.h"
+	"ventas.h"
+	"Menues.h"
+
+1572284751 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\fecha.h
+
+1573181722 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\productos.h
+
+1573213962 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\ventas.h
+	"PERSONAS.h"
+	"detalle_venta.h"
+	"clientes.h"
+
+1572585937 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\personas.h
+
+1573181722 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\detalle_venta.h
+	"ventas.h"
+
+1573181722 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\clientes.h
+
+1572616757 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\empleados.h
+
+1573181722 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\pagos.h
+
+1573213440 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\menues.h
+

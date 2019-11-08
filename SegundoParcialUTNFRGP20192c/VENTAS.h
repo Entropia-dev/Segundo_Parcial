@@ -191,26 +191,33 @@ for(int i=0;i<cantidad_ventas;i++){
   //   cout<<endl;   cout<<"VUELTA DE VENTA NUMERO "<<i<<endl;
 
     ///MOSTRAR VENTAS GENERALES
-      cout<<"==========="<<endl;
+        cout<<"INFORMACION GENERAL"<<endl;
+        cout<<endl;
       venta_final.leer_venta(i);                ///LEE SOLO LA VENTA 1      ACA TENDRIA QUE CHEQUEAR EL ESTADO
       if(venta_final.get_id_venta()==i+1){          ///LEE LA ID DE VENTA 0+1
-     if(venta_final.get_estado()==true) {venta_final.mostrar_venta();
+     if(venta_final.get_estado()==true) {
 
-    /// MOSTRAR DETALLES DE LA VENTA
+            venta_final.mostrar_venta();
+
+            cout<<"================"<<endl;
+        cout<<"PRODUCTOS E INFORMACION ADICIONAL"<<endl;
+        cout<<endl;
 
         for(int t=0;t<cantidad_detalles;t++){
+
        //     cout<<endl;
       //          cout<<"VUELTA DE DETALLE"<<t<<endl;
         detalle.leer_detalle(t);
-        if(detalle.get_id_venta()==i+1){             ///lee los detalles correspondientes a una vuelta del primer for   ACA TENDRIA QUE CHEQUEAR EL ESTADO
+        if(detalle.get_id_venta()==i+1){
+                ///lee los detalles correspondientes a una vuelta del primer for   ACA TENDRIA QUE CHEQUEAR EL ESTADO
                 detalle.mostrar_detalle_venta();
-
+                cout<<"============"<<endl;
             }
 
 
         }
 
-        cout<<"========="<<endl;
+
                 }
             }
                 }
