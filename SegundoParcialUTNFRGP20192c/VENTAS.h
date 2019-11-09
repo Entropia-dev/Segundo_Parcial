@@ -141,10 +141,29 @@ cout<<"MENU CARGAR VENTAS"<<endl;
 cout<<"INGRESE LA ID DEL CLIENTE"<<endl;
 cin>>nueva_id;
 venta_final.set_id_cliente(nueva_id);
-if(buscar_id_cliente(nueva_id)==false){cout<<"INGRESE UNA ID DE CLIENTE VALIDA"<<endl;
-                                    cin>>nueva_id;          ///esto tiene que ser un while.
-                                        venta_final.set_id_cliente(nueva_id);}
-for(int i=0;i<cant_art;i++){                ///al inicio de la carga del detalle de venta preguntar si es distinto de null
+if(buscar_id_cliente(nueva_id)==false){cout<<"NO ES UNA ID DE CLIENTE VALIDA"<<endl;
+                                    system("pause");
+                                    return;
+                                    }
+
+
+///
+cout<<"INGRESE LA FORMA DE PAGO: ";
+int fp;
+cin>>fp;///hay que validar
+venta_final.set_forma_pago(fp);
+venta_final.set_importe(0);
+///detalles de la venta;
+char continuar='s';
+while(continuar=='s'){
+    detalles.cargar_detalle_venta(1);
+    //venta_final.set_importe(venta_final.get_importe()+detalles.get_importe_producto());
+    detalles.guardar_detalle_venta();
+    cout<<"DESEA INGRESAR OTRO PRODUCTO (s: SI; n: NO) :";
+    cin>>continuar;
+}
+///ver si sale sin ningun detalle
+/*for(int i=0;i<cant_art;i++){                ///al inicio de la carga del detalle de venta preguntar si es distinto de null
 detalles.set_id_venta(contar_ventas()+1);       ///y chequear si hay detalles del producto con la id de venta que se esta cargando en el momento
 detalles.cargar_detalle_venta(contar_ventas()+1);                 ///si hay detalles previamente cargados con la id de venta correspondiente se debe
 detalles.set_estado(true);                  ///omitir la solicitud del metodo de pago y la id de cliente de ser requerido
@@ -152,9 +171,9 @@ detalles.guardar_detalle_venta();           /// los datos se deberan re cargar c
 cout<<"DESEA CARGAR OTRO ARTICULO"<<endl;   ///el detalle ya existe en disco a este punto
 cin>>opc;
 if(opc == 'S'){cant_art++;}
-    }
+    }*/
 venta_final.set_id_venta(contar_ventas()+1);
-venta_final.set_importe(obtener_importe(contar_ventas()+1));
+//venta_final.set_importe(obtener_importe(contar_ventas()+1));
 venta_final.set_estado(true);
 venta_final.guardar_venta();
 cout<<"CARGA DE LA VENTA FINALIZADA CON EXITO"<<endl;
@@ -304,7 +323,7 @@ venta_final.sobreescribir_venta(id_venta-1);
 }
 
 void eliminar_venta(){
-venta obj;
+/*venta obj;
 detalle_venta detalle;
 int cantidad_ventas=contar_ventas();
 int cantidad_detalles=contar_detalles_venta();
@@ -326,11 +345,11 @@ for(int i=0;i<cantidad_ventas;i++){
                             }
                         }
                         cout<<"VENTA ELIMINADA CON EXITO"<<endl;
-
+*/
         }
 
 
-void restaurar_venta(){
+void restaurar_venta(){/*
 venta obj;
 detalle_venta detalle;
 int cantidad_ventas=contar_ventas();
@@ -353,7 +372,7 @@ for(int i=0;i<cantidad_ventas;i++){
                             }
                         }
                         cout<<"VENTA RESTAURADA CON EXITO"<<endl;
-
+*/
         }
 
 

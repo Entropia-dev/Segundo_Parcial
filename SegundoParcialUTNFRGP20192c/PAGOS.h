@@ -1,6 +1,7 @@
 #ifndef PAGOS_H_INCLUDED
 #define PAGOS_H_INCLUDED
 
+
    class pago{
     private:
     int id_cliente; ///HAY QUE INGRESAR

@@ -252,8 +252,11 @@ int Fecha::cantAniosHastaHoy()
   if(mes==aux.mes && dia>aux.dia) return cant-1;
   return cant;
   }
+
+
+
+
+
+
+
 #endif // FECHA_H_INCLUDED
-
-
-
-

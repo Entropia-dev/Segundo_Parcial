@@ -1,7 +1,7 @@
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
 
-    int contar_clientes();
+  int contar_clientes();
 
 	 class cliente:public persona {
         private:
@@ -120,20 +120,14 @@ bool cliente::sobreescribir_cliente(int pos){
 
 bool buscar_id_cliente(int id){
 cliente obj;
-FILE *p;
 int cantidad_clientes;
-p=fopen("clientes.dat","rb");
-if(p==NULL){cout<<"ERROR DE ARCHIVO EN BUSCAR ID CLIENTE"<<endl;
-                    exit(1);}
 cantidad_clientes=contar_clientes();
 for(int i=0;i<cantidad_clientes;i++){
         obj.leer_cliente(i);
         if(obj.get_codigo_cliente()==id){
-            fclose(p);
             return true;
             }
         }
-        fclose(p);
         return false;
 }
 

@@ -69,13 +69,16 @@ return cant_registros;
  system("cls");
  int cant_regs;
  cant_regs=contar_empleados();
-     cout<<"================"<<endl;
+
  for(int i=0;i<cant_regs;i++){
         obj.leer_empleado(i);
        if(obj.get_estado()==true)
+         cout<<"================"<<endl;
             obj.Mostrar_empleado();
-     cout<<"================"<<endl;
+
     }
+         cout<<"================"<<endl;
+        cout<<"FIN DEL LISTADO"<<endl;
         system("pause");
         return;
  }
@@ -176,22 +179,22 @@ obj.sobreescribir_empleado(id-1);
 return;
 }
 
-void eliminar_empleado(){
-int id;
-char dni[9];
+/*void eliminar_empleado(){
 empleado obj;
+char dni[9];
+int cantidad_empleados = contar_empleados();
 system("cls");
 cout<<"INGRESE EL DNI DEL EMPLEADO A ELIMINAR"<<endl;
 cin>>dni;
-if(buscar_dni_empleado(dni)==true){
-obj.set_estado(false);
-id=buscar_pos_dni(dni);
-obj.sobreescribir_empleado(id);
-return;
-    }else{cout<<"DNI NO ENCONTRADO INTENTE NUEVAMENTE"<<endl;}
-
+for(int i=0;i<cantidad_empleados;i++){
+    obj.leer_empleado(i);
+//    if(strcmp(obj.get_dni(),dni)=0){
+        obj.set_estado(false);
+        obj.sobreescribir_empleado(buscar_pos_dni(dni));
+        }
+    }
 }
-
+*/
 void listar_empleado_x_dni(){
 char auxiliar[9];
 int cantidad_registros;

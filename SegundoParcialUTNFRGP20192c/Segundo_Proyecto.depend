@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1573258922 source:c:\users\kai anderson\desktop\reboot_proyecto\main.cpp
+	<iostream>
+	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"Fecha.h"
+	"personas.h"
+	"empleados.h"
+	"MenuPrincipal.h"
+
+1556194782 c:\users\kai anderson\desktop\reboot_proyecto\estructuras.h
+
+1557405636 c:\users\kai anderson\desktop\reboot_proyecto\categorias.h
+
+1559224442 c:\users\kai anderson\desktop\reboot_proyecto\cuentas.h
+
+1561505410 c:\users\kai anderson\desktop\reboot_proyecto\movimientos.h
+
+1573260228 c:\users\kai anderson\desktop\reboot_proyecto\menuprincipal.h
+
+1573257311 c:\users\kai anderson\desktop\reboot_proyecto\fecha.h
+
+1573258330 c:\users\kai anderson\desktop\reboot_proyecto\personas.h
+
+1573260224 c:\users\kai anderson\desktop\reboot_proyecto\empleados.h
+

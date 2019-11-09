@@ -1,206 +1,290 @@
-#ifndef DETALLE_VENTA_H_INCLUDED
-#define DETALLE_VENTA_H_INCLUDED
+#ifndef FECHA_H_INCLUDED
+#define FECHA_H_INCLUDED
 
-#include "ventas.h"
+///////////////CLASE FECHA
+//Puede utilizarse para fechas desde el 01/01/1900
 
-bool buscar_detalle_x_id_venta(int id_venta);
-char buscar_dni_venta(int id_venta);
-int buscar_forma_pago(int id_venta);
-int contar_detalles_venta();
-
-///!!!SOLUCIONAR BUSCAR DNI VENTA !!!
-
-class detalle_venta{
-    private:
-    float importe_prdocuto; /// se obtiene el  importe del producto listado en el detalle y para la venta se obitnene el detalle final.
-    int id_producto;        ///se ingresa una sola vez
-    int id_venta;           /// se obtiene de la venta
-    bool estado;        /// se setea en verdadero
-    int forma_pago;         /// se obtiene desde la venta
-        char dni_cliente[9];    /// se solicita en caso de que el medio de pago lo requiera
-    float metros_vendidos;          ///se ingresa una vez sola
-    float precio_x_metro;           /// se obtiene mediante la id de prodcuto
-    int id_detalle;
-    public:
-        ///==================SETS=====================================
-        void set_id_producto(int nueva_id){id_producto = nueva_id;}
-        void set_precio_x_metro(float nuevo_precio){precio_x_metro = nuevo_precio;}
-        void set_id_venta(int nueva_id){id_venta = nueva_id;}
-        void set_metros_vendidos(float cant_vendida){metros_vendidos = cant_vendida;}
-        void set_dni_cliente(char *nuevo_dni){strcpy(dni_cliente, nuevo_dni);}
-        void set_forma_pago(int nueva_forma_pago){forma_pago = nueva_forma_pago;}
-        void set_estado(bool nuevo_estado){forma_pago = nuevo_estado;}
-        void set_id_detalle(int nuevo_detalle){id_detalle = nuevo_detalle;}
-        ///====================GETS====================================
-        int get_id_producto(){return id_producto;}
-        float get_precio_x_metro(){return precio_x_metro;}
-        float get_metros_vendidos(){return metros_vendidos;}
-        int get_id_venta(){return id_venta;}
-        bool get_estado(){return estado;}
-        int get_forma_pago(){return forma_pago;}
-        char *get_dni_cliente(){return dni_cliente;}
-        int get_id_detalle(){return id_detalle;}
-        ///====================CARGAR/MOSTRAR/GUARDAR==================
-        void cargar_detalle_venta(int);
-        void mostrar_detalle_venta();
-        bool guardar_detalle_venta();
-        void leer_detalle(int);
-        void sobreescribir_detalle(int);
-
+class Fecha
+{
+private:
+    int dia;
+    int mes;
+    int anio;
+    bool esbisiesto(int);
+    void NumeroSerieaFecha(int);
+public:
+    Fecha(int d=0,int m=0,int a=0);
+    int getDia()
+    {
+        return dia;
+    }
+    int getMes()
+    {
+        return mes;
+    }
+    int getAnio()
+    {
+        return anio;
+    }
+    void setDia(int d)
+    {
+        dia=d;
+    }
+    void setMes(int m)
+    {
+        mes=m;
     };
-
-
-
-    void detalle_venta::cargar_detalle_venta(int id_venta_final){
-
-    cout<<"INGRESE LA ID DE PRODUCTO"<<endl;
-
-    cin>>id_producto;
-
-    if(buscar_id_producto(id_producto)==false){
-
-        cout<<"INGRESE UNA ID DE PRODUCTO VALIDA"<<endl;
-
-        cin>>id_producto;
+    void setAnio(int a)
+    {
+        anio=a;
     }
+    void MostrarFecha();
+    void MostrarFechaTexto();
+    int NumeroSerie();
+    bool operator >(Fecha &);
+    bool operator ==(Fecha &);
+    Fecha operator+(int);
+    int operator -(Fecha &);
+    void operator +=(int);
+    int operator==(const char*);
+    friend istream & operator>>(istream &, Fecha &);
+    friend ostream & operator<<(ostream &, Fecha &);
+    int cantDiasMes();
+    int cantDiasHabilesMes();
+    int cantAniosHastaHoy();
+};
 
-    if(buscar_detalle_x_id_venta(id_venta_final)==true){    ///setea valores obtenidos de la primer carga para no tener que
-    forma_pago=buscar_forma_pago(id_venta_final);           ///ingresarlos cada vez que se carga un producto-
-   /// strcpy(dni_cliente,buscar_dni_venta(id_venta_final))   ///consultar el problema con el buscar dni de venta
-    }else{
-    cout<<"INGRESE LA FORMA DE PAGO"<<endl;
-
-    cin>>forma_pago;
-
-    while(forma_pago > 6 || forma_pago < 1){cout<<"INGRESE LA FORMA DE PAGO"<<endl;
-                                                cin>>forma_pago;}
-
-
-
-        if(forma_pago == 4){
-    cout<<"INGRESE EL DNI DEL CLIENTE"<<endl;
-    cin>>dni_cliente;         ///el dni del cliente luego sera solicitado solamente
-                                ///seleccionando un metodo de pago que lo requiera
-    }
-            }
-    cout<<"INGRESE LOS METROS VENDIDOS"<<endl;
-    cin>>metros_vendidos;
-    precio_x_metro=buscar_precio_producto(id_producto);
-
-    id_detalle=contar_detalles_venta()+1;
-    estado=true;
-    return;
-
-
-    }
-
-    void detalle_venta::mostrar_detalle_venta(){
-    cout<<"ID DE VENTA: "<<id_venta<<endl;
-    cout<<"ID DEL PRODUCTO: "<<id_producto<<endl;
-    cout<<"DNI CLIENTE: "<<dni_cliente<<endl;
-    cout<<"PRECIO POR METRO: "<<precio_x_metro<<endl;
-    cout<<"METROS VENDIDOS: "<<metros_vendidos<<endl;
-    cout<<"FORMA DE PAGO: "<<forma_pago<<endl;
-  //  cout<<"ID DEL DETALLE"<<id_detalle<<endl;
-    }
-
-    bool detalle_venta::guardar_detalle_venta(){
-    bool grabo;
-    FILE *p;
-    p=fopen("detalle_ventas.dat","ab");
-    if(p==NULL){cout<<"ERROR DE ARCHIVO EN DETALLE_VENTA::GUARDAR_DETALLE"<<endl;
-                            exit(1);}
-    grabo=fwrite(this,sizeof *this , 1 ,p);
-    fclose(p);
-    return grabo;
-    }
-
-int contar_detalles_venta(){
-FILE *p;
-int cant_registros;
-long int bytes_arch;
-p=fopen("detalle_ventas.dat","rb");
-if(p==NULL){cout<<"ERROR DE ARCHIVO EN CONTAR_DETALLES_VENTA"<<endl;
-                    exit(1);}
-        fseek(p,0,SEEK_END);
-        bytes_arch=ftell(p);
-    cant_registros=bytes_arch/sizeof(detalle_venta);
-    fclose(p);
-    return cant_registros;
-}
-
-void detalle_venta::leer_detalle(int pos){
-  FILE *p;
-  p=fopen("detalle_ventas.dat","rb");
-  if(p==NULL)exit(1);
-  fseek(p, sizeof *this*pos,0);
-  fread(this, sizeof *this, 1, p);
-  fclose(p);
-  return;
-}
-/**
- char buscar_dni_venta(int id_venta){
-char auxiliar[9] = "err_busc";
-FILE *p;
-detalle_venta obj;
-p=fopen("detalle_ventas.dat","rb");
-if(p==NULL){cout<<"ERROR DE ARCHIVO EN BUSCAR DNI VENTAS"<<endl;
-                        exit(1);}
-int cant_registros;
-cant_registros=contar_detalles_venta();
-for(int i=0;i<cant_registros;i++){
-    obj.leer_detalle(i);
-    if(obj.get_id_venta()==id_venta);
-    return obj.get_dni_cliente();
-
-            }
-    return auxiliar;
-}
-**/
-bool buscar_detalle_x_id_venta(int id_venta){
-detalle_venta obj;
-FILE *p;
-p=fopen("detalle_ventas.dat","rb");
-if(p==NULL){cout<<"ERROR DE ARCHIVO EN BUSCAR DETALLE X ID VENTA"<<endl;}
-int cant_detalles;
-cant_detalles=contar_detalles_venta();
-for(int i=0;i<cant_detalles;i++){
-    obj.leer_detalle(i);
-    if(obj.get_id_venta()==id_venta){
-     return true;
+Fecha::Fecha(int d,int m,int a)
+{
+    //El constructor asigna los valores recibidos, si le son pasados como parámetros
+    if(d!=0)
+    {
+        dia=d;
+        mes=m;
+        anio=a;//¿Qué modificación habría que hacerle al constructor para
+    }                   // garantizar que no se asignen valores absurdos? Ej.:65/65/-12
+    else  //si no recibe valores asigna por defecto la fecha actual
+    {
+        time_t tiempo;
+        struct tm *tmPtr;
+        tiempo = time(NULL);
+        tmPtr = localtime(&tiempo);
+        anio=tmPtr->tm_year+1900;
+        mes=tmPtr->tm_mon+1;
+        dia=tmPtr->tm_mday;
     }
 }
-return false;
+
+//Devuelve true si el año recibido es bisiesto.
+bool Fecha::esbisiesto(int a)
+{
+    bool bisiesto=false;
+    if(a%4==0)
+        bisiesto=true;
+    if((a%100==0) && (a%400!=0))
+        bisiesto=false;
+    return bisiesto;
 }
 
+//Muestra la fecha en formato número. Ej.:  15/10/2008
+void Fecha::MostrarFecha()
+{
+    cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+}//¿Qué modificación habría que hacer para que siempre muestre DD/MM/AAAA?
 
-int buscar_forma_pago(int id_venta){
-detalle_venta obj;
-FILE *p;
-int cant_detalles;
-p=fopen("detalle_ventas.dat","rb");
-if(p==NULL){cout<<"ERROR DE ARCHIVO EN BUSCAR FORMA PAGO"<<endl;
-                                exit(1);}
-cant_detalles=contar_detalles_venta();
-    for(int i=0;i<cant_detalles;i++){
-    obj.leer_detalle(i);
-    if(obj.get_id_venta()==id_venta ){
-        return obj.get_forma_pago();
-            }
-        }
-    return -1;
+
+//Devuelve 1 si la fecha coincide con una cadena que representa un día de la semana
+int Fecha::operator==(const char *diaSemana)
+{
+    int cantdias=NumeroSerie()-1;//cantidad de días transcurridos desde 01/01/1900
+    //El 01/01/1900 fue Lunes
+    int numerodia=cantdias%7;
+
+    char mdia[7][10];
+    strcpy(mdia[0],"Lunes");
+    strcpy(mdia[1],"Martes");
+    strcpy(mdia[2],"Miercoles");
+    strcpy(mdia[3],"Jueves");
+    strcpy(mdia[4],"Viernes");
+    strcpy(mdia[5],"Sábado");
+    strcpy(mdia[6],"Domingo");
+    if(strcmp(mdia[numerodia],diaSemana)==0)
+        return 1;
+    return 0;
+}
+
+//Muestra la fecha indicando en texto el día y el mes.Ej.: Lunes 1 de enero de 1900
+void Fecha::MostrarFechaTexto()
+{
+    char mmes[12][11];
+    strcpy(mmes[0],"Enero");
+    strcpy(mmes[1],"Febrero");
+    strcpy(mmes[2],"Marzo");
+    strcpy(mmes[3],"Abril");
+    strcpy(mmes[4],"Mayo");
+    strcpy(mmes[5],"Junio");
+    strcpy(mmes[6],"Julio");
+    strcpy(mmes[7],"Agosto");
+    strcpy(mmes[8],"Septiembre");
+    strcpy(mmes[9],"OCtubre");
+    strcpy(mmes[10],"Noviembre");
+    strcpy(mmes[11],"Diciembre");
+
+
+    int cantdias=NumeroSerie()-1;//cantidad de días transcurridos desde 01/01/1900
+    //El 01/01/1900 fue Lunes
+    int numerodia=cantdias%7;
+
+    char mdia[7][10];
+    strcpy(mdia[0],"Lunes");
+    strcpy(mdia[1],"Martes");
+    strcpy(mdia[2],"Miercoles");
+    strcpy(mdia[3],"Jueves");
+    strcpy(mdia[4],"Viernes");
+    strcpy(mdia[5],"Sábado");
+    strcpy(mdia[6],"Domingo");
+
+    cout<<endl<<mdia[numerodia]<<" "<<dia<<" de "<<mmes[mes-1]<<" de "<<anio<<endl;
+}
+
+//Devuelve la cantidad de días transcurridos desde el 01/01/1900
+int Fecha::NumeroSerie()
+{
+    int cont=0,i;
+    for(i=1900; i<anio; i++)
+        if(esbisiesto(i))
+            cont++;
+    int vmes[]= {31,28,31,30,31,30,31,31,30,31,30,31},suma=0;
+    if(esbisiesto(anio))
+        vmes[1]=29;
+    for(int i=0; i<mes-1; i++)
+        suma+=vmes[i];
+    int cantdias=(anio-1900)*365+cont+suma+dia;
+    return cantdias;
+}
+
+//Sobrecargas
+bool Fecha::operator>(Fecha &obj)
+{
+    if(NumeroSerie()>obj.NumeroSerie())
+        return true;
+    return false;
+}
+
+bool Fecha::operator==(Fecha &obj)
+{
+    if(NumeroSerie()==obj.NumeroSerie())
+        return true;
+    //Otra posibilidad
+    //if(dia==obj.dia && mes==obj.mes && anio==obj.anio)
+    //  return true;
+    return false;
+}
+
+void Fecha::NumeroSerieaFecha(int ns)
+{
+    int suma=0, dia_adicional, suma_ant;
+    int anio_real=1900;
+    while(ns>suma)
+    {
+        dia_adicional=(esbisiesto(anio_real)?1:0);
+        suma_ant=suma;
+        suma+=365+dia_adicional;
+        anio_real++;
     }
+    anio=anio_real-1;
+    //Cantidad de días pasados desde anio
+    int dias_anio_actual=ns-suma_ant,i=0;
+    int vmes[]= {31,28,31,30,31,30,31,31,30,31,30,31};
+    if(esbisiesto(anio))
+        vmes[1]=29;
+    suma=0;
+    while(dias_anio_actual>suma)
+        suma+=vmes[i++];
+    mes=i;
+    dia=dias_anio_actual-(suma-vmes[i-1]);
+}
+
+void Fecha::operator +=(int masdias)
+{
+    int  ns=NumeroSerie()+masdias;
+    NumeroSerieaFecha(ns);
+}
+
+istream & operator>>(istream &entra, Fecha &f)
+{
+    cout<<"Ingrese el dia: ";
+    entra>>f.dia;
+    cout<<"Ingrese el mes: ";
+    entra>>f.mes;
+    cout<<"Ingrese el año: ";
+    entra>>f.anio;
+    return entra;
+}
+
+ostream & operator<<(ostream &sale, Fecha &f)
+{
+    cout<<"Dia: ";
+    sale<<f.dia<<endl;
+    cout<<"Mes: ";
+    sale<<f.mes<<endl;
+    cout<<"Año: ";
+    sale<<f.anio<<endl;
+    return sale;
+}
+
+Fecha Fecha::operator+(int masdias)
+{
+    Fecha aux;
+    int  ns=NumeroSerie()+masdias;
+    aux.NumeroSerieaFecha(ns);
+    return aux;
+}
+
+int Fecha::operator -(Fecha &obj)
+{
+    return NumeroSerie()-obj.NumeroSerie();
+}
+
+int Fecha::cantDiasMes()
+{
+    int vmes[]= {31,28,31,30,31,30,31,31,30,31,30,31};
+    if(esbisiesto(anio))
+        vmes[1]=29;
+    return vmes[mes-1];
+}
+// Devuelve la cantidad de días hábiles del mes correspondiente a la fecha
+// No tiene en cuenta si en el mes hay o no feriados
+// Una posibilidad es que se identifique en una matriz los días feriados del año
+// y se compare cada día con esa matriz
+int Fecha::cantDiasHabilesMes()
+{
+    int totDias=cantDiasMes();
+    int dia, cant=0;
+    Fecha aux=*this;
+    for(int i=1; i<=totDias; i++)
+    {
+        dia=(aux.NumeroSerie()-1)%7;
+        if(dia<5)
+            cant++;
+        aux+=1;
+    }
+    return cant;
+}
+
+//Devuelve la cantidad de años entre una fecha y el día actual
+int Fecha::cantAniosHastaHoy()
+{
+    Fecha aux; //por usar un constructor por defecto tiene la fecha de hoy;
+    int cant=aux.anio-anio;
+    if(mes>aux.mes)
+        return cant-1;
+    if(mes==aux.mes && dia>aux.dia)
+        return cant-1;
+    return cant;
+}
+#endif // FECHA_H_INCLUDED
 
 
-void detalle_venta::sobreescribir_detalle(int pos){
-  FILE *p;
-  p=fopen("detalle_ventas.dat","rb+");
-  if(p==NULL){cout<<"error de archivo en sobreescribir detalle"<<endl;}
-  fseek(p,sizeof *this * pos, 0);
-  fwrite(this , sizeof *this ,1 ,p);
-  fclose(p);
-  return;
-  }
 
 
-#endif // DETALLE_VENTA_H_INCLUDED
