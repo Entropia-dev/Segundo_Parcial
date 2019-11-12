@@ -35,7 +35,6 @@
 		<Unit filename="Fecha.h" />
 		<Unit filename="MenuPrincipal.h" />
 		<Unit filename="clientes.h" />
-		<Unit filename="detalle_venta.h" />
 		<Unit filename="empleados.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="pagos.h" />

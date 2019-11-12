@@ -1,13 +1,17 @@
 # depslib dependency file v1.0
-1573258922 source:c:\users\kai anderson\desktop\reboot_proyecto\main.cpp
+1573490607 source:c:\users\kai anderson\desktop\reboot_proyecto\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
 	<time.h>
 	<cstdlib>
-	"Fecha.h"
+	"fecha.h"
+	"productos.h"
 	"personas.h"
 	"empleados.h"
+	"clientes.h"
+	"pagos.h"
+	"ventas.h"
 	"MenuPrincipal.h"
 
 1556194782 c:\users\kai anderson\desktop\reboot_proyecto\estructuras.h
@@ -18,11 +22,19 @@
 
 1561505410 c:\users\kai anderson\desktop\reboot_proyecto\movimientos.h
 
-1573260228 c:\users\kai anderson\desktop\reboot_proyecto\menuprincipal.h
+1573492726 c:\users\kai anderson\desktop\reboot_proyecto\menuprincipal.h
 
-1573257311 c:\users\kai anderson\desktop\reboot_proyecto\fecha.h
+1573325240 c:\users\kai anderson\desktop\reboot_proyecto\fecha.h
 
-1573258330 c:\users\kai anderson\desktop\reboot_proyecto\personas.h
+1573325240 c:\users\kai anderson\desktop\reboot_proyecto\personas.h
 
-1573260224 c:\users\kai anderson\desktop\reboot_proyecto\empleados.h
+1573490401 c:\users\kai anderson\desktop\reboot_proyecto\empleados.h
+
+1573492469 c:\users\kai anderson\desktop\reboot_proyecto\productos.h
+
+1573490401 c:\users\kai anderson\desktop\reboot_proyecto\clientes.h
+
+1573325240 c:\users\kai anderson\desktop\reboot_proyecto\pagos.h
+
+1573492469 c:\users\kai anderson\desktop\reboot_proyecto\ventas.h
 
