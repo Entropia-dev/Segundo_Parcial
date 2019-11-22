@@ -6,6 +6,7 @@ void Menu_Principal();
 void menu_clientes();
 void menu_ventas();
 void menu_productos();
+void menu_pagos();
 
 void Menu_Principal()
 {
@@ -13,7 +14,7 @@ void Menu_Principal()
     system("cls");
     while(true)
     {
-
+        system("cls");
         cout<<"MENU PRINCIPAL"<<endl;
         cout<<"=========="<<endl;
         cout<<"1)MENU EMPLEADOS"<<endl;
@@ -40,7 +41,7 @@ void Menu_Principal()
 
         case 4:
             system("cls");
-            //    menuparcial();
+            cout<<"MENU EN DESARROLLO"<<endl;
             system("cls");
             break;
 
@@ -74,6 +75,7 @@ void Menu_Principal()
 
 void menu_empleados()
 {
+
     int opc;
     system("cls");
     while(true)
@@ -155,7 +157,7 @@ void menu_clientes()
         cout<<"MENU CLIENTES"<<endl;
         cout<<"============"<<endl;
         cout<<"1)CARGAR CLIENTE"<<endl;
-        cout<<"2)MODIFICAR DNI DEL CLIENTE"<<endl;
+        cout<<"2)MODIFICAR EL CORREO DEL CLIENTE"<<endl;
         cout<<"3)LISTAR TODOS LOS CLIENTES"<<endl;
         cout<<"4)ELIMINAR CLIENTE"<<endl;
         cout<<"5)RESTAURAR CLIENTE"<<endl;
@@ -291,7 +293,8 @@ void menu_ventas()
             return;
             break;
 
-            default: cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause"); break;
+            default: cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause");
+            system("cls"); break;
         }
     }
 
@@ -313,6 +316,7 @@ void menu_productos()
         cout<<"4)LISTAR TODOS LOS PRODUCTOS"<<endl;
         cout<<"5)ELIMINAR PRODUCTO"<<endl;
         cout<<"6)RESTAURAR PRODUCTO"<<endl;
+        cout<<"7)AUMENTAR STOCK"<<endl;
         cout<<"========================"<<endl;
         cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
         cin>>opc;
@@ -358,13 +362,18 @@ void menu_productos()
             system("cls");
             break;
 
+        case 7:
+            system("cls");
+            aumentar_stock();
+            system("cls");
+            break;
 
         case 0:
             system("cls");
             return;
             break;
 
-            default: cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause"); break;
+            default: cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause");  break;
         }
 
     }
@@ -374,5 +383,54 @@ void menu_productos()
 
 
 }
+
+
+
+void menu_pagos(){
+
+        int opc;
+    system("cls");
+    while(true)
+    {
+
+cout<<"MENU DE PAGOS"<<endl;
+cout<<"1)NUEVO PAGO"<<endl;
+cout<<"2)LISTAR TODOS LOS PAGOS"<<endl;
+cout<<"3)LISTAR PAGO POR TIPO"<<endl;
+cout<<"4)LISTAR PAGO POR CLIENTE"<<endl;
+cout<<"5)LISTAR PAGO POR ID"<<endl;
+cout<<"6)CANCELAR PAGO"<<endl;
+cout<<"==================="<<endl;
+cout<<"INGRESE UNA OPCION"<<endl;
+cin>>opc;
+
+switch(opc){
+case 1:
+break;
+
+case 2:
+break;
+
+case 3:
+break;
+
+case 4:
+break;
+
+case 5:
+break;
+
+case 6:
+break;
+
+cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause");
+            system("cls"); break;
+
+    }
+
+}
+
+}
+
 
 #endif // MENUPRINCIPAL_H_INCLUDED

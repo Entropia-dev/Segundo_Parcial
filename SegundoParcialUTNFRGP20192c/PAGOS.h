@@ -1,6 +1,7 @@
 #ifndef PAGOS_H_INCLUDED
 #define PAGOS_H_INCLUDED
 
+int contar_pagos();
 
 class pago
 {
@@ -39,6 +40,8 @@ public:
         fecha_pago =f;
     }
 
+    void set_id_cliente()
+
     ///==================GETS=====================================
     Fecha getFecha()
     {
@@ -68,10 +71,11 @@ public:
     void cargar_pago();
     void mostrar_pago();
     bool guardar_pago();
+    ///=====================OTROS==================================
+    void generar_pago_total();
 };
 
-void pago::cargar_pago()
-{
+void pago::cargar_pago(){
 
     cout<<"ID DE PAGO: "<<endl;
     cin>>id_pago;
@@ -127,5 +131,26 @@ int contar_pagos()
     fclose(p);
     return cant_pagos;
 }
+
+///
+///cout<<"1)NUEVO PAGO"<<endl;
+///cout<<"2)LISTAR TODOS LOS PAGOS"<<endl;
+///cout<<"3)LISTAR PAGO POR TIPO"<<endl;
+///cout<<"4)LISTAR PAGO POR CLIENTE"<<endl;
+///cout<<"5)LISTAR PAGO POR ID"<<endl;
+///cout<<"6)CANCELAR PAGO"<<endl
+
+void alta_pago(){
+int id_cliente;
+pago obj;
+cout<<"INGRESE LA ID DEL CLIENTE QUE REALIZA EL PAGO"<<endl;
+cin>>id_cliente;
+if(buscar_id_cliente(id_cliente)==false){cout<<"NO SE ENCONTRO EL CLIENTE , INTENETLO NUEVAMENTE "
+                                            system("pause"); return;}
+if(buscar_estado_cliente(id_cliente)==false){cout<<"LOS CLIENTES DADOS DE BAJA NO PUEDEN REALIZAR PAGOS"<<endl;
+                                                        system("pause"); return;}
+pago.set_
+}
+
 
 #endif // PAGOS_H_INCLUDED

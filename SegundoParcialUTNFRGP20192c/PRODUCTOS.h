@@ -15,7 +15,7 @@ void alta_producto();
 int contar_cant_productos();
 bool buscar_id_producto(int);
 float buscar_precio_producto(int id_producto);
-
+void aumentar_stock();
 class productos
 {
 private:
@@ -332,6 +332,27 @@ void productos::decrementar_stock(int id_prod, float mts_vendidos){
 this->leer_producto(id_prod-1);
 stock=stock-mts_vendidos;
 sobreescribir_producto(id_prod-1);
+}
+
+
+void aumentar_stock(){
+productos obj;
+float nuevo_stock;
+int id_deseada;
+float aux;
+cout<<"SELECCIONE LA ID DEL ARTICULO DE LA QUE QUIERE AUMENTAR EL STOCK"<<endl;
+cin>>id_deseada;
+if(id_deseada > contar_cant_productos() || id_deseada < 0){cout<<"LA ID INGRESADA NO ES CORRECTA , INTENTE NUEVAMENTE"<<endl;
+                                                            system("pause"); return;}
+
+cout<<"INGRESE (EN METROS) EN CUANTO DESEA INCREMENTAR EL STOCK"<<endl;
+cin>>nuevo_stock;
+obj.leer_producto(id_deseada-1);
+aux=obj.get_stock()+nuevo_stock;
+obj.set_stock(aux);
+obj.sobreescribir_producto(id_deseada -1);
+cout<<"STOCK ACTUALIZADO CON EXITO"<<endl;
+system("pause");
 }
 
 #endif // PRODUCTOS_H_INCLUDED

@@ -22,7 +22,7 @@
 
 1561505410 c:\users\kai anderson\desktop\reboot_proyecto\movimientos.h
 
-1573492726 c:\users\kai anderson\desktop\reboot_proyecto\menuprincipal.h
+1573778251 c:\users\kai anderson\desktop\reboot_proyecto\menuprincipal.h
 
 1573325240 c:\users\kai anderson\desktop\reboot_proyecto\fecha.h
 
@@ -36,5 +36,37 @@
 
 1573325240 c:\users\kai anderson\desktop\reboot_proyecto\pagos.h
 
-1573492469 c:\users\kai anderson\desktop\reboot_proyecto\ventas.h
+1573779293 c:\users\kai anderson\desktop\reboot_proyecto\ventas.h
+
+1574324277 source:c:\users\miran\desktop\reboot_proyecto\main.cpp
+	<iostream>
+	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"fecha.h"
+	"productos.h"
+	"personas.h"
+	"empleados.h"
+	"clientes.h"
+	"pagos.h"
+	"ventas.h"
+	"MenuPrincipal.h"
+	<locale.h>
+
+1573325240 c:\users\miran\desktop\reboot_proyecto\fecha.h
+
+1573817937 c:\users\miran\desktop\reboot_proyecto\productos.h
+
+1573325240 c:\users\miran\desktop\reboot_proyecto\personas.h
+
+1574324948 c:\users\miran\desktop\reboot_proyecto\empleados.h
+
+1574328853 c:\users\miran\desktop\reboot_proyecto\clientes.h
+
+1574328456 c:\users\miran\desktop\reboot_proyecto\pagos.h
+
+1574329568 c:\users\miran\desktop\reboot_proyecto\ventas.h
+
+1574328853 c:\users\miran\desktop\reboot_proyecto\menuprincipal.h
 

@@ -174,10 +174,12 @@ bool detalle_venta::cargar_detalle_venta()
     cin>>id_producto;
     if(buscar_id_producto(id_producto)==false)
     {
-        return false;
+        cout<<"NO SE ENCONTRO EL PRODUCTO BUSCADO , INTENTELO NUEVAMENTE"<<endl; return false;
     }
     cout<<"INGRESE LOS METROS VENDIDOS"<<endl;
     cin>>metros_vendidos;
+    if(metros_vendidos < 0){cout<<"NO SE PUEDE VENDER UNA CANTIDAD DE METROS NEGATIVA , INTENTE NUEVAMENTE"<<endl;
+                                    system("pause"); return false;}
     precio_x_metro=buscar_precio_producto(id_producto);
     id_venta=contar_ventas()+1;
     estado=true;
@@ -353,7 +355,6 @@ void alta_venta()
 {
     venta venta_final;
     detalle_venta detalles;
-    char opc;
     int nueva_id;
     productos obj;
     cout<<"MENU CARGAR VENTAS"<<endl;
@@ -367,9 +368,16 @@ void alta_venta()
         system("pause");
         return;
     }
+
+    if(buscar_estado_cliente(nueva_id)==false){cout<<"EL CLIENTE SE ENCUENTRA DADO DE BAJA , INTENTELO NUEVAMENTE"<<endl;
+          system("pause");  return;}
+
     cout<<"INGRESE LA FORMA DE PAGO (UN NUMERO ENTERO ENTRE 1 Y 6): ";
     int fp;
-    cin>>fp;///hay que validar
+    cin>>fp;
+    if(fp<1 || fp > 6){cout<<"FORMA DE PAGO NO VALIDA , INTENTE NUEVAMENTE "<<endl;
+                            system("pause"); return;}
+
     venta_final.set_forma_pago(fp);
     venta_final.set_importe(0);
     venta_final.set_id_venta(contar_ventas()+1);
@@ -377,19 +385,21 @@ void alta_venta()
     char continuar='s';
     while(continuar=='s')
     {
-      if(  detalles.cargar_detalle_venta() == false ){cout<<"NO SE ENCONTRO EL PRODUCTO BUSCADO , INTENTELO NUEVAMENTE "<<endl; system("pause"); return;}
+         if(detalles.cargar_detalle_venta()==false){cout<<"NO SE PUDO DAR DE ALTA LA VENTA INTENTE NUEVAMENTE"<<endl;
+                                                            system("pause");}
       obj.leer_producto(detalles.get_id_producto()-1);
         if(detalles.get_metros_vendidos()  > obj.get_stock()){cout<<"NO DISPONEMOS DEL STOCK NECESARIO PARA REALIZAR LA VENTA"<<endl;   system("pause");    return;}
         detalles.guardar_detalle_venta();
         cout<<"DESEA INGRESAR OTRO PRODUCTO (s: SI; n: NO) :";
         cin>>continuar;
             obj.decrementar_stock(detalles.get_id_producto(),detalles.get_metros_vendidos());
-    }
+                ///mostrar costo de venta e informacion parcial ?
+          }
 
     venta_final.set_importe(obtener_importe(contar_ventas()+1));
     venta_final.set_estado(true);
     venta_final.guardar_venta();
-
+        /// por aca se tendria que mostrar la venta con el importe final a pagar y demas informacion
     cout<<"CARGA DE LA VENTA FINALIZADA CON EXITO"<<endl;
     system("pause");
 }
@@ -555,9 +565,7 @@ void modificar_venta()
 void eliminar_venta()
 {
     venta obj;
-    detalle_venta detalle;
     int cantidad_ventas=contar_ventas();
-    int cantidad_detalles=contar_detalles_venta();
     int id_venta;
 
     cout<<"INGRESE LA ID DE LA VENTA QUE DESEA ELIMINAR"<<endl;

@@ -2,6 +2,8 @@
 #define EMPLEADOS_H_INCLUDED
 
 int contar_empleados();
+int contar_baja_empleados();
+
 
 class empleado:public persona
 {
@@ -92,6 +94,17 @@ int contar_empleados()
     fclose(p);
 
     return cant_registros;
+}
+
+int contar_baja_empleados(){
+empleado obj;
+int cant_empleados=contar_empleados();
+int empleados_eliminados=0;
+for(int i=0;i<cant_empleados;i++){
+obj.leer_empleado(i);
+if(obj.get_estado()==false){empleados_eliminados++;}
+}
+return empleados_eliminados;
 }
 
 
@@ -295,7 +308,9 @@ void restaurar_empleado()
     int cant=contar_empleados();
     empleado obj;
     system("cls");
-    if(cant==0){cout<<"NO SE ENCONTRARON EMPLEADOS DADOS DE BAJA"<<endl;
+        if(cant==0){cout<<"NO SE ENCONTRARON EMPLEADOS CARGADOS"<<endl;
+        system("pause");    return;}
+    if(contar_baja_empleados()==0){cout<<"NO SE ENCONTRARON EMPLEADOS DADOS DE BAJA"<<endl;
         system("pause");    return;}
     cout<<"ESTOS SON LOS EMPLEADOS DADOS DE BAJA: "<<endl;
     for(int i=0; i<cant; i++)
@@ -327,4 +342,6 @@ void restaurar_empleado()
     cout<<"ID DEL EMPLEADO NO ENCONTRADO , INTENTELO NUEVAMENTE"<<endl;
     system("pause");
 }
+
+
 #endif // EMPLEADOS_H_INCLUDED

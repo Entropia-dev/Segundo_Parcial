@@ -2,6 +2,8 @@
 #define CLIENTES_H_INCLUDED
 
 int contar_clientes();
+int buscar_pos_id(int);
+bool buscar_estado_cliente(int);
 
 class cliente:public persona
 {
@@ -218,7 +220,7 @@ void listar_cliente_x_id()
     return;
 }
 
-void modificar_cliente()
+void modificar_cliente() ///modifica el e mail del cliente
 {
     cliente obj;
     int cant_clientes;
@@ -233,6 +235,8 @@ void modificar_cliente()
         system("pause");
         return;
     }
+    if(buscar_estado_cliente(id_cliente)==false){cout<<"EL CLIENTE SE ENCUENTRA DADO DE BAJA , INTENTE NUEVAMENTE"<<endl;
+                                                    system("pause"); return;}
     cant_clientes=contar_clientes();
     for(int i=0; i<cant_clientes; i++)
     {
@@ -243,7 +247,7 @@ void modificar_cliente()
             cin>>nuevo_correo;
             obj.set_email(nuevo_correo);
             obj.sobreescribir_cliente(id_cliente-1);
-            cout<<"DNI DEL CLIENTE MODIFICADO CON EXITO"<<endl;
+            cout<<"CORREO DEL CLIENTE MODIFICADO CON EXITO"<<endl;
             system("pause");
         }
     }
@@ -277,6 +281,10 @@ void restaurar_cliente()
     }
     cout<<"INGRESE LA ID DEL CLIENTE A RESTAURAR: "<<endl;
     cin>>id;
+    if(buscar_id_cliente(id)==false){
+            cout<<"ID INCORRECTA"<<endl;
+            cout<<"INTENTELO NUEVAMENTE INGRESANDO UNA ID DE CLIENTE VALIDA "<<endl;
+                                        system("pause"); return;    }
     if(buscar_id_cliente(id)==true)
     {
         obj.leer_cliente(id-1);
@@ -294,5 +302,22 @@ void restaurar_cliente()
 
 }
 
+int buscar_pos_id(int id_cliente){  ///buca la pocison en el archivo en la cual coincida la id de cliente
+cliente obj;
+int cant_clientes = contar_clientes();
+for(int i=0;i<cant_clientes;i++){
+    obj.leer_cliente(i);
+    if(obj.get_codigo_cliente() == id_cliente){return i;}
+    }
+    return -1;
+}
+
+bool buscar_estado_cliente(int id_buscada){     ///obtiene el estado del cliente para saber si es apto para ser utilizado como parametro
+cliente obj;                                    ///por ejemplo de un pago
+obj.leer_cliente(buscar_pos_id(id_buscada));
+bool aux;
+aux = obj.get_estado_cliente();
+return aux;
+}
 
 #endif // CLIENTES_H_INCLUDED
