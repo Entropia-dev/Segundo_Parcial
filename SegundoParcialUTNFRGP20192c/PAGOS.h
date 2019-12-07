@@ -40,7 +40,9 @@ public:
         fecha_pago =f;
     }
 
-    void set_id_cliente()
+    void set_id_cliente(int nueva_id){
+    id_cliente=nueva_id;
+    }
 
     ///==================GETS=====================================
     Fecha getFecha()
@@ -76,19 +78,26 @@ public:
 };
 
 void pago::cargar_pago(){
+    /// cada pago se tendria que generar y guardar en un archivo por ejemplo "pagos.dat"
+    /// para que puedas saber si a algun cliente le falta por pagar.
 
+    cout<<"ID CLIENTE"<<endl;
+    cin>>id_cliente;    /// hay que validar que exista  y no este dado de baja.
     cout<<"ID DE PAGO: "<<endl;
-    cin>>id_pago;
-    cout<<"ID DE VENTA: "<<endl;
-    cin>>id_venta;
-    cout<<"FORMA DE PAGO: "<<endl;
+    cin>>id_pago;   ///se va a auto generar con un contador de pagos
+    cout<<"ID DE VENTA: "<<endl;    ///deberia mostrar cuanto falta por pagar ? esto se puede hacer buscando en el archivo
+    cin>>id_venta;  ///pagos pagos generados con respecto a la misma venta , ademas de obtener el importe del archivo ventas
+                    ///para saber cuanto es el total a pagar.
+                    /// ademas la id necesita validarse
+    cout<<"FORMA DE PAGO: "<<endl;  ///deberia obtenerla de la venta (buscando en el archivo ventas usando como referencia la id brindada)
     cin>>forma_pago;
-    cout<<"IMPORTE: "<<endl;
+    cout<<"IMPORTE: "<<endl;    ///deberia obtenerla de la venta (buscando en el archivo ventas usando como referencia la id brindada)
     cin>>importe;
     estado = true;
-    cin>>fecha_pago;
+    cin>>fecha_pago;    /// se deberia ingresar la fecha o utilizar la del dia de sistema ?
     return;
-}
+
+    }
 
 void pago::mostrar_pago()
 {
@@ -139,7 +148,7 @@ int contar_pagos()
 ///cout<<"4)LISTAR PAGO POR CLIENTE"<<endl;
 ///cout<<"5)LISTAR PAGO POR ID"<<endl;
 ///cout<<"6)CANCELAR PAGO"<<endl
-
+/*
 void alta_pago(){
 int id_cliente;
 pago obj;
@@ -151,6 +160,6 @@ if(buscar_estado_cliente(id_cliente)==false){cout<<"LOS CLIENTES DADOS DE BAJA N
                                                         system("pause"); return;}
 pago.set_
 }
-
+*/
 
 #endif // PAGOS_H_INCLUDED

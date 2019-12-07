@@ -399,7 +399,11 @@ void alta_venta()
     venta_final.set_importe(obtener_importe(contar_ventas()+1));
     venta_final.set_estado(true);
     venta_final.guardar_venta();
+
         /// por aca se tendria que mostrar la venta con el importe final a pagar y demas informacion
+        /// en caso de ser un pago realizado por cualquier medio que no sea cuenta corriente se tendria que generar
+        /// un registro en el archivo de pagos con la informacion obtenida de  la venta
+
     cout<<"CARGA DE LA VENTA FINALIZADA CON EXITO"<<endl;
     system("pause");
 }
