@@ -12,9 +12,10 @@ using namespace std;
 #include "personas.h"
 #include "empleados.h"
 #include "clientes.h"
+#include "ventas.h"
 #include "pagos.h"
 
-#include "ventas.h"
+
 #include "MenuPrincipal.h"
 
 #include <locale.h>
@@ -38,6 +39,8 @@ void inicializar_archivos()
         fclose(k);
         FILE *g=fopen("detalle_ventas.dat","ab");
         fclose(g);
+        FILE *h=fopen("pagos.dat","ab");
+        fclose(h);
         return;
     }
     else

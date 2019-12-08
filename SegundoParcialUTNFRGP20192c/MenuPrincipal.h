@@ -41,7 +41,7 @@ void Menu_Principal()
 
         case 4:
             system("cls");
-            cout<<"MENU EN DESARROLLO"<<endl;
+            menu_pagos();
             system("cls");
             break;
 
@@ -387,13 +387,14 @@ void menu_productos()
 
 
 void menu_pagos(){
-
+    pago obj;
         int opc;
     system("cls");
     while(true)
     {
 
 cout<<"MENU DE PAGOS"<<endl;
+cout<<"==================="<<endl;
 cout<<"1)NUEVO PAGO"<<endl;
 cout<<"2)LISTAR TODOS LOS PAGOS"<<endl;
 cout<<"3)LISTAR PAGO POR TIPO"<<endl;
@@ -401,11 +402,15 @@ cout<<"4)LISTAR PAGO POR CLIENTE"<<endl;
 cout<<"5)LISTAR PAGO POR ID"<<endl;
 cout<<"6)CANCELAR PAGO"<<endl;
 cout<<"==================="<<endl;
+cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
 cout<<"INGRESE UNA OPCION"<<endl;
 cin>>opc;
 
 switch(opc){
 case 1:
+    system("cls");
+    alta_pago();
+    system("cls");
 break;
 
 case 2:
@@ -421,6 +426,10 @@ case 5:
 break;
 
 case 6:
+break;
+
+case 0:
+return;
 break;
 
 cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause");

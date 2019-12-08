@@ -3,7 +3,6 @@
 
 bool buscar_detalle_x_id_venta(int id_venta);
 char buscar_dni_venta(int id_venta);
-int buscar_forma_pago(int id_venta);
 int contar_detalles_venta();
 void listar_ventas();
 void listar_ventas_x_id();
@@ -12,7 +11,8 @@ void listar_venta_x_anio();
 void listar_venta_x_mes();
 bool buscar_id_venta(int);
 void alta_venta();
-
+int obtener_forma_pago(int);
+float obtener_importe_venta(int);
 
 class venta
 {
@@ -326,7 +326,7 @@ void venta::mostrar_venta()
     cout<<"ID DE CLIENTE: "<<id_cliente<<endl;
     cout<<"IMPORTE DE LA VENTA: "<<importe<<endl;
     cout<<"FECHA DE VENTA: "<<endl;
-    cout<<fecha_venta; ///consultar como funciona esto
+    fecha_venta.MostrarFecha();
 }
 
 float obtener_importe(int id_venta)
@@ -399,11 +399,13 @@ void alta_venta()
     venta_final.set_importe(obtener_importe(contar_ventas()+1));
     venta_final.set_estado(true);
     venta_final.guardar_venta();
-
+    cout<<endl;
+    cout<<"===================================RESUMEN DE VENTA================================"<<endl;
+        venta_final.mostrar_venta();
         /// por aca se tendria que mostrar la venta con el importe final a pagar y demas informacion
         /// en caso de ser un pago realizado por cualquier medio que no sea cuenta corriente se tendria que generar
         /// un registro en el archivo de pagos con la informacion obtenida de  la venta
-
+    cout<<"==================================================================================="<<endl;
     cout<<"CARGA DE LA VENTA FINALIZADA CON EXITO"<<endl;
     system("pause");
 }
@@ -431,11 +433,11 @@ void listar_ventas()
         {
             if(venta_final.get_estado()==true)
             {
-                cout<<"INFORMACION GENERAL"<<endl;
+                cout<<"RESUMEN DE LA VENTA"<<endl;
                 venta_final.mostrar_venta();
 
                 cout<<"================"<<endl;
-                cout<<"PRODUCTOS E INFORMACION ADICIONAL"<<endl;
+                cout<<"PRODUCTOS VENDIDOS"<<endl;
                 cout<<endl;
 
                 for(int t=0; t<cantidad_detalles; t++)
@@ -655,6 +657,29 @@ bool buscar_id_venta(int id_buscada)
     }
     return false;
 }
+
+int obtener_forma_pago(int id_venta){
+venta obj;
+int cantidad_ventas = contar_ventas();
+for(int i=0;i<cantidad_ventas;i++){
+    obj.leer_venta(i);
+    if(obj.get_id_venta()==id_venta){return obj.get_forma_pago();}
+    }
+    return -1;
+}
+
+float obtener_importe_venta(int id_venta)   ///obtiene el importe de una venta mediante id para poder calcular cuanto falta pagar.
+{
+venta obj;
+int cantidad_ventas = contar_ventas();
+for(int i=0;i<cantidad_ventas;i++){
+    obj.leer_venta(i);
+    if(obj.get_id_venta()==id_venta){return obj.get_importe();}
+
+    }
+        return -1;
+}
+
 
 
 #endif // VENTAS_H_INCLUDED

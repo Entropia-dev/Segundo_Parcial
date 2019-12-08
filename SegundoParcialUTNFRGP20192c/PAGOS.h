@@ -2,6 +2,7 @@
 #define PAGOS_H_INCLUDED
 
 int contar_pagos();
+float buscar_total_pagado(int);
 
 class pago
 {
@@ -70,32 +71,48 @@ public:
         return estado;
     }
     ///====================CARGAR/MOSTRAR/GUARDAR==================
-    void cargar_pago();
+    int cargar_pago();
     void mostrar_pago();
     bool guardar_pago();
+    void leer_pago(int);
     ///=====================OTROS==================================
     void generar_pago_total();
 };
 
-void pago::cargar_pago(){
+int pago::cargar_pago(){
+    system("cls");
+    cout<<"=============================MENU PAGOS==============================="<<endl;
+    float resto;
     /// cada pago se tendria que generar y guardar en un archivo por ejemplo "pagos.dat"
     /// para que puedas saber si a algun cliente le falta por pagar.
 
-    cout<<"ID CLIENTE"<<endl;
-    cin>>id_cliente;    /// hay que validar que exista  y no este dado de baja.
-    cout<<"ID DE PAGO: "<<endl;
-    cin>>id_pago;   ///se va a auto generar con un contador de pagos
-    cout<<"ID DE VENTA: "<<endl;    ///deberia mostrar cuanto falta por pagar ? esto se puede hacer buscando en el archivo
-    cin>>id_venta;  ///pagos pagos generados con respecto a la misma venta , ademas de obtener el importe del archivo ventas
-                    ///para saber cuanto es el total a pagar.
-                    /// ademas la id necesita validarse
-    cout<<"FORMA DE PAGO: "<<endl;  ///deberia obtenerla de la venta (buscando en el archivo ventas usando como referencia la id brindada)
-    cin>>forma_pago;
-    cout<<"IMPORTE: "<<endl;    ///deberia obtenerla de la venta (buscando en el archivo ventas usando como referencia la id brindada)
+    cout<<"INGRESE LA ID CLIENTE QUE EFECTUA EL PAGO"<<endl;
+    cin>>id_cliente;
+    if(buscar_id_cliente(id_cliente)==false){cout<<"no se encontro la id de cliente , intentelo nuevamente"<<endl;}
+    if(buscar_estado_cliente(id_cliente)==false){cout<<"el cliente se encuenta dado de baja , intentelo nuevamente"<<endl; system("pause"); return -1;} /// hay que validar que exista  y no este dado de baja.
+    id_pago=contar_pagos()+1;
+    cout<<"INGRESE ID DE VENTA A PAGAR: "<<endl;
+    cin>>id_venta;
+     if(buscar_id_venta(id_venta)==false){cout<<"no se encontro la venta , intentelo nuevamente"<<endl; system("pause"); return -1;}           ///para saber cuanto es el total a pagar. falta validar la venta
+
+    forma_pago = obtener_forma_pago(id_venta);
+    if(forma_pago == -1){cout<<"error al obtener la forma de pago !"; system("pause"); return -1;}
+
+    ///========================================================================================================================
+    if(obtener_importe_venta(id_venta) - buscar_total_pagado(id_venta)==0){cout<<"ESTA VENTA FUE SALDADA POR COMPLETO "<<endl; system("pause"); return -1;}
+    cout<<"RESTA ABONAR "<<obtener_importe_venta(id_venta) - buscar_total_pagado(id_venta)<<"$"<<endl;
+    resto = obtener_importe_venta(id_venta) - buscar_total_pagado(id_venta);
+    ///========================================================================================================================
+
+    cout<<"TOTAL ABONADO: "<<endl;
     cin>>importe;
+    if(importe < 0){cout<<"EL TOTAL ABONADO NO PUEDE SER UN NUMERO NEGATIVO , INTENTELO NUEVAMENTE"<<endl;
+                        system("pause"); return -1;}
+    if(resto < importe){cout<<"vuelto: "<<importe - resto <<"$"<<endl;}
+    if(resto < importe){importe = obtener_importe_venta(id_venta);} ///esto es para que se registre la venta efectuada por el total
+                                                                    ///del importe correspondiente y no guardar el pago con vuelto incluido
     estado = true;
-    cin>>fecha_pago;    /// se deberia ingresar la fecha o utilizar la del dia de sistema ?
-    return;
+    return 1;
 
     }
 
@@ -141,25 +158,41 @@ int contar_pagos()
     return cant_pagos;
 }
 
-///
-///cout<<"1)NUEVO PAGO"<<endl;
-///cout<<"2)LISTAR TODOS LOS PAGOS"<<endl;
-///cout<<"3)LISTAR PAGO POR TIPO"<<endl;
-///cout<<"4)LISTAR PAGO POR CLIENTE"<<endl;
-///cout<<"5)LISTAR PAGO POR ID"<<endl;
-///cout<<"6)CANCELAR PAGO"<<endl
-/*
+void pago::leer_pago(int pos)
+{
+    FILE *p;
+    p=fopen("pagos.dat","rb");
+    if(p==NULL){
+            cout<<"ERROR DE ARCHIVO EN LEER_PAGO"<<endl;
+        exit(1);
+    }
+    fseek(p, sizeof *this*pos,0);
+    fread(this, sizeof *this, 1, p);
+    fclose(p);
+    return;
+}
+
+
+
 void alta_pago(){
 int id_cliente;
 pago obj;
-cout<<"INGRESE LA ID DEL CLIENTE QUE REALIZA EL PAGO"<<endl;
-cin>>id_cliente;
-if(buscar_id_cliente(id_cliente)==false){cout<<"NO SE ENCONTRO EL CLIENTE , INTENETLO NUEVAMENTE "
-                                            system("pause"); return;}
-if(buscar_estado_cliente(id_cliente)==false){cout<<"LOS CLIENTES DADOS DE BAJA NO PUEDEN REALIZAR PAGOS"<<endl;
-                                                        system("pause"); return;}
-pago.set_
+        if(obj.cargar_pago()==-1){return;}
+    if(obj.guardar_pago()){cout<<"PAGO GUARDADO CON EXITO"<<endl; system("pause"); return;}
+
 }
-*/
+
+
+float buscar_total_pagado(int id_venta) ///busca todos los pagos en referencia a una id de venta para saber cuanto falta pagar.
+{
+pago obj;
+float total_abonado=0;
+int cantidad_pagos = contar_pagos();
+for(int i=0;i<cantidad_pagos;i++){
+    obj.leer_pago(i);
+    total_abonado+=obj.get_importe();
+    }
+    return total_abonado;
+}
 
 #endif // PAGOS_H_INCLUDED

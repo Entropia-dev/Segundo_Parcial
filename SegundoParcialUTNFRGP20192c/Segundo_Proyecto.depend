@@ -70,7 +70,7 @@
 
 1574328853 c:\users\miran\desktop\reboot_proyecto\menuprincipal.h
 
-1574434133 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
+1575815852 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
@@ -81,8 +81,8 @@
 	"personas.h"
 	"empleados.h"
 	"clientes.h"
-	"pagos.h"
 	"ventas.h"
+	"pagos.h"
 	"MenuPrincipal.h"
 	<locale.h>
 
@@ -96,9 +96,9 @@
 
 1574434133 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clientes.h
 
-1575740493 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\pagos.h
+1575820257 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\pagos.h
 
-1575740493 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\ventas.h
+1575820957 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\ventas.h
 
-1574434133 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menuprincipal.h
+1575820380 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menuprincipal.h
 
