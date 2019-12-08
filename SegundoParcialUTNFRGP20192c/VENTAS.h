@@ -353,6 +353,7 @@ float obtener_importe(int id_venta)
 
 void alta_venta()
 {
+    pago pago_total;
     venta venta_final;
     detalle_venta detalles;
     int nueva_id;
@@ -398,6 +399,7 @@ void alta_venta()
 
     venta_final.set_importe(obtener_importe(contar_ventas()+1));
     venta_final.set_estado(true);
+    if(fp!=4){pago_total(venta_final.get_id_venta(),venta_final.get_id_cliente(), venta_final.get_id_venta(),venta_final.get_forma_pago())}
     venta_final.guardar_venta();
     cout<<endl;
     cout<<"===================================RESUMEN DE VENTA================================"<<endl;
@@ -486,7 +488,6 @@ void listar_venta_x_cliente()
     cout<<"FIN DEL LISTADO"<<endl;
     system("pause");
 }
-
 
 
 void listar_venta_x_anio()

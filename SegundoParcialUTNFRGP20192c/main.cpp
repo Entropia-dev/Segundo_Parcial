@@ -12,8 +12,9 @@ using namespace std;
 #include "personas.h"
 #include "empleados.h"
 #include "clientes.h"
-#include "ventas.h"
 #include "pagos.h"
+#include "ventas.h"
+
 
 
 #include "MenuPrincipal.h"

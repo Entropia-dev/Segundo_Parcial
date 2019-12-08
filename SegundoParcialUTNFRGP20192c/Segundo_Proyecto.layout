@@ -2,9 +2,19 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="pagos.h" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="-5" zoom_2="0">
+	<File name="empleados.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1579" topLine="72" />
+			<Cursor1 position="7688" topLine="260" />
+		</Cursor>
+	</File>
+	<File name="Fecha.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1542" topLine="75" />
+		</Cursor>
+	</File>
+	<File name="MenuPrincipal.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1453" topLine="76" />
 		</Cursor>
 	</File>
 	<File name="personas.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -12,34 +22,29 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="empleados.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="7688" topLine="260" />
+			<Cursor1 position="260" topLine="5" />
 		</Cursor>
 	</File>
-	<File name="MenuPrincipal.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="productos.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1779" topLine="213" />
+			<Cursor1 position="8348" topLine="132" />
 		</Cursor>
 	</File>
-	<File name="VENTAS.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="-5" zoom_2="0">
+	<File name="pagos.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="10733" topLine="386" />
+			<Cursor1 position="75" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="productos.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+	<File name="CLIENTES.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="-6" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8348" topLine="0" />
+			<Cursor1 position="0" topLine="144" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ventas.h" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1397" topLine="40" />
-		</Cursor>
-	</File>
-	<File name="Fecha.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1542" topLine="59" />
+			<Cursor1 position="8613" topLine="353" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

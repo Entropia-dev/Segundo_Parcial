@@ -1,6 +1,8 @@
 #ifndef PAGOS_H_INCLUDED
 #define PAGOS_H_INCLUDED
 
+#include "ventas.h"
+
 int contar_pagos();
 float buscar_total_pagado(int);
 
@@ -76,7 +78,7 @@ public:
     bool guardar_pago();
     void leer_pago(int);
     ///=====================OTROS==================================
-    void generar_pago_total();
+    void generar_pago_total(int , int , int , int );
 };
 
 int pago::cargar_pago(){
@@ -175,7 +177,6 @@ void pago::leer_pago(int pos)
 
 
 void alta_pago(){
-int id_cliente;
 pago obj;
         if(obj.cargar_pago()==-1){return;}
     if(obj.guardar_pago()){cout<<"PAGO GUARDADO CON EXITO"<<endl; system("pause"); return;}
@@ -194,5 +195,16 @@ for(int i=0;i<cantidad_pagos;i++){
     }
     return total_abonado;
 }
+
+void pago::generar_pago_total(int nueva_id , int id_cliente , int id_venta , int forma_pago ){
+pago obj;
+obj.set_id_venta(nueva_id);
+obj.set_id_cliente(id_cliente);
+obj.set_forma_pago(forma_pago);
+obj.set_importe(obtener_importe_venta(id_venta));
+obj.set_estado(true);
+obj.set_id_pago(contar_pagos()+1);
+}
+
 
 #endif // PAGOS_H_INCLUDED

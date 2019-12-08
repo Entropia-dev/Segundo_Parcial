@@ -81,7 +81,6 @@ void menu_empleados()
     while(true)
     {
         system("cls");
-        int opc;
         cout<<"MENU EMPLEADOS"<<endl;
         cout<<"======="<<endl;
         cout<<"1)NUEVO EMPLEADO"<<endl;
@@ -91,7 +90,7 @@ void menu_empleados()
         cout<<"5)ELIMINAR EMPLEADO"<<endl;
         cout<<"6)RESTAURAR EMPLEADO"<<endl;
         cout<<"========"<<endl;
-        cout<<"0) VOLVEr AL MENU ANTERIOR"<<endl;
+        cout<<"0) VOLVER AL MENU ANTERIOR"<<endl;
         cin>>opc;
         switch(opc)
         {
