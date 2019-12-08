@@ -5,48 +5,6 @@ int contar_empleados();
 int contar_baja_empleados();
 
 
-class empleado:public persona
-{
-private:
-    int codigo_empleado;
-    float sueldo;
-    bool estado;
-public:
-    ///====================CARGAR/MOSTRAR/GUARDAR/LEER==================
-    void Cargar_empleado();
-    void Mostrar_empleado();
-    bool guardar_empleado();
-    void leer_empleado(int);
-    void sobreescribir_empleado(int);
-    ///====================SETS==================
-    void set_codigo_empleado(int nuevo_codigo)
-    {
-        codigo_empleado = nuevo_codigo;
-    }
-    void set_estado(bool nuevo_estado)
-    {
-        estado = nuevo_estado;
-    }
-    void set_sueldo(float nuevo_sueldo)
-    {
-        sueldo = nuevo_sueldo;
-    }
-    void set_id(int nueva_id) {}
-    ///====================GETS==================
-    bool get_estado()
-    {
-        return estado;
-    }
-    int get_codigo_empleado()
-    {
-        return codigo_empleado;
-    }
-    float get_sueldo()
-    {
-        return sueldo;
-    }
-
-};
 
 
 bool buscar_dni_empleado(char *dni)

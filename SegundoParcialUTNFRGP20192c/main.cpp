@@ -6,14 +6,17 @@
 
 using namespace std;
 
-#include "fecha.h"
-#include "productos.h"
 
+#include "fecha.h"
+#include "Clases.h"
+#include "productos.h"
 #include "personas.h"
 #include "empleados.h"
 #include "clientes.h"
 #include "pagos.h"
 #include "ventas.h"
+
+
 
 
 

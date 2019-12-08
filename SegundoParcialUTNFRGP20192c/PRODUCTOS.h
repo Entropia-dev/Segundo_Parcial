@@ -16,74 +16,7 @@ int contar_cant_productos();
 bool buscar_id_producto(int);
 float buscar_precio_producto(int id_producto);
 void aumentar_stock();
-class productos
-{
-private:
-    int id_producto;
-    float precio_x_metro;
-    char modelo[50];
-    char color[50];
-    bool estado;
-    float stock;
-public:
-    ///============GETS====================================================
-    float get_stock()
-    {
-        return stock;
-    }
-    int get_id_producto()
-    {
-        return id_producto;
-    }
-    bool get_estado()
-    {
-        return estado;
-    }
-    char *get_modelo()
-    {
-        return modelo;
-    }
-    char *get_color()
-    {
-        return color;
-    }
-    float get_precio_x_metro()
-    {
-        return precio_x_metro;
-    }
-    ///=======================SETS=========================================
-    void set_stock(float nuevo_stock)
-    {
-        stock=nuevo_stock;
-    }
-    void set_estado(bool nuevo_estado)
-    {
-        estado= nuevo_estado;
-    }
-    void set_modelo(char *nuevo_modelo)
-    {
-        strcpy(modelo, nuevo_modelo);
-    }
-    void set_precio_x_metro(float nuevo_precio)
-    {
-        precio_x_metro = nuevo_precio;
-    }
-    void set_id_producto(int nueva_id)
-    {
-        id_producto= nueva_id;
-    }
-    void set_color(char *_color)
-    {
-        strcpy(color,_color);
-    }
-    ///====================CARGAR/MOSTRAR/GUARDAR==================
-    void cargar_producto();
-    void mostrar_producto();
-    bool guardar_producto();
-    bool leer_producto(int);
-    void sobreescribir_producto(int);
-    void decrementar_stock(int, float);
-};
+
 
 void productos::cargar_producto()
 {

@@ -5,37 +5,6 @@ int contar_clientes();
 int buscar_pos_id(int);
 bool buscar_estado_cliente(int);
 
-class cliente:public persona
-{
-private:
-    bool estado;
-    int codigo_cliente;
-public:
-    ///============================SETS=================================
-    void set_codigo_cliente(int nuevo_codigo)
-    {
-        codigo_cliente=nuevo_codigo;
-    }
-    void set_estado_cliente(bool nuevo_estado)
-    {
-        estado=nuevo_estado;
-    }
-    ///=============================GETS======================================
-    int get_codigo_cliente()
-    {
-        return codigo_cliente;
-    }
-    bool get_estado_cliente()
-    {
-        return estado;
-    }
-    ///====================CARGAR/MOSTRAR/GUARDAR==================
-    bool guardar_cliente();
-    void mostrar_cliente();
-    void cargar_cliente();
-    void leer_cliente(int);
-    bool sobreescribir_cliente(int);
-};
 
 void cliente::cargar_cliente()
 {

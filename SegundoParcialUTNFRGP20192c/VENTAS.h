@@ -1,6 +1,8 @@
 #ifndef VENTAS_H_INCLUDED
 #define VENTAS_H_INCLUDED
 
+#include "pagos.h"
+
 bool buscar_detalle_x_id_venta(int id_venta);
 char buscar_dni_venta(int id_venta);
 int contar_detalles_venta();
@@ -14,75 +16,6 @@ void alta_venta();
 int obtener_forma_pago(int);
 float obtener_importe_venta(int);
 
-class venta
-{
-private:
-    Fecha fecha_venta;   /// se genera automaticamente con el constructor de fecha
-    int id_venta;       ///se genera automaticamente en base a el archivo fecha
-    float importe;      ///se obtiene desde el detalle de la venta
-    int forma_pago;     ///se ingresa una sola vez
-    bool estado;        ///se setea por defecto en true
-    int id_cliente;     ///se ingresa una sola vez
-public:
-    ///==================SETS=====================================
-    void set_id_venta(int nueva_id)
-    {
-        id_venta = nueva_id;
-    }
-    void set_importe(float nuevo_importe)
-    {
-        importe = nuevo_importe;
-    }
-    void set_forma_pago(int nueva_forma_pago)
-    {
-        forma_pago=nueva_forma_pago;
-    }
-    void set_estado(bool nuevo_estado)
-    {
-        estado = nuevo_estado;
-    }
-    void set_id_cliente(int nueva_id)
-    {
-        id_cliente = nueva_id;
-    }
-    void setFecha_venta(Fecha f)
-    {
-        fecha_venta =f;
-    }
-
-    ///====================GETS====================================
-    Fecha getFecha()
-    {
-        return fecha_venta;
-    }
-    int get_id_venta()
-    {
-        return id_venta;
-    }
-    int get_id_cliente()
-    {
-        return id_cliente;
-    }
-    float get_importe()
-    {
-        return importe;
-    }
-    int get_forma_pago()
-    {
-        return forma_pago;
-    }
-    bool get_estado()
-    {
-        return estado;
-    }
-    ///====================CARGAR/MOSTRAR/GUARDAR==================
-    void cargar_venta();
-    void guardar_venta();
-    void mostrar_venta();
-    void leer_venta(int);
-    void sobreescribir_venta(int );
-
-};
 
 
 class detalle_venta
@@ -399,7 +332,7 @@ void alta_venta()
 
     venta_final.set_importe(obtener_importe(contar_ventas()+1));
     venta_final.set_estado(true);
-    if(fp!=4){pago_total(venta_final.get_id_venta(),venta_final.get_id_cliente(), venta_final.get_id_venta(),venta_final.get_forma_pago())}
+    if(fp!=4){pago_total.generar_pago_total(venta_final.get_id_venta(),venta_final.get_id_cliente(), venta_final.get_id_venta(),venta_final.get_forma_pago());}
     venta_final.guardar_venta();
     cout<<endl;
     cout<<"===================================RESUMEN DE VENTA================================"<<endl;
@@ -644,20 +577,6 @@ void venta::sobreescribir_venta(int pos)
 }
 
 
-bool buscar_id_venta(int id_buscada)
-{
-    venta obj;
-    int cantidad_ventas=contar_ventas();
-    for(int i=0; i<cantidad_ventas; i++)
-    {
-        obj.leer_venta(i);
-        if(obj.get_id_venta()==id_buscada)
-        {
-            return true;
-        }
-    }
-    return false;
-}
 
 int obtener_forma_pago(int id_venta){
 venta obj;
@@ -669,17 +588,7 @@ for(int i=0;i<cantidad_ventas;i++){
     return -1;
 }
 
-float obtener_importe_venta(int id_venta)   ///obtiene el importe de una venta mediante id para poder calcular cuanto falta pagar.
-{
-venta obj;
-int cantidad_ventas = contar_ventas();
-for(int i=0;i<cantidad_ventas;i++){
-    obj.leer_venta(i);
-    if(obj.get_id_venta()==id_venta){return obj.get_importe();}
 
-    }
-        return -1;
-}
 
 
 
