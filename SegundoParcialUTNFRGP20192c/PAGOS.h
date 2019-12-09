@@ -162,4 +162,55 @@ for(int i=0;i<cantidad_ventas;i++){
     }
         return -1;
 }
+
+
+void listar_todos_pagos()
+{
+    pago obj;
+    system("cls");
+    int cant_regs;
+    cant_regs=contar_pagos();
+
+    for(int i=0; i<cant_regs; i++)
+    {
+        obj.leer_pago(i);
+        if(obj.get_estado() == true)
+        {
+
+            obj.mostrar_pago();
+            cout<<"================"<<endl;
+        }
+    }
+    cout<<"================"<<endl;
+    cout<<"FIN DEL LISTADO"<<endl;
+    system("pause");
+}
+
+
+void listar_pago_x_tipo()
+{
+    int tipo_pago;
+    int cantidad_registros;
+    pago obj;
+    cout<<"INGRESE EL TIPO DE PAGO QUE DESEA LISTAR"<<endl;
+    cin>>tipo_pago;
+    cantidad_registros=contar_pagos();
+    for(int i=0; i<cantidad_registros; i++)
+    {
+        obj.leer_pago(i);
+        if(obj.get_forma_pago()==tipo_pago && obj.get_estado() == true )
+        {
+            obj.mostrar_pago();
+            system("pause");
+            return;
+        }
+    }
+    cout<<"no se encontro ningun pago en esa forma "<<endl;
+    return;
+    system("pause");
+}
+
+
+
+
 #endif // PAGOS_H_INCLUDED

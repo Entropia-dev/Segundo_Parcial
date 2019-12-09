@@ -413,9 +413,16 @@ case 1:
 break;
 
 case 2:
+    system("cls");
+    listar_todos_pagos();
+    system("cls");
 break;
 
 case 3:
+
+    system("cls");
+    listar_pago_x_tipo();
+    system("cls");
 break;
 
 case 4:
