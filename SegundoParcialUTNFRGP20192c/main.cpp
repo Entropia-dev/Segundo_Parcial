@@ -75,3 +75,33 @@ int main()
     Menu_Principal();
     return 0;
 }
+
+/*int strLen(char *Cad)
+{
+    int T =0;
+    while(Cad[T]!='\0')
+    {
+        T++;
+    }
+    return T;
+}
+int strToIntAll(char *Cad)
+{
+    int x=(strLen(Cad)-1), NE=0, M=1;
+    while(x!=-1)
+    {
+        if(Cad[x]>=48 && Cad[x]<=57)
+        {
+            NE+=((Cad[x]-48)*M);
+            x--;
+            M*=10;
+        }
+        else
+        {
+            NE+=Cad[x]*M;
+            x--;
+            M*=10;
+        }
+    }
+    return NE;
+}*/
