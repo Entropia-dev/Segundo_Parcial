@@ -84,8 +84,8 @@ void menu_empleados()
         cout<<"MENU EMPLEADOS"<<endl;
         cout<<"======="<<endl;
         cout<<"1)NUEVO EMPLEADO"<<endl;
-        cout<<"2)LISTAR EMPLEADO POR DNI"<<endl;
-        cout<<"3)LISTAR TODOS LOS EMPLEADOS"<<endl;
+        cout<<"2)LISTAR TODOS LOS EMPLEADOS"<<endl;
+        cout<<"3)LISTAR EMPLEADO POR DNI"<<endl;
         cout<<"4)MODIFICAR EMPLEADO"<<endl;
         cout<<"5)ELIMINAR EMPLEADO"<<endl;
         cout<<"6)RESTAURAR EMPLEADO"<<endl;
@@ -104,13 +104,13 @@ void menu_empleados()
 
         case 2:
             system("cls");
-            listar_empleado_x_dni();
+            listar_todos_empleados();
             system("cls");
             break;
 
         case 3:
             system("cls");
-            listar_todos_empleados();
+            listar_empleado_x_dni();
             system("cls");
             break;
 
@@ -156,8 +156,8 @@ void menu_clientes()
         cout<<"MENU CLIENTES"<<endl;
         cout<<"============"<<endl;
         cout<<"1)CARGAR CLIENTE"<<endl;
-        cout<<"2)MODIFICAR EL CORREO DEL CLIENTE"<<endl;
-        cout<<"3)LISTAR TODOS LOS CLIENTES"<<endl;
+        cout<<"2)LISTAR TODOS LOS CLIENTES"<<endl;
+        cout<<"3)MODIFICAR EL CORREO DEL CLIENTE"<<endl;
         cout<<"4)ELIMINAR CLIENTE"<<endl;
         cout<<"5)RESTAURAR CLIENTE"<<endl;
         cout<<"==========="<<endl;
@@ -174,13 +174,13 @@ void menu_clientes()
 
         case 2:
             system("cls");
-            modificar_cliente();
+            listar_todos_clientes();
             system("cls");
             break;
 
         case 3:
             system("cls");
-            listar_todos_clientes();
+            modificar_cliente();
             system("cls");
             break;
 
@@ -310,9 +310,9 @@ void menu_productos()
         cout<<"MENU PRODUCTOS "<<endl;
         cout<<"========================"<<endl;
         cout<<"1)NUEVO PRODUCTO"<<endl;
-        cout<<"2)LISTAR PRODUCTO POR ID"<<endl;
-        cout<<"3)MODIFICAR PRECIO PRODUCTO"<<endl;
-        cout<<"4)LISTAR TODOS LOS PRODUCTOS"<<endl;
+        cout<<"2)LISTAR TODOS LOS PRODUCTOS"<<endl;
+        cout<<"3)LISTAR PRODUCTO POR ID"<<endl;
+        cout<<"4)MODIFICAR PRECIO PRODUCTO"<<endl;
         cout<<"5)ELIMINAR PRODUCTO"<<endl;
         cout<<"6)RESTAURAR PRODUCTO"<<endl;
         cout<<"7)AUMENTAR STOCK"<<endl;
@@ -332,19 +332,19 @@ void menu_productos()
 
         case 2:
             system("cls");
-            listar_producto_x_id();
+            listar_todos_productos();
             system("cls");
             break;
 
         case 3:
             system("cls");
-            modificar_precio_producto();
+            listar_producto_x_id();
             system("cls");
             break;
 
         case 4:
             system("cls");
-            listar_todos_productos();
+            modificar_precio_producto();
             system("cls");
             break;
 

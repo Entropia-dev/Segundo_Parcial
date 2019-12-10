@@ -24,7 +24,10 @@ int pago::cargar_pago(){
     cout<<"INGRESE LA ID CLIENTE QUE EFECTUA EL PAGO"<<endl;
     cin>>id_cliente;
     if(buscar_id_cliente(id_cliente)==false){cout<<"no se encontro la id de cliente , intentelo nuevamente"<<endl;}
-    if(buscar_estado_cliente(id_cliente)==false){cout<<"el cliente se encuenta dado de baja , intentelo nuevamente"<<endl; system("pause"); return -1;} /// hay que validar que exista  y no este dado de baja.
+    if(buscar_estado_cliente(id_cliente)==false)
+        {cout<<"el cliente se encuenta dado de baja , intentelo nuevamente"<<endl;
+    system("pause"); return -1;}
+    /// hay que validar que exista  y no este dado de baja.
     id_pago=contar_pagos()+1;
     cout<<"INGRESE ID DE VENTA A PAGAR: "<<endl;
     cin>>id_venta;
@@ -157,7 +160,7 @@ bool buscar_id_venta(int id_buscada)
     for(int i=0; i<cantidad_ventas; i++)
     {
         obj.leer_venta(i);
-        if(obj.get_id_venta()==id_buscada)
+        if(obj.get_estado()==true && obj.get_id_venta()==id_buscada)//valide que exista la venta a eliminar
         {
             return true;
         }

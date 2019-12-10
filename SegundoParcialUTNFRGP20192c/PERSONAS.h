@@ -5,14 +5,16 @@
 
 void persona::cargar_persona()
 {
-    cout<<"NOMBRE :"<<endl;
-    cin>>nombre;
-    cout<<"APELLIDO :"<<endl;
-    cin>>apellido;
+    cin.ignore();
+    cout<<"NOMBRE: "<<endl;
+    cin.getline(nombre,50);
+    cout<<"APELLIDO: "<<endl;
+    cin.getline(apellido,50);
     cout<<"INGRESE EL EMAIL :"<<endl;
     cin>>e_mail;
+    cin.ignore();
     cout<<"DIRECCION: "<<endl;
-    cin>>direccion;
+    cin.getline(direccion,50);
     cout<<"DNI :"<<endl;
     cin>>dni;
     return;
