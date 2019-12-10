@@ -108,7 +108,16 @@ void pago::leer_pago(int pos)
     return;
 }
 
+int pago::modificar_en_disco(int pos){
+  FILE *p;
+  p=fopen("pagos.dat", "rb+");
+  if(p==NULL) return -1;
+  fseek(p, sizeof *this*pos,0);
+  fwrite(this, sizeof *this, 1,p);
+  fclose(p);
+  return 0;
 
+}
 
 void alta_pago(){
 pago obj;
@@ -116,7 +125,6 @@ pago obj;
     if(obj.guardar_pago()){cout<<"PAGO GUARDADO CON EXITO"<<endl; system("pause"); return;}
 
 }
-
 
 float buscar_total_pagado(int id_venta) ///busca todos los pagos en referencia a una id de venta para saber cuanto falta pagar.
 {
@@ -164,7 +172,7 @@ venta obj;
 int cantidad_ventas = contar_ventas();
 for(int i=0;i<cantidad_ventas;i++){
     obj.leer_venta(i);
-    if(obj.get_id_venta() == id_venta){return obj.get_importe();}
+    if(obj.get_estado()==true && obj.get_id_venta() == id_venta){return obj.get_importe();}
 
     }
         return -1;
@@ -218,6 +226,78 @@ void listar_pago_x_tipo()
 }
 
 
+void listar_pago_x_cliente(){
+pago obj;
+int comparador;
+int cantidad_registros;
+cout<<" INGRESE ID DEL CLIENTE: "<<endl;
+cin>>comparador;
+   cantidad_registros=contar_pagos();
+    for(int i=0; i<cantidad_registros; i++)
+    {
+  obj.leer_pago(i);
+if(obj.get_id_cliente()==comparador){
+    obj.mostrar_pago();
+            system("pause");
+            return;
+
+}
+}
+
+    cout<<" NO SE ENCONTRO  ID. "<<endl;
+    return;
+    system("pause");
+}
+
+
+void listar_pago_x_id(){
+pago obj;
+int comparador;
+int cantidad_registros;
+cout<<" INGRESE ID DEL PAGO: "<<endl;
+cin>>comparador;
+   cantidad_registros=contar_pagos();
+    for(int i=0; i<cantidad_registros; i++)
+    {
+  obj.leer_pago(i);
+if(obj.get_id_pago()==comparador){
+    obj.mostrar_pago();
+            system("pause");
+            return;
+
+}
+}
+
+    cout<<" NO SE ENCONTRO  ID. "<<endl;
+    return;
+    system("pause");
+}
+
+
+void cancelar_pago(){
+pago obj;
+int comparador;
+int cantidad_registros;
+cout<<" INGRESE ID DEL PAGO A CANCELAR: "<<endl;
+cin>>comparador;
+   cantidad_registros=contar_pagos();
+    for(int i=0; i<cantidad_registros; i++)
+    {
+  obj.leer_pago(i);
+if(obj.get_id_pago()==comparador){
+    obj.set_estado(false);
+    obj.modificar_en_disco(i);
+    cout<<" PAGO CANCELADO CON EXITO. "<<endl;
+            system("pause");
+            return;
+
+}
+}
+
+    cout<<" NO SE ENCONTRO  ID. "<<endl;
+    return;
+    system("pause");
+}
 
 
 #endif // PAGOS_H_INCLUDED

@@ -309,9 +309,11 @@ public:
         fecha_pago =f;
     }
 
-    void set_id_cliente(int nueva_id){
-    id_cliente=nueva_id;
+    void set_id_cliente(int nueva_id)
+    {
+        id_cliente=nueva_id;
     }
+
 
     ///==================GETS=====================================
     Fecha getFecha()
@@ -338,13 +340,19 @@ public:
     {
         return estado;
     }
+    int get_id_cliente()
+    {
+        return id_cliente;
+    }
+
     ///====================CARGAR/MOSTRAR/GUARDAR==================
     int cargar_pago();
     void mostrar_pago();
     bool guardar_pago();
     void leer_pago(int);
+    int modificar_en_disco(int);
     ///=====================OTROS==================================
-    void generar_pago_total(int , int , int );
+    void generar_pago_total(int, int, int );
 };
 
 #endif // CLASES_H_INCLUDED

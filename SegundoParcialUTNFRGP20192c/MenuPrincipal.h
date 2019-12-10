@@ -10,6 +10,7 @@ void menu_pagos();
 
 void Menu_Principal()
 {
+
     int opc;
     system("cls");
     while(true)
@@ -44,7 +45,6 @@ void Menu_Principal()
             menu_pagos();
             system("cls");
             break;
-
         case 5:
             system("cls");
             menu_productos();
@@ -426,12 +426,21 @@ case 3:
 break;
 
 case 4:
+    system("cls");
+    listar_pago_x_cliente();
+    system("cls");
 break;
 
 case 5:
+    system("cls");
+    listar_pago_x_id();
+    system("cls");
 break;
 
 case 6:
+    system("cls");
+    cancelar_pago();
+    system("cls");
 break;
 
 case 0:

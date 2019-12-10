@@ -121,7 +121,7 @@ bool detalle_venta::cargar_detalle_venta()
 
 void detalle_venta::mostrar_detalle_venta()
 {
-    cout<<"ID DE VENTA: "<<id_venta<<endl;
+    //cout<<"ID DE VENTA: "<<id_venta<<endl;
     cout<<"ID DEL PRODUCTO: "<<id_producto<<endl;
     cout<<"PRECIO POR METRO: "<<precio_x_metro<<endl;
     cout<<"METROS VENDIDOS: "<<metros_vendidos<<endl;
