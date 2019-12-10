@@ -1,6 +1,7 @@
 #ifndef PAGOS_H_INCLUDED
 #define PAGOS_H_INCLUDED
 
+#include "ventas.h"
 
 int contar_pagos();
 float buscar_total_pagado(int);
@@ -8,6 +9,9 @@ bool buscar_id_venta(int id_buscada);
 int obtener_forma_pago(int id_venta);
 float obtener_importe_venta(int id_venta);
 int contar_ventas();
+
+
+
 
 
 int pago::cargar_pago(){
@@ -37,6 +41,7 @@ int pago::cargar_pago(){
 
     cout<<"TOTAL ABONADO: "<<endl;
     cin>>importe;
+    if(importe == 0 ){cout<<"EL IMPORTE NO PUEDE SER NULO , INTENTELO NUEVAMENTE"<<endl; system("pause"); return -1;}
     if(importe < 0){cout<<"EL TOTAL ABONADO NO PUEDE SER UN NUMERO NEGATIVO , INTENTELO NUEVAMENTE"<<endl;
                         system("pause"); return -1;}
     if(resto < importe){cout<<"vuelto: "<<importe - resto <<"$"<<endl;}
@@ -125,14 +130,16 @@ for(int i=0;i<cantidad_pagos;i++){
     return total_abonado;
 }
 
-void pago::generar_pago_total(int nueva_id , int id_cliente , int id_venta , int forma_pago ){
+void pago::generar_pago_total(int nueva_id , int id_cliente , int forma_pago ){
 pago obj;
+venta venta_realizada;
 obj.set_id_venta(nueva_id);
 obj.set_id_cliente(id_cliente);
 obj.set_forma_pago(forma_pago);
-obj.set_importe(obtener_importe_venta(id_venta));
+obj.set_importe(obtener_importe(nueva_id-1));
 obj.set_estado(true);
 obj.set_id_pago(contar_pagos()+1);
+obj.guardar_pago();
 }
 
 bool buscar_id_venta(int id_buscada)
@@ -157,7 +164,7 @@ venta obj;
 int cantidad_ventas = contar_ventas();
 for(int i=0;i<cantidad_ventas;i++){
     obj.leer_venta(i);
-    if(obj.get_id_venta()==id_venta){return obj.get_importe();}
+    if(obj.get_id_venta() == id_venta){return obj.get_importe();}
 
     }
         return -1;

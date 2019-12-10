@@ -344,7 +344,7 @@ public:
     bool guardar_pago();
     void leer_pago(int);
     ///=====================OTROS==================================
-    void generar_pago_total(int , int , int , int );
+    void generar_pago_total(int , int , int );
 };
 
 #endif // CLASES_H_INCLUDED

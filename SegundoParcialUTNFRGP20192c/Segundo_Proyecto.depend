@@ -70,7 +70,7 @@
 
 1574328853 c:\users\miran\desktop\reboot_proyecto\menuprincipal.h
 
-1575836871 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
+1575944887 source:c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
@@ -87,24 +87,25 @@
 	"MenuPrincipal.h"
 	<locale.h>
 
-1575836857 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\fecha.h
+1575944604 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\fecha.h
 
-1575834271 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\productos.h
+1575944604 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\productos.h
 
-1575834271 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\personas.h
+1575944604 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\personas.h
 
-1575834271 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\empleados.h
+1575944604 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\empleados.h
 
-1575834271 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clientes.h
+1575944604 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clientes.h
 
-1575834452 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\pagos.h
+1575945385 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\pagos.h
+	"ventas.h"
 
-1575834527 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\ventas.h
+1575945417 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\ventas.h
 	"pagos.h"
 
-1575833311 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menuprincipal.h
+1575944604 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\menuprincipal.h
 
-1575836857 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clases.h
+1575944810 c:\users\kai anderson\desktop\segundoparcial_2c\segundoparcialutnfrgp20192c\clases.h
 
 1575914672 source:c:\users\windows 10 pro\documents\utn\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>

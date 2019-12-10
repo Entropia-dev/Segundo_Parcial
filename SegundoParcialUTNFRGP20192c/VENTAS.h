@@ -332,7 +332,7 @@ void alta_venta()
 
     venta_final.set_importe(obtener_importe(contar_ventas()+1));
     venta_final.set_estado(true);
-    if(fp!=4){pago_total.generar_pago_total(venta_final.get_id_venta(),venta_final.get_id_cliente(), venta_final.get_id_venta(),venta_final.get_forma_pago());}
+
     venta_final.guardar_venta();
     cout<<endl;
     cout<<"===================================RESUMEN DE VENTA================================"<<endl;
@@ -341,6 +341,7 @@ void alta_venta()
         /// en caso de ser un pago realizado por cualquier medio que no sea cuenta corriente se tendria que generar
         /// un registro en el archivo de pagos con la informacion obtenida de  la venta
     cout<<"==================================================================================="<<endl;
+     if(fp!=4){pago_total.generar_pago_total(venta_final.get_id_venta(),venta_final.get_id_cliente(),venta_final.get_forma_pago());}
     cout<<"CARGA DE LA VENTA FINALIZADA CON EXITO"<<endl;
     system("pause");
 }
