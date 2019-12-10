@@ -117,7 +117,7 @@ public:
     {
         return apellido;
     }
-    char *get_dni()
+   const char *get_dni()
     {
         return dni;
     }

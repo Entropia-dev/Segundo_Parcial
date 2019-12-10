@@ -193,18 +193,20 @@ int buscar_pos_dni(char *dni)
 
 void modificar_empleado()
 {
-    int id;
+    int dni;
     empleado obj;
     system("cls");
-    cout<<"INGRESE LA ID DEL EMPLEADO A MODIFICAR"<<endl;
-    cin>>id;
+    cout<<"INGRESE DNI DEL EMPLEADO A MODIFICAR"<<endl;
+    cin>>dni;
     cout<<"EL EMPLEADO A MODIFICAR ES"<<endl;
-    obj.leer_empleado(id-1);
+    obj.leer_empleado(dni);
     obj.Mostrar_empleado();
     cout<<endl;
     obj.Cargar_empleado();
-    obj.set_codigo_empleado(id);
-    obj.sobreescribir_empleado(id-1);
+    obj.set_codigo_empleado(dni);
+    obj.sobreescribir_empleado(dni);
+    cout<<" MODIFICACION EXITOSA! "<<endl;
+    system("pause");
     return;
 }
 
@@ -270,7 +272,7 @@ void restaurar_empleado()
         system("pause");    return;}
     if(contar_baja_empleados()==0){cout<<"NO SE ENCONTRARON EMPLEADOS DADOS DE BAJA"<<endl;
         system("pause");    return;}
-    cout<<"ESTOS SON LOS EMPLEADOS DADOS DE BAJA: "<<endl;
+    cout<<"EMPLEADOS DADOS DE BAJA: "<<endl;
     for(int i=0; i<cant; i++)
     {
         obj.leer_empleado(i);
