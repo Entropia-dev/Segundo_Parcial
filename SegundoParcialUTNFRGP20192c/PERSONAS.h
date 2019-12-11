@@ -7,20 +7,21 @@ void persona::cargar_persona()
 {
     cin.ignore();
     cout<<"NOMBRE: "<<endl;
+    cin.ignore();
     cin.getline(nombre,50);
     cout<<"APELLIDO: "<<endl;
     cin.getline(apellido,50);
-    cin.ignore();
+    //cin.ignore();
     cout<<"INGRESE EL EMAIL :"<<endl;
     cin.getline(e_mail,50);
-    cin.ignore();
+    //cin.ignore();
     cout<<"DIRECCION: "<<endl;
     cin.getline(direccion,50);
     cout<<"DNI :"<<endl;
     cin>>dni;
     if(strcmp(dni,get_dni())==0){
        cout<<" DNI EXISTENTE, INTENTE NUEVAMENTE "<<endl;
-       exit(1);}
+       return;}
     return;
 }
 
