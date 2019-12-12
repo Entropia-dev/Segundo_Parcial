@@ -2,7 +2,7 @@
 #define MENUPRINCIPAL_H_INCLUDED
 
 void restaurar_productos();
-void restaurar_pagos();
+void restaurar_pagos_conf();
 void menu_empleados();
 void Menu_Principal();
 void menu_clientes();
@@ -529,13 +529,13 @@ void menu_configuracion()
 
         case 4:
             system("cls");
-            restaurar_pagos();
+            //restaurar_pagos_conf();
             system("cls");
             break;
 
         case 5:
             system("cls");
-            restaurar_productos();
+            //restaurar_productos();
             system("cls");
             break;
 

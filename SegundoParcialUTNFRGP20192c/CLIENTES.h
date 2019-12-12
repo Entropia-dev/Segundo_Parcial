@@ -8,14 +8,20 @@ bool buscar_estado_cliente(int);
 
 void cliente::cargar_cliente()
 {
+    cin.ignore();
+    cout<<endl;
     cout<<"INGRESE EL NOMBRE DEL CLIENTE"<<endl;
-    cin>>nombre;
+    cin.getline(nombre,50);
+    //cin.ignore();
     cout<<"INGRESE EL APELLIDO DEL CLIENTE"<<endl;
-    cin>>apellido;
+    cin.getline(apellido,50);
+    //cin.ignore();
     cout<<"INGRESE EL EMAIL DEL CLIENTE"<<endl;
-    cin>>e_mail;
+    cin.getline(e_mail,50);
+    //cin.ignore();
     cout<<"INGRESE LA DIRECCION DEL CLIENTE"<<endl;
-    cin>>direccion;
+    cin.getline(direccion,50);
+    //cin.ignore();
     strcpy(dni,"-----");
     codigo_cliente=contar_clientes()+1;
     estado=true;

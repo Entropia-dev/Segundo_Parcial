@@ -137,7 +137,7 @@ void restaurar_clientes ()
 }
 
 
-void restaurar_pagos()
+void restaurar_pagos_conf()
 {
     pago reg;
 
@@ -166,7 +166,7 @@ void restaurar_pagos()
     }
 
     gotoxi ( 21 , 7 );
-    cout << " Se Restauro El Archivo clientes.dat Con Exito! " << endl;
+    cout << " Se Restauro El Archivo Pagos.dat Con Exito! " << endl;
     fclose (p);
     fclose (pback);
     return ;
