@@ -134,7 +134,7 @@ void empleado::Mostrar_empleado()
 {
     cout.precision(2);
     persona::mostrar_persona();
-    cin.ignore();
+   // cin.ignore();
     cout<<fixed <<"SUELDO :"<<sueldo<<endl;
       cout<<"ID DE EMPLEADO :"<<codigo_empleado<<endl;
 }

@@ -401,7 +401,8 @@ void menu_productos()
 
 }
 
-
+///SE SUGIRIO REALIZAR UN LISTADO O ALGUN METODO POR EL CUAL SE PUEDAN OBTENER LOS CLIENTES QUE RESTE PAGAR Y EL MONTO
+/// Y TAMBIEN LISTAR LA INFORMACION DE LA VENTA
 
 void menu_pagos()
 {
@@ -419,6 +420,7 @@ void menu_pagos()
         cout<<"4)LISTAR PAGO POR CLIENTE"<<endl;
         cout<<"5)LISTAR PAGO POR ID"<<endl;
         cout<<"6)CANCELAR PAGO"<<endl;
+        cout<<"7)LISTAR DEUDORES"<<endl;
         cout<<"==================="<<endl;
         cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
         cout<<"INGRESE UNA OPCION"<<endl;
