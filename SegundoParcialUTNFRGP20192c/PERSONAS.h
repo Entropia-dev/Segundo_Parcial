@@ -19,9 +19,6 @@ void persona::cargar_persona()
     cin.getline(direccion,50);
     cout<<"DNI :"<<endl;
     cin>>dni;
-    if(strcmp(dni,get_dni())==0){
-       cout<<" DNI EXISTENTE, INTENTE NUEVAMENTE "<<endl;
-       return;}
     return;
 }
 

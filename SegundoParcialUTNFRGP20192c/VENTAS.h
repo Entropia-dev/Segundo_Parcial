@@ -107,12 +107,17 @@ bool detalle_venta::cargar_detalle_venta()
     cin>>id_producto;
     if(buscar_id_producto(id_producto)==false)
     {
-        cout<<"NO SE ENCONTRO EL PRODUCTO BUSCADO , INTENTELO NUEVAMENTE"<<endl; return false;
+        cout<<"NO SE ENCONTRO EL PRODUCTO BUSCADO , INTENTELO NUEVAMENTE"<<endl;
+        return false;
     }
     cout<<"INGRESE LOS METROS VENDIDOS"<<endl;
     cin>>metros_vendidos;
-    if(metros_vendidos < 0){cout<<"NO SE PUEDE VENDER UNA CANTIDAD DE METROS NEGATIVA , INTENTE NUEVAMENTE"<<endl;
-                                    system("pause"); return false;}
+    if(metros_vendidos < 0)
+    {
+        cout<<"NO SE PUEDE VENDER UNA CANTIDAD DE METROS NEGATIVA , INTENTE NUEVAMENTE"<<endl;
+        system("pause");
+        return false;
+    }
     precio_x_metro=buscar_precio_producto(id_producto);
     id_venta=contar_ventas()+1;
     estado=true;
@@ -303,14 +308,23 @@ void alta_venta()
         return;
     }
 
-    if(buscar_estado_cliente(nueva_id)==false){cout<<"EL CLIENTE SE ENCUENTRA DADO DE BAJA , INTENTELO NUEVAMENTE"<<endl;
-          system("pause");  return;}
+    if(buscar_estado_cliente(nueva_id)==false)
+    {
+        cout<<"EL CLIENTE SE ENCUENTRA DADO DE BAJA , INTENTELO NUEVAMENTE"<<endl;
+        system("pause");
+        return;
+    }
 
-    cout<<"INGRESE LA FORMA DE PAGO (UN NUMERO ENTERO ENTRE 1 Y 6): ";
+    cout<<"INGRESE LA FORMA DE PAGO  ";
+    cout<<" 1.EFECTIVO / 2.DEBITO / 3.CREDITO / 4.CUENTA / 5.MERCADO PAGO / 6.CHEQUES "<<endl;
     int fp;
     cin>>fp;
-    if(fp<1 || fp > 6){cout<<"FORMA DE PAGO NO VALIDA , INTENTE NUEVAMENTE "<<endl;
-                            system("pause"); return;}
+    if(fp<1 || fp > 6)
+    {
+        cout<<"FORMA DE PAGO NO VALIDA , INTENTE NUEVAMENTE "<<endl;
+        system("pause");
+        return;
+    }
 
     venta_final.set_forma_pago(fp);
     venta_final.set_importe(0);
@@ -319,16 +333,24 @@ void alta_venta()
     char continuar='s';
     while(continuar=='s')
     {
-         if(detalles.cargar_detalle_venta()==false){cout<<"NO SE PUDO DAR DE ALTA LA VENTA INTENTE NUEVAMENTE"<<endl;
-                                                            system("pause");}
-      obj.leer_producto(detalles.get_id_producto()-1);
-        if(detalles.get_metros_vendidos()  > obj.get_stock()){cout<<"NO DISPONEMOS DEL STOCK NECESARIO PARA REALIZAR LA VENTA"<<endl;   system("pause");    return;}
+        if(detalles.cargar_detalle_venta()==false)
+        {
+            cout<<"NO SE PUDO DAR DE ALTA LA VENTA INTENTE NUEVAMENTE"<<endl;
+            system("pause");
+        }
+        obj.leer_producto(detalles.get_id_producto()-1);
+        if(detalles.get_metros_vendidos()  > obj.get_stock())
+        {
+            cout<<"NO DISPONEMOS DEL STOCK NECESARIO PARA REALIZAR LA VENTA"<<endl;
+            system("pause");
+            return;
+        }
         detalles.guardar_detalle_venta();
         cout<<"DESEA INGRESAR OTRO PRODUCTO (s: SI; n: NO) :";
         cin>>continuar;
-            obj.decrementar_stock(detalles.get_id_producto(),detalles.get_metros_vendidos());
-                ///mostrar costo de venta e informacion parcial ?
-          }
+        obj.decrementar_stock(detalles.get_id_producto(),detalles.get_metros_vendidos());
+        ///mostrar costo de venta e informacion parcial ?
+    }
 
     venta_final.set_importe(obtener_importe(contar_ventas()+1));
     venta_final.set_estado(true);
@@ -336,12 +358,15 @@ void alta_venta()
     venta_final.guardar_venta();
     cout<<endl;
     cout<<"===================================RESUMEN DE VENTA================================"<<endl;
-        venta_final.mostrar_venta();
-        /// por aca se tendria que mostrar la venta con el importe final a pagar y demas informacion
-        /// en caso de ser un pago realizado por cualquier medio que no sea cuenta corriente se tendria que generar
-        /// un registro en el archivo de pagos con la informacion obtenida de  la venta
+    venta_final.mostrar_venta();
+    /// por aca se tendria que mostrar la venta con el importe final a pagar y demas informacion
+    /// en caso de ser un pago realizado por cualquier medio que no sea cuenta corriente se tendria que generar
+    /// un registro en el archivo de pagos con la informacion obtenida de  la venta
     cout<<"==================================================================================="<<endl;
-     if(fp!=4){pago_total.generar_pago_total(venta_final.get_id_venta(),venta_final.get_id_cliente(),venta_final.get_forma_pago());}
+    if(fp!=4)
+    {
+        pago_total.generar_pago_total(venta_final.get_id_venta(),venta_final.get_id_cliente(),venta_final.get_forma_pago());
+    }
     cout<<"CARGA DE LA VENTA FINALIZADA CON EXITO"<<endl;
     system("pause");
 }
@@ -357,8 +382,12 @@ void listar_ventas()
     detalle_venta detalle;
 
     cantidad_ventas=contar_ventas();
-    if(cantidad_ventas == 0){cout<<"NO SE ENCONTRARON VENTAS REGISTRADAS "<<endl;
-        system("pause"); return;}
+    if(cantidad_ventas == 0)
+    {
+        cout<<"NO SE ENCONTRARON VENTAS REGISTRADAS "<<endl;
+        system("pause");
+        return;
+    }
     cantidad_detalles=contar_detalles_venta();
     for(int i=0; i<cantidad_ventas; i++)
     {
@@ -372,7 +401,7 @@ void listar_ventas()
                 cout<<"RESUMEN DE LA VENTA"<<endl;
                 venta_final.mostrar_venta();
 
-                cout<<"================"<<endl;
+                cout<<"                   "<<endl;
                 cout<<"PRODUCTOS VENDIDOS"<<endl;
                 cout<<endl;
 
@@ -383,7 +412,7 @@ void listar_ventas()
                     {
 
                         detalle.mostrar_detalle_venta();
-                        cout<<"============"<<endl;
+                        cout<<"========================="<<endl;
                     }   ///CIERRE DEL FOR DEL DETALLE DE VENTAS
                 }   ///CIERRE DEL IF DE DETALLE DE VENTAS
 
@@ -535,31 +564,42 @@ void eliminar_venta()
 
 void restaurar_venta()
 {
-    /*
+
     venta obj;
     detalle_venta detalle;
     int cantidad_ventas=contar_ventas();
     int cantidad_detalles=contar_detalles_venta();
     int id_venta;
+    cout<<"      VENTAS DADAS DE BAJA  "<<endl;
+    cout<<"                            "<<endl;
+    for(int i=0; i<cantidad_detalles; i++)
+    {
+        obj.leer_venta(i);
+        if(obj.get_estado()==false)
+        {
+
+            obj.mostrar_venta();
+            cout<<"======================"<<endl;
+        }
+
+    }
+    cout<< " FIN DEL LISTADO "<<endl;
+
     cout<<"INGRESE LA ID DE LA VENTA QUE DESEA RESTAURAR"<<endl;
     cin>>id_venta;                           ///chequear que la id de venta exista
-    for(int i=0;i<cantidad_ventas;i++){
+    for(int i=0; i<cantidad_ventas; i++)
+    {
         obj.leer_venta(i);
-        if(obj.get_id_venta() == id_venta){
+        if(obj.get_id_venta() == id_venta)
+        {
             obj.set_estado(true);
             obj.sobreescribir_venta(id_venta-1);
-            }
         }
-        for(int t=0;t<cantidad_detalles;t++){
-            detalle.leer_detalle(t);
-            if(detalle.get_id_venta()==id_venta){
-                detalle.set_estado(true);
-                detalle.sobreescribir_detalle(detalle.get_id_detalle()-1);
-                                }
-                            }
-                            cout<<"VENTA RESTAURADA CON EXITO"<<endl;
-    */
+    }
+cout<<"VENTA RESTAURADA CON EXITO"<<endl;
 }
+
+
 
 
 
@@ -579,12 +619,17 @@ void venta::sobreescribir_venta(int pos)
 
 
 
-int obtener_forma_pago(int id_venta){
-venta obj;
-int cantidad_ventas = contar_ventas();
-for(int i=0;i<cantidad_ventas;i++){
-    obj.leer_venta(i);
-    if(obj.get_id_venta()==id_venta){return obj.get_forma_pago();}
+int obtener_forma_pago(int id_venta)
+{
+    venta obj;
+    int cantidad_ventas = contar_ventas();
+    for(int i=0; i<cantidad_ventas; i++)
+    {
+        obj.leer_venta(i);
+        if(obj.get_id_venta()==id_venta)
+        {
+            return obj.get_forma_pago();
+        }
     }
     return -1;
 }

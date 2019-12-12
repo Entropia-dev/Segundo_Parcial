@@ -54,15 +54,20 @@ int contar_empleados()
     return cant_registros;
 }
 
-int contar_baja_empleados(){
-empleado obj;
-int cant_empleados=contar_empleados();
-int empleados_eliminados=0;
-for(int i=0;i<cant_empleados;i++){
-obj.leer_empleado(i);
-if(obj.get_estado()==false){empleados_eliminados++;}
-}
-return empleados_eliminados;
+int contar_baja_empleados()
+{
+    empleado obj;
+    int cant_empleados=contar_empleados();
+    int empleados_eliminados=0;
+    for(int i=0; i<cant_empleados; i++)
+    {
+        obj.leer_empleado(i);
+        if(obj.get_estado()==false)
+        {
+            empleados_eliminados++;
+        }
+    }
+    return empleados_eliminados;
 }
 
 
@@ -131,6 +136,12 @@ void alta_empleado()
     empleado obj;
     bool resultado;
     obj.Cargar_empleado();
+    /*if(buscar_dni_empleado(obj.get_dni())==true)
+    {
+        cout<<"EL DNI NO PUEDE ESTAR DUPLICADO"<<endl;
+        system("pause");
+        return;
+    }*/
     resultado=obj.guardar_empleado();
     if(resultado==true)
     {
@@ -216,9 +227,13 @@ void eliminar_empleado()
     char auxiliar[9];
     int cantidad_registros;
     empleado obj;
-        cantidad_registros=contar_empleados();
-        if(cantidad_registros==0){cout<<"NO SE ENCONTRARON EMPLEADOS CARGADOS"<<endl;
-                                    system("pause"); return;}
+    cantidad_registros=contar_empleados();
+    if(cantidad_registros==0)
+    {
+        cout<<"NO SE ENCONTRARON EMPLEADOS CARGADOS"<<endl;
+        system("pause");
+        return;
+    }
     cout<<"INGRESE EL DNI DEL EMPLEADO QUE DESEA ELIMINAR"<<endl;
     cin>>auxiliar;
 
@@ -269,10 +284,18 @@ void restaurar_empleado()
     int cant=contar_empleados();
     empleado obj;
     system("cls");
-        if(cant==0){cout<<"NO SE ENCONTRARON EMPLEADOS CARGADOS"<<endl;
-        system("pause");    return;}
-    if(contar_baja_empleados()==0){cout<<"NO SE ENCONTRARON EMPLEADOS DADOS DE BAJA"<<endl;
-        system("pause");    return;}
+    if(cant==0)
+    {
+        cout<<"NO SE ENCONTRARON EMPLEADOS CARGADOS"<<endl;
+        system("pause");
+        return;
+    }
+    if(contar_baja_empleados()==0)
+    {
+        cout<<"NO SE ENCONTRARON EMPLEADOS DADOS DE BAJA"<<endl;
+        system("pause");
+        return;
+    }
     cout<<"EMPLEADOS DADOS DE BAJA: "<<endl;
     for(int i=0; i<cant; i++)
     {
