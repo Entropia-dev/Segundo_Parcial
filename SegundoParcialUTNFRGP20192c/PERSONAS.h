@@ -5,7 +5,7 @@
 
 void persona::cargar_persona()
 {
-    cin.ignore();
+
     cout<<"NOMBRE: "<<endl;
     cin.ignore();
     cin.getline(nombre,50);

@@ -336,8 +336,7 @@ void menu_productos()
         cout<<"3)LISTAR PRODUCTO POR ID"<<endl;
         cout<<"4)MODIFICAR PRECIO PRODUCTO"<<endl;
         cout<<"5)ELIMINAR PRODUCTO"<<endl;
-        cout<<"6)RESTAURAR PRODUCTO"<<endl;
-        cout<<"7)AUMENTAR STOCK"<<endl;
+        cout<<"6)AUMENTAR STOCK"<<endl;
         cout<<"========================"<<endl;
         cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
         cin>>opc;
@@ -378,14 +377,8 @@ void menu_productos()
 
         case 6:
             system("cls");
-            cout<<"OPCION EN DESARROLLO"<<endl;
+              aumentar_stock();
             system("pause");
-            system("cls");
-            break;
-
-        case 7:
-            system("cls");
-            aumentar_stock();
             system("cls");
             break;
 

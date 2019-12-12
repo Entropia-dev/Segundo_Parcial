@@ -147,7 +147,7 @@ venta venta_realizada;
 obj.set_id_venta(nueva_id);
 obj.set_id_cliente(id_cliente);
 obj.set_forma_pago(forma_pago);
-obj.set_importe(obtener_importe(nueva_id-1));
+obj.set_importe(obtener_importe(nueva_id));
 obj.set_estado(true);
 obj.set_id_pago(contar_pagos()+1);
 obj.guardar_pago();

@@ -132,9 +132,11 @@ void empleado::Cargar_empleado()
 
 void empleado::Mostrar_empleado()
 {
+    cout.precision(2);
     persona::mostrar_persona();
-    cout<<"SUELDO :"<<sueldo<<endl;
-    cout<<"ID DE EMPLEADO :"<<codigo_empleado<<endl;
+    cin.ignore();
+    cout<<fixed <<"SUELDO :"<<sueldo<<endl;
+      cout<<"ID DE EMPLEADO :"<<codigo_empleado<<endl;
 }
 
 ///guardar empleados ->
@@ -176,6 +178,7 @@ void alta_empleado()
         cout<<"EMPLEADO CARGADO CON EXITO"<<endl;
     }
     system("pause");
+    return;
 }
 
 void empleado::leer_empleado(int pos)

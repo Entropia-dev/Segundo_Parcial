@@ -259,10 +259,10 @@ void venta::leer_venta(int pos)
 
 void venta::mostrar_venta()
 {
-
+    cout.precision(2);
     cout<<"ID DE VENTA: "<<id_venta<<endl;
     cout<<"ID DE CLIENTE: "<<id_cliente<<endl;
-    cout<<"IMPORTE DE LA VENTA: "<<importe<<endl;
+     cout << fixed <<"IMPORTE DE LA VENTA: "<<importe<<endl;
     cout<<"FECHA DE VENTA: "<<endl;
     fecha_venta.MostrarFecha();
 }
