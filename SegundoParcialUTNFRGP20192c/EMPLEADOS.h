@@ -5,7 +5,32 @@ int contar_empleados();
 int contar_baja_empleados();
 
 
+int buscar_pos_dni(char *dni)
+{
+    empleado obj;
+    int cant_registros;
+    FILE *p;
+    p=fopen("empleados.dat","rb");
+    if(p==NULL)
+    {
+        cout<<"error de archivo en buscar_pos_dni"<<endl;
+        exit(1);
+    }
 
+    cant_registros=contar_empleados();
+
+    for(int i=0; i<cant_registros; i++)
+    {
+        obj.leer_empleado(i);
+        if(strcmp(dni, obj.get_dni())==0)
+        {
+            fclose(p);
+            return i;
+        }
+    }
+    fclose(p);
+    return -1;
+}
 
 bool buscar_dni_empleado(char *dni)
 {
@@ -130,18 +155,21 @@ bool empleado::guardar_empleado()
 
 void alta_empleado()
 {
+    char aux[9];
     system("cls");
     cout<<"MENU CARGA DE EMPLEADOS "<<endl;
     cout<<endl;
     empleado obj;
     bool resultado;
     obj.Cargar_empleado();
-    /*if(buscar_dni_empleado(obj.get_dni())==true)
+    strcpy(aux, obj.get_dni());
+    if(buscar_pos_dni(aux)!=-1)
     {
         cout<<"EL DNI NO PUEDE ESTAR DUPLICADO"<<endl;
         system("pause");
         return;
-    }*/
+    }
+
     resultado=obj.guardar_empleado();
     if(resultado==true)
     {
@@ -176,32 +204,7 @@ void empleado::sobreescribir_empleado(int pos)
     return;
 }
 
-int buscar_pos_dni(char *dni)
-{
-    empleado obj;
-    int cant_registros;
-    FILE *p;
-    p=fopen("empleados.dat","rb");
-    if(p==NULL)
-    {
-        cout<<"error de archivo en buscar_pos_dni"<<endl;
-        exit(1);
-    }
 
-    cant_registros=contar_empleados();
-
-    for(int i=0; i<cant_registros; i++)
-    {
-        obj.leer_empleado(i);
-        if(strcmp(dni, obj.get_dni())==0)
-        {
-            fclose(p);
-            return i;
-        }
-    }
-    fclose(p);
-    return -1;
-}
 
 void modificar_empleado()
 {

@@ -566,7 +566,6 @@ void restaurar_venta()
 {
 
     venta obj;
-    detalle_venta detalle;
     int cantidad_ventas=contar_ventas();
     int cantidad_detalles=contar_detalles_venta();
     int id_venta;

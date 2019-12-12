@@ -224,3 +224,43 @@
 
 1576116481 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\back_up.h
 
+1576119921 source:c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
+	<iostream>
+	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"fecha.h"
+	"Clases.h"
+	"productos.h"
+	"personas.h"
+	"empleados.h"
+	"clientes.h"
+	"pagos.h"
+	"ventas.h"
+	"back_up.h"
+	"MenuPrincipal.h"
+	<locale.h>
+
+1573325240 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\fecha.h
+
+1576119921 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\clases.h
+
+1576119921 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\productos.h
+
+1576119921 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\personas.h
+
+1576120716 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\empleados.h
+
+1576119921 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\clientes.h
+
+1576119921 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\pagos.h
+	"ventas.h"
+
+1576120097 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\ventas.h
+	"pagos.h"
+
+1576119921 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\back_up.h
+
+1576119921 c:\users\miran\desktop\clone\segundo_parcial\segundo_parcial\segundoparcialutnfrgp20192c\menuprincipal.h
+
