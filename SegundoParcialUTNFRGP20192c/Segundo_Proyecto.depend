@@ -181,3 +181,43 @@
 
 1576110203 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\menuprincipal.h
 
+1576111795 source:c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\main.cpp
+	<iostream>
+	<cstring>
+	<stdio.h>
+	<time.h>
+	<cstdlib>
+	"fecha.h"
+	"Clases.h"
+	"productos.h"
+	"personas.h"
+	"empleados.h"
+	"clientes.h"
+	"pagos.h"
+	"ventas.h"
+	"back_up.h"
+	"MenuPrincipal.h"
+	<locale.h>
+
+1576111401 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\fecha.h
+
+1576111401 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\clases.h
+
+1576111401 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\productos.h
+
+1576111401 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\personas.h
+
+1576111401 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\empleados.h
+
+1576111401 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\clientes.h
+
+1576111401 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\pagos.h
+	"ventas.h"
+
+1576111401 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\ventas.h
+	"pagos.h"
+
+1576115897 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\menuprincipal.h
+
+1576115879 c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\back_up.h
+

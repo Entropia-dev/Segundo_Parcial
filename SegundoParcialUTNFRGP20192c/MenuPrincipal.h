@@ -496,11 +496,8 @@ void menu_configuracion()
         system("cls");
         cout<<"MENU CONFIGURACION   "<<endl;
         cout<<"==================   "<<endl;
-        cout<<"1)RESTAURAR EMPLEADOS"<<endl;
-        cout<<"2)RESTAURAR VENTAS   "<<endl;
-        cout<<"3)RESTAURAR CLIENTES "<<endl;
-        cout<<"4)RESTAURAR PAGOS    "<<endl;
-        cout<<"5)RESTAURAR PRODUCTOS"<<endl;
+        cout<<"1)GENERAR BACKUP     "<<endl;
+        cout<<"2)RESTAURAR ARCHIVOS "<<endl;
         cout<<"                     "<<endl;
         cout<<"====================="<<endl;
         cout<<"0) VOLVER AL MENU ANTERIOR"<<endl;
@@ -510,32 +507,26 @@ void menu_configuracion()
 
         case 1:
             system("cls");
-            restaurar_empleado();
+            generar_backup_empleados();
+            generar_backup_productos();
+            generar_backup_pagos();
+            generar_backup_ventas();
+            generar_backup_clientes();
+            generar_backup_detalles();
+            system("pause");
             system("cls");
             break;
 
 
         case 2:
             system("cls");
-            restaurar_venta();
-            system("cls");
-            break;
-
-        case 3:
-            system("cls");
-            restaurar_cliente();
-            system("cls");
-            break;
-
-        case 4:
-            system("cls");
-            //restaurar_pagos_conf();
-            system("cls");
-            break;
-
-        case 5:
-            system("cls");
-            //restaurar_productos();
+            restaurar_backup_empleados();
+            restaurar_backup_productos();
+            restaurar_backup_pagos();
+            restaurar_backup_ventas();
+            restaurar_backup_clientes();
+            restaurar_detalle_ventas();
+            system("pause");
             system("cls");
             break;
 

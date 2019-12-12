@@ -35,14 +35,14 @@
 		<Unit filename="CLIENTES.h" />
 		<Unit filename="Clases.h" />
 		<Unit filename="MenuPrincipal.h" />
-		<Unit filename="back up.h" />
+		<Unit filename="PAGOS.h" />
+		<Unit filename="PERSONAS.h" />
+		<Unit filename="VENTAS.h" />
+		<Unit filename="back_up.h" />
 		<Unit filename="empleados.h" />
 		<Unit filename="fecha.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="pagos.h" />
-		<Unit filename="personas.h" />
 		<Unit filename="productos.h" />
-		<Unit filename="ventas.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

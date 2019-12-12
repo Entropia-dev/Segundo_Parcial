@@ -15,7 +15,7 @@ using namespace std;
 #include "clientes.h"
 #include "pagos.h"
 #include "ventas.h"
-
+#include "back_up.h"
 
 
 
