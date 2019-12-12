@@ -126,7 +126,8 @@ bool empleado::guardar_empleado()
 void alta_empleado()
 {
     system("cls");
-    cout<<"MENU CARGA DE EMPLEADOS :"<<endl;
+    cout<<"MENU CARGA DE EMPLEADOS "<<endl;
+    cout<<endl;
     empleado obj;
     bool resultado;
     obj.Cargar_empleado();

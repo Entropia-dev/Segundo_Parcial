@@ -32,11 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="CLIENTES.h" />
 		<Unit filename="Clases.h" />
-		<Unit filename="Fecha.h" />
 		<Unit filename="MenuPrincipal.h" />
-		<Unit filename="clientes.h" />
+		<Unit filename="back up.h" />
 		<Unit filename="empleados.h" />
+		<Unit filename="fecha.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="pagos.h" />
 		<Unit filename="personas.h" />

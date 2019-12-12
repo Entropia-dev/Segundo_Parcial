@@ -1,13 +1,15 @@
 #ifndef MENUPRINCIPAL_H_INCLUDED
 #define MENUPRINCIPAL_H_INCLUDED
 
+void restaurar_productos();
+void restaurar_pagos();
 void menu_empleados();
 void Menu_Principal();
 void menu_clientes();
 void menu_ventas();
 void menu_productos();
 void menu_pagos();
-
+void menu_configuracion();
 void Menu_Principal()
 {
 
@@ -23,6 +25,7 @@ void Menu_Principal()
         cout<<"3)MENU VENTAS"<<endl;
         cout<<"4)MENU PAGOS"<<endl;
         cout<<"5)MENU PRODUCTOS"<<endl;
+        cout<<"6)MENU CONFIGURACION"<<endl;
         cout<<"========="<<endl;
         cout<<"0)SALIR DEL PROGRAMA"<<endl;
         cin>>opc;
@@ -51,10 +54,20 @@ void Menu_Principal()
             system("cls");
             break;
 
+        case 6:
+            system("cls");
+            menu_configuracion();
+            system("cls");
+            break;
+
+
         case 0:
             return;
 
-        default: cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause"); break;
+        default:
+            cout<<"INGRESE UNA OPCION VALIDA"<<endl;
+            system("pause");
+            break;
 
         }
 
@@ -137,7 +150,10 @@ void menu_empleados()
             return;
             break;
 
-            default: cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause"); break;
+        default:
+            cout<<"INGRESE UNA OPCION VALIDA"<<endl;
+            system("pause");
+            break;
         }
 
     }
@@ -199,7 +215,10 @@ void menu_clientes()
             system("cls");
             return;
 
-            default: cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause"); break;
+        default:
+            cout<<"INGRESE UNA OPCION VALIDA"<<endl;
+            system("pause");
+            break;
 
         }
 
@@ -292,8 +311,11 @@ void menu_ventas()
             return;
             break;
 
-            default: cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause");
-            system("cls"); break;
+        default:
+            cout<<"INGRESE UNA OPCION VALIDA"<<endl;
+            system("pause");
+            system("cls");
+            break;
         }
     }
 
@@ -372,7 +394,10 @@ void menu_productos()
             return;
             break;
 
-            default: cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause");  break;
+        default:
+            cout<<"INGRESE UNA OPCION VALIDA"<<endl;
+            system("pause");
+            break;
         }
 
     }
@@ -385,76 +410,155 @@ void menu_productos()
 
 
 
-void menu_pagos(){
+void menu_pagos()
+{
     pago obj;
-        int opc;
+    int opc;
     system("cls");
     while(true)
     {
 
-cout<<"MENU DE PAGOS"<<endl;
-cout<<"==================="<<endl;
-cout<<"1)NUEVO PAGO"<<endl;
-cout<<"2)LISTAR TODOS LOS PAGOS"<<endl;
-cout<<"3)LISTAR PAGO POR TIPO"<<endl;
-cout<<"4)LISTAR PAGO POR CLIENTE"<<endl;
-cout<<"5)LISTAR PAGO POR ID"<<endl;
-cout<<"6)CANCELAR PAGO"<<endl;
-cout<<"==================="<<endl;
-cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
-cout<<"INGRESE UNA OPCION"<<endl;
-cin>>opc;
+        cout<<"MENU DE PAGOS"<<endl;
+        cout<<"==================="<<endl;
+        cout<<"1)NUEVO PAGO"<<endl;
+        cout<<"2)LISTAR TODOS LOS PAGOS"<<endl;
+        cout<<"3)LISTAR PAGO POR TIPO"<<endl;
+        cout<<"4)LISTAR PAGO POR CLIENTE"<<endl;
+        cout<<"5)LISTAR PAGO POR ID"<<endl;
+        cout<<"6)CANCELAR PAGO"<<endl;
+        cout<<"==================="<<endl;
+        cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
+        cout<<"INGRESE UNA OPCION"<<endl;
+        cin>>opc;
 
-switch(opc){
-case 1:
-    system("cls");
-    alta_pago();
-    system("cls");
-break;
+        switch(opc)
+        {
+        case 1:
+            system("cls");
+            alta_pago();
+            system("cls");
+            break;
 
-case 2:
-    system("cls");
-    listar_todos_pagos();
-    system("cls");
-break;
+        case 2:
+            system("cls");
+            listar_todos_pagos();
+            system("cls");
+            break;
 
-case 3:
+        case 3:
 
-    system("cls");
-    listar_pago_x_tipo();
-    system("cls");
-break;
+            system("cls");
+            listar_pago_x_tipo();
+            system("cls");
+            break;
 
-case 4:
-    system("cls");
-    listar_pago_x_cliente();
-    system("cls");
-break;
+        case 4:
+            system("cls");
+            listar_pago_x_cliente();
+            system("cls");
+            break;
 
-case 5:
-    system("cls");
-    listar_pago_x_id();
-    system("cls");
-break;
+        case 5:
+            system("cls");
+            listar_pago_x_id();
+            system("cls");
+            break;
 
-case 6:
-    system("cls");
-    cancelar_pago();
-    system("cls");
-break;
+        case 6:
+            system("cls");
+            cancelar_pago();
+            system("cls");
+            break;
 
-case 0:
-return;
-break;
+        case 0:
+            return;
+            break;
 
-cout<<"INGRESE UNA OPCION VALIDA"<<endl; system("pause");
-            system("cls"); break;
+            cout<<"INGRESE UNA OPCION VALIDA"<<endl;
+            system("pause");
+            system("cls");
+            break;
+
+        }
 
     }
 
 }
 
+
+void menu_configuracion()
+{
+
+    int opc;
+    system("cls");
+    while(true)
+    {
+        system("cls");
+        cout<<"MENU CONFIGURACION   "<<endl;
+        cout<<"==================   "<<endl;
+        cout<<"1)RESTAURAR EMPLEADOS"<<endl;
+        cout<<"2)RESTAURAR VENTAS   "<<endl;
+        cout<<"3)RESTAURAR CLIENTES "<<endl;
+        cout<<"4)RESTAURAR PAGOS    "<<endl;
+        cout<<"5)RESTAURAR PRODUCTOS"<<endl;
+        cout<<"                     "<<endl;
+        cout<<"====================="<<endl;
+        cout<<"0) VOLVER AL MENU ANTERIOR"<<endl;
+        cin>>opc;
+        switch(opc)
+        {
+
+        case 1:
+            system("cls");
+            restaurar_empleado();
+            system("cls");
+            break;
+
+
+        case 2:
+            system("cls");
+            restaurar_venta();
+            system("cls");
+            break;
+
+        case 3:
+            system("cls");
+            restaurar_cliente();
+            system("cls");
+            break;
+
+        case 4:
+            system("cls");
+            restaurar_pagos();
+            system("cls");
+            break;
+
+        case 5:
+            system("cls");
+            restaurar_productos();
+            system("cls");
+            break;
+
+
+        case 0:
+            system("cls");
+            return;
+            break;
+
+        default:
+            cout<<"INGRESE UNA OPCION VALIDA"<<endl;
+            system("pause");
+            break;
+        }
+
+    }
+
+
 }
+
+
+
+
 
 
 #endif // MENUPRINCIPAL_H_INCLUDED
