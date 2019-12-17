@@ -101,16 +101,18 @@ void listar_todos_empleados()
     empleado obj;
     system("cls");
     int cant_regs;
-    cant_regs=contar_empleados();
+    cant_regs=contar_empleados()+1;
 
-    for(int i=0; i<cant_regs; i++)
+    for(int i=1; i<cant_regs; i++)
     {
         obj.leer_empleado(i);
         if(obj.get_estado() == true)
         {
 
             obj.Mostrar_empleado();
-            cout<<"================"<<endl;
+            cout<<"=============="<<endl;
+
+
         }
     }
     cout<<"================"<<endl;

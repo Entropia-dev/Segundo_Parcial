@@ -302,5 +302,17 @@ if(obj.get_id_pago()==comparador){
     system("pause");
 }
 
+void listar_deudores(){
+cout<<"LOS VENTAS QUE REGISTRAN DEUDA SON"<<endl;
+///dentro de esta funcion iria listar deudas una vez que se encuentre funcional
+}
+
+void listar_deudas(){
+    ///tengo que evaluar venta por venta.(la tengo que leer).
+    ///por cada venta reviso los pagos para ver si acumulan el total del valor de la venta.
+    ///resto el moento de venta con los pagos acumulados que hagan referencia a esa venta.
+    ///si la resta da un numero posivivo distinto de ser
+
+}
 
 #endif // PAGOS_H_INCLUDED

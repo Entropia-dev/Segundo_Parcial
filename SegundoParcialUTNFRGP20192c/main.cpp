@@ -54,18 +54,6 @@ void inicializar_archivos()
 
 }
 
-///EL MENU DE CLIENTES QUEDO PROBADO Y FUNCIONAL    TIENE LOS FLAGS DE EMPLEADOS NO ENCONTRADOS EN ELIMINAR/RESTAURAR
-///EL MENU DE EMPLEADOS QUEDO PROBADO Y FUNCIONAL   TIENE LOS FLAGS DE EMPLEADOS NO ENCONTRADOS EN ELIMINAR/RESTAURAR
-///EL MENU DE PRODUCTOS QUEDO PROBADO Y FUNCIONAL
-///EL MENU DE VENTAS QUEDO PROBADO Y FUNCIONAL
-///cuando se modifica la factura al ingresar al usuario que se muestre nombre y apellido
-///validar todas las ventas
-
-/// no dejar que cargue consumos negativos
-///rlutil.h libreria para corregir la factura
-///opciones de exportacion a pdf / excel
-
-
 int main()
 {
 
@@ -75,6 +63,9 @@ int main()
     Menu_Principal();
     return 0;
 }
+
+///en "pagos.h" se encuentran dos funciones que faltan terminar.
+///falta darle alguna funcionalidad a los empleados
 
 /*int strLen(char *Cad)
 {
