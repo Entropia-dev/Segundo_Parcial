@@ -471,6 +471,15 @@ void menu_pagos()
             system("cls");
             break;
 
+       case 8:
+            system("cls");
+            cout<<" ingrese id: ";
+            int id;
+            cin>>id;
+            cout<<buscar_pagos(id)<<endl;
+            system("pause");
+            system("cls");
+            break;
 
         case 0:
             return;

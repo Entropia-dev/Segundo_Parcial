@@ -333,10 +333,12 @@ float deuda;
 float acum=0;
 while(obj.leerDeDisco(pos++)){
     if(obj.get_id_cliente()==id && obj.get_estado()==true){
-        acum+=obj.get_importe();
+        if(obj.get_forma_pago()==4){
+            acum+=obj.get_importe();
+        }
     }
 }
-       deuda = acum-buscar_pagos(obj.get_id_cliente());
+       deuda = buscar_pagos(obj.get_id_cliente())-acum;
 if(deuda!=0){
     return true;
 }
@@ -348,17 +350,18 @@ cout<<"LOS CLIENTES QUE REGISTRAN DEUDA SON"<<endl;
 
 cliente obj;
 int pos=0;
-//float dueda;
 while(obj.leerDeDisco(pos++)){
 if(obj.get_estado_cliente()==true){
   if(buscar_deudor(obj.get_codigo_cliente())==true){
     obj.mostrar_cliente();
-    system("pause");
-            return;
+
 
   }
+
 }
 }
+    system("pause");
+return;
 ///dentro de esta funcion iria listar deudas una vez que se encuentre funcional
 }
 

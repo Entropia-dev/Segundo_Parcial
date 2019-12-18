@@ -274,10 +274,12 @@ void venta::mostrar_venta()
 {
     cout.precision(2);
     cout<<"ID DE VENTA: "<<id_venta<<endl;
+    if(forma_pago==4){
     cout<<"ID DE CLIENTE: "<<id_cliente<<endl;
+    }
      cout << fixed <<"IMPORTE DE LA VENTA: "<<importe<<endl;
-    cout<<"FECHA DE VENTA: "<<endl;
-    fecha_venta.MostrarFecha();
+    cout<<"FECHA DE VENTA: ";
+     fecha_venta.MostrarFecha();
 }
 
 float obtener_importe(int id_venta)
@@ -310,6 +312,21 @@ void alta_venta()
     int nueva_id;
     productos obj;
     cout<<"MENU CARGAR VENTAS"<<endl;
+    cout<<"INGRESE LA FORMA DE PAGO  ";
+    cout<<" 1.EFECTIVO / 2.DEBITO / 3.CREDITO / 4.CUENTA / 5.MERCADO PAGO / 6.CHEQUES "<<endl;
+    int fp;
+    cin>>fp;
+    if(fp<1 || fp > 6)
+    {
+        cout<<"FORMA DE PAGO NO VALIDA , INTENTE NUEVAMENTE "<<endl;
+        system("pause");
+        return;
+    }
+
+    venta_final.set_forma_pago(fp);
+    venta_final.set_importe(0);
+    venta_final.set_id_venta(contar_ventas()+1);
+    if(fp==4){
     cout<<"INGRESE LA ID DEL CLIENTE"<<endl;
     cin>>nueva_id;
     venta_final.set_id_cliente(nueva_id);
@@ -327,21 +344,8 @@ void alta_venta()
         system("pause");
         return;
     }
-
-    cout<<"INGRESE LA FORMA DE PAGO  ";
-    cout<<" 1.EFECTIVO / 2.DEBITO / 3.CREDITO / 4.CUENTA / 5.MERCADO PAGO / 6.CHEQUES "<<endl;
-    int fp;
-    cin>>fp;
-    if(fp<1 || fp > 6)
-    {
-        cout<<"FORMA DE PAGO NO VALIDA , INTENTE NUEVAMENTE "<<endl;
-        system("pause");
-        return;
     }
 
-    venta_final.set_forma_pago(fp);
-    venta_final.set_importe(0);
-    venta_final.set_id_venta(contar_ventas()+1);
 ///detalles de la venta;
     char continuar='s';
     while(continuar=='s')
