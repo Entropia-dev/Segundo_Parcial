@@ -199,6 +199,7 @@ public:
     void cargar_cliente();
     void leer_cliente(int);
     bool sobreescribir_cliente(int);
+    bool leerDeDisco(int);
 };
 
 
@@ -269,6 +270,7 @@ public:
     void mostrar_venta();
     void leer_venta(int);
     void sobreescribir_venta(int );
+    bool leerDeDisco(int);
 
 };
 
@@ -350,6 +352,7 @@ public:
     void mostrar_pago();
     bool guardar_pago();
     void leer_pago(int);
+    bool leerDeDisco(int);
     int modificar_en_disco(int);
     ///=====================OTROS==================================
     void generar_pago_total(int, int, int );

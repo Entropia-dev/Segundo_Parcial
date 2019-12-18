@@ -177,6 +177,19 @@ void detalle_venta::leer_detalle(int pos)
     return;
 }
 
+bool venta::leerDeDisco(int pos){
+FILE*p=fopen("ventas.dat","rb");
+if(p==NULL){
+    cout<<" ERROR DE LECTURA ! "<< endl;
+    exit(1);
+    }
+    fseek(p,sizeof*this*pos,0);
+    bool leyo = fread(this,sizeof*this,1,p);
+    fclose(p);
+    return leyo;
+    }
+
+
 
 bool buscar_detalle_x_id_venta(int id_venta)
 {

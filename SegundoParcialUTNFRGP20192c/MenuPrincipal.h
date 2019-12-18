@@ -377,7 +377,7 @@ void menu_productos()
 
         case 6:
             system("cls");
-              aumentar_stock();
+            aumentar_stock();
             system("pause");
             system("cls");
             break;
@@ -464,6 +464,13 @@ void menu_pagos()
             cancelar_pago();
             system("cls");
             break;
+
+        case 7:
+            system("cls");
+            listar_deudores();
+            system("cls");
+            break;
+
 
         case 0:
             return;

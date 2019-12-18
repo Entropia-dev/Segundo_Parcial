@@ -99,6 +99,22 @@ void cliente::leer_cliente(int pos)
     return;
 }
 
+/// leerDeDisco
+
+bool cliente::leerDeDisco(int pos){
+FILE*p=fopen("clientes.dat","rb");
+if(p==NULL){
+    cout<<" ERROR DE LECTURA ! "<< endl;
+    exit(1);
+    }
+    fseek(p,sizeof*this*pos,0);
+    bool leyo = fread(this,sizeof*this,1,p);
+    fclose(p);
+    return leyo;
+    }
+
+
+
 void listar_todos_clientes()
 {
     cliente obj;

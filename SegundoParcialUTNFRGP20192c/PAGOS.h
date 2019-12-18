@@ -11,7 +11,17 @@ float obtener_importe_venta(int id_venta);
 int contar_ventas();
 
 
-
+bool pago::leerDeDisco(int pos){
+FILE*p=fopen("pagos.dat","rb");
+if(p==NULL){
+    cout<<" ERROR DE LECTURA ! "<< endl;
+    exit(1);
+    }
+    fseek(p,sizeof*this*pos,0);
+    bool leyo = fread(this,sizeof*this,1,p);
+    fclose(p);
+    return leyo;
+    }
 
 
 int pago::cargar_pago(){
@@ -302,8 +312,53 @@ if(obj.get_id_pago()==comparador){
     system("pause");
 }
 
+
+float buscar_pagos(int id){
+pago obj;
+int pos=0;
+float acum=0;
+while(obj.leerDeDisco(pos++)){
+    if(obj.get_id_cliente()==id){
+        acum+=obj.get_importe();
+    }
+
+}
+    return acum;
+}
+
+bool buscar_deudor (int id){
+venta obj;
+int pos=0;
+float deuda;
+float acum=0;
+while(obj.leerDeDisco(pos++)){
+    if(obj.get_id_cliente()==id && obj.get_estado()==true){
+        acum+=obj.get_importe();
+    }
+}
+       deuda = acum-buscar_pagos(obj.get_id_cliente());
+if(deuda!=0){
+    return true;
+}
+return false;
+}
+
 void listar_deudores(){
-cout<<"LOS VENTAS QUE REGISTRAN DEUDA SON"<<endl;
+cout<<"LOS CLIENTES QUE REGISTRAN DEUDA SON"<<endl;
+
+cliente obj;
+int pos=0;
+//float dueda;
+while(obj.leerDeDisco(pos++)){
+if(obj.get_estado_cliente()==true){
+  if(buscar_deudor(obj.get_codigo_cliente())==true){
+    obj.mostrar_cliente();
+    system("pause");
+            return;
+
+  }
+}
+}
 ///dentro de esta funcion iria listar deudas una vez que se encuentre funcional
 }
 

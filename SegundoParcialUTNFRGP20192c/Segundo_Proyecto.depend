@@ -144,7 +144,7 @@
 
 1575996663 c:\users\windows 10 pro\documents\utn\segundo_parcial\segundoparcialutnfrgp20192c\menuprincipal.h
 
-1576116481 source:c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
+1576611513 source:c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
 	<cstring>
 	<stdio.h>
@@ -164,23 +164,23 @@
 
 1576004251 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\fecha.h
 
-1576014344 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\clases.h
+1576621629 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\clases.h
 
 1576004251 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\productos.h
 
-1576119513 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\personas.h
+1576611512 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\personas.h
 
-1576119933 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\empleados.h
+1576611512 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\empleados.h
 
-1576110821 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\clientes.h
+1576621629 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\clientes.h
 
-1576006569 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\pagos.h
+1576634527 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\pagos.h
 	"ventas.h"
 
-1576119254 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\ventas.h
+1576621629 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\ventas.h
 	"pagos.h"
 
-1576117760 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\menuprincipal.h
+1576621989 c:\users\windows 10 pro\desktop\segundo_parcial\segundoparcialutnfrgp20192c\menuprincipal.h
 
 1576111795 source:c:\users\kai anderson\desktop\segundo_parcial-master\segundoparcialutnfrgp20192c\main.cpp
 	<iostream>
