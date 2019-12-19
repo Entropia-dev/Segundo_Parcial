@@ -412,9 +412,10 @@ bool buscar_deudor (int id)
     }
 
     deuda = buscar_pagos(obj.get_id_cliente())-acum;
-   // cout<<"DEUDA:   "<<acum<<endl;
     if(deuda!=0)
     {
+
+   cout<<"DEUDA:   "<<acum<<endl;
         return true;
     }
     return false;
@@ -423,7 +424,7 @@ bool buscar_deudor (int id)
 void listar_deudores()
 {
     cout<<"LOS CLIENTES QUE REGISTRAN DEUDA SON"<<endl;
-
+cout<<" ****************************************"<<endl;
     cliente obj;
     int pos=0;
     while(obj.leerDeDisco(pos++))
