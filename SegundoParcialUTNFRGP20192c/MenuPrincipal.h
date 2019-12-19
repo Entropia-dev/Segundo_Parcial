@@ -424,7 +424,6 @@ void menu_pagos()
         cout<<"7)LISTAR DEUDORES"<<endl;
         cout<<"==================="<<endl;
         cout<<"0)VOLVER AL MENU ANTERIOR"<<endl;
-        cout<<"INGRESE UNA OPCION"<<endl;
         cin>>opc;
 
         switch(opc)

@@ -397,6 +397,7 @@ float buscar_pagos(int id)
 
 bool buscar_deudor (int id)
 {
+    cout.precision(2);
     venta obj;
     int pos=0;
     float deuda;
@@ -415,7 +416,7 @@ bool buscar_deudor (int id)
     if(deuda!=0)
     {
 
-   cout<<"DEUDA:   "<<acum<<endl;
+   cout<<fixed<<"DEUDA:   "<<acum<<endl;
         return true;
     }
     return false;
