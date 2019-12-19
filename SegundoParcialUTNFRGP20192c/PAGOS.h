@@ -445,7 +445,7 @@ cout<<" ****************************************"<<endl;
     }
     system("pause");
     return;
-///dentro de esta funcion iria listar deudas una vez que se encuentre funcional
+
 }
 
 void listar_deudas()
