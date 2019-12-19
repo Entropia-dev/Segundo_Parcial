@@ -312,21 +312,6 @@ void alta_venta()
     int nueva_id;
     productos obj;
     cout<<"MENU CARGAR VENTAS"<<endl;
-    cout<<"INGRESE LA FORMA DE PAGO  ";
-    cout<<" 1.EFECTIVO / 2.DEBITO / 3.CREDITO / 4.CUENTA / 5.MERCADO PAGO / 6.CHEQUES "<<endl;
-    int fp;
-    cin>>fp;
-    if(fp<1 || fp > 6)
-    {
-        cout<<"FORMA DE PAGO NO VALIDA , INTENTE NUEVAMENTE "<<endl;
-        system("pause");
-        return;
-    }
-
-    venta_final.set_forma_pago(fp);
-    venta_final.set_importe(0);
-    venta_final.set_id_venta(contar_ventas()+1);
-    if(fp==4){
     cout<<"INGRESE LA ID DEL CLIENTE"<<endl;
     cin>>nueva_id;
     venta_final.set_id_cliente(nueva_id);
@@ -344,7 +329,22 @@ void alta_venta()
         system("pause");
         return;
     }
+
+
+    cout<<"INGRESE LA FORMA DE PAGO  ";
+    cout<<" 1.EFECTIVO / 2.DEBITO / 3.CREDITO / 4.CUENTA / 5.MERCADO PAGO / 6.CHEQUES "<<endl;
+    int fp;
+    cin>>fp;
+    if(fp<1 || fp > 6)
+    {
+        cout<<"FORMA DE PAGO NO VALIDA , INTENTE NUEVAMENTE "<<endl;
+        system("pause");
+        return;
     }
+
+    venta_final.set_forma_pago(fp);
+    venta_final.set_importe(0);
+    venta_final.set_id_venta(contar_ventas()+1);
 
 ///detalles de la venta;
     char continuar='s';

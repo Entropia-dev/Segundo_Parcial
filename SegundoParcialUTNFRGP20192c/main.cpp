@@ -63,6 +63,8 @@ int main()
     Menu_Principal();
     return 0;
 }
+/// notacion para mostrar por id y tambien en listar productos y EN MOSTRAR PAGOS y ,PSTRAR DEUDORES
+
 
 ///en "pagos.h" se encuentran dos funciones que faltan terminar.
 ///falta darle alguna funcionalidad a los empleados

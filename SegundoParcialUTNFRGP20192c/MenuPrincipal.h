@@ -300,6 +300,7 @@ void menu_ventas()
             system("cls");
             eliminar_venta();
             system("cls");
+            break;
 
         case 9:
             system("cls");
@@ -473,7 +474,7 @@ void menu_pagos()
 
        case 8:
             system("cls");
-            cout<<" ingrese id: ";
+            cout<<" ingrese id de cliente: ";
             int id;
             cin>>id;
             cout<<buscar_pagos(id)<<endl;
