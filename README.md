@@ -1,2 +1,2 @@
 # Segundo_Parcial
-Segundo parcial Laboratorio 2 
+Trabajo practico enfocado en el manejo de datos de tipo class y el manejo de archivos te dipo binario.
